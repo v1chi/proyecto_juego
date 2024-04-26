@@ -85,7 +85,7 @@ _data = {
 
 [node name="Card-flip" type="Node2D"]
 position = Vector2(104, 70)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_srr83")
 metadata/_edit_group_ = true
 
