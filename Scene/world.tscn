@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://b6rv6l8rafnm"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://b6rv6l8rafnm"]
+>>>>>>> Stashed changes
 
+[ext_resource type="PackedScene" uid="uid://c3r0p041g8emv" path="res://Characters/char2/char_2.tscn" id="1_odmsc"]
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="1_uhwxt"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_xcdej"]
 
@@ -97,7 +102,11 @@ sources/0 = SubResource("TileSetAtlasSource_trrvo")
 
 [node name="world" type="Node2D"]
 
+[node name="char2" parent="." instance=ExtResource("1_odmsc")]
+position = Vector2(111, 56)
+
 [node name="char1" parent="." instance=ExtResource("1_uhwxt")]
+<<<<<<< Updated upstream
 top_level = true
 position = Vector2(114, 73)
 
@@ -111,3 +120,6 @@ tile_set = SubResource("TileSet_jqci0")
 collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(3, 0, 1, 65539, 0, 2, 4, 65536, 1, 65540, 65536, 2, 5, 0, 1, 65541, 524288, 4, 6, 65536, 1, 65542, 65536, 2, 9, 0, 1, 65545, 524288, 4, 8, 65536, 1, 7, 0, 1, 65543, 0, 2, 65544, 65536, 2, 10, 196608, 0, 65546, 65536, 2, 2, 131072, 0, 11, 196608, 0, 65538, 131072, 1, 131074, 131072, 1, 196610, 131072, 1, 262146, 131072, 1, 327682, 131072, 1, 196612, 0, 9, 196618, 0, 9, 196615, 262144, 9, 393220, 262144, 9, 393226, 262144, 9, 393223, 0, 9, 65547, 65536, 2, 12, 262144, 0, 65548, 131072, 1, 131084, 131072, 1, 196620, 131072, 1, 262156, 131072, 1, 327692, 131072, 1, 393228, 131072, 1, 458764, 131072, 1, 524291, 0, 1, 524292, 65536, 1, 589826, 0, 2, 589827, 0, 2, 589828, 65536, 2, 524299, 65536, 1, 589835, 65536, 2, 589836, 65536, 2, 524298, 0, 1, 589834, 0, 2, 393218, 131072, 1, 458754, 131072, 1, 524290, 131072, 2, 524300, 262144, 1, 524293, 393216, 0, 524294, 458752, 0, 524295, 393216, 0, 524296, 393216, 0, 524297, 458752, 0, 589832, 393216, 0, 589833, 458752, 0, 589830, 393216, 0, 589831, 458752, 0, 262155, 524288, 5, 262154, 524288, 5, 131083, 983040, 4, 131076, 589824, 5, 196613, 589824, 5, 262147, 589824, 5, 589829, 393216, 0)
+=======
+position = Vector2(68, 60)
+>>>>>>> Stashed changes
