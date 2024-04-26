@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://cg7aqgxy5o4tp"]
+
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Carta/Card Scenes/card_flip.gd" id="1_srr83"]
+[ext_resource type="Texture2D" uid="uid://c6b67du5ld3wj" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/backcard.png" id="2_dixf5"]
+[ext_resource type="Texture2D" uid="uid://d2t6pt82fgg4k" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/CuteCards_outline-JOKER.png" id="3_sif5d"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Carta/Card Scenes/CollisionShape2D.gd" id="4_4cgdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dr5"]
+size = Vector2(100, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7ohc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sif5d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vlen1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardback:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardback/card:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="Animation" id="Animation_dj0b8"]
+resource_name = "card_flip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardback:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardback/card:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_wov2m"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qd105"]
+_data = {
+"RESET": SubResource("Animation_vlen1"),
+"card_flip": SubResource("Animation_dj0b8"),
+"new_animation": SubResource("Animation_wov2m")
+}
+
+[node name="Card-flip" type="Node2D"]
+position = Vector2(104, 70)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_srr83")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p6dr5")
+script = ExtResource("4_4cgdy")
+
+[node name="cardback" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_dixf5")
+
+[node name="card" type="AnimatedSprite2D" parent="cardback"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_x7ohc")
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qd105")
+}
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_mouse_entered"]
