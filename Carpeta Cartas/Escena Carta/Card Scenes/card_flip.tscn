@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg7aqgxy5o4tp"]
+[gd_scene load_steps=10 format=3 uid="uid://cg7aqgxy5o4tp"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Carta/Card Scenes/card_flip.gd" id="1_srr83"]
 [ext_resource type="Texture2D" uid="uid://c6b67du5ld3wj" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/backcard.png" id="2_dixf5"]
 [ext_resource type="Texture2D" uid="uid://d2t6pt82fgg4k" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/CuteCards_outline-JOKER.png" id="3_sif5d"]
-[ext_resource type="Script" path="res://Carpeta Cartas/Escena Carta/Card Scenes/CollisionShape2D.gd" id="4_4cgdy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dr5"]
 size = Vector2(100, 145)
@@ -92,10 +91,8 @@ metadata/_edit_group_ = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_p6dr5")
-script = ExtResource("4_4cgdy")
 
 [node name="cardback" type="Sprite2D" parent="."]
 z_index = -1
@@ -110,5 +107,3 @@ frame_progress = 1.0
 libraries = {
 "": SubResource("AnimationLibrary_qd105")
 }
-
-[connection signal="mouse_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_mouse_entered"]
