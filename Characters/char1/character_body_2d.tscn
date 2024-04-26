@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cg4o1dqm08nvi"]
+[gd_scene load_steps=11 format=3 uid="uid://cg4o1dqm08nvi"]
 
 [ext_resource type="Texture2D" uid="uid://b5skfb6m4eqtw" path="res://Characters/char1/player.png" id="1_72ft7"]
 [ext_resource type="Script" path="res://Characters/char1/character_body_2d.gd" id="1_k8407"]
@@ -18,9 +18,9 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_3pw1k"]
-resource_name = "attackDown"
-length = 0.8
+[sub_resource type="Animation" id="Animation_2b02k"]
+resource_name = "walkStand"
+length = 1.2
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -30,28 +30,10 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6)]
-}
-
-[sub_resource type="Animation" id="Animation_ytkod"]
-resource_name = "attackLeft"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7)]
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_eswyb"]
@@ -132,24 +114,6 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_2b02k"]
-resource_name = "walkStand"
-length = 1.2
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_w5t8i"]
 resource_name = "walkUp"
 length = 1.2
@@ -171,8 +135,6 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n225e"]
 _data = {
 "RESET": SubResource("Animation_g7jm4"),
-"attackDown": SubResource("Animation_3pw1k"),
-"attackLeft": SubResource("Animation_ytkod"),
 "walkDown": SubResource("Animation_eswyb"),
 "walkLeft": SubResource("Animation_uvu0b"),
 "walkRight": SubResource("Animation_fr6ct"),
