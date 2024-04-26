@@ -143,7 +143,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow8hn"]
-size = Vector2(7, 3)
+size = Vector2(9, 3)
 
 [node name="char1" type="CharacterBody2D"]
 script = ExtResource("1_k8407")
