@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://2sqerc471nvn"]
+
+[ext_resource type="Script" path="res://Menu/Fondo Menu.gd" id="1_qq1k0"]
+[ext_resource type="Texture2D" uid="uid://qaflgffqf7" path="res://Menu/Fondo juego.png" id="1_vlo1c"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_qq1k0")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(6000, 5849)
+scale = Vector2(0.9, 0.9)
+motion_scale = Vector2(10240, 10240)
+motion_offset = Vector2(10240, 10240)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-4512.5, -4592.5)
+scale = Vector2(0.95, 0.55)
+texture = ExtResource("1_vlo1c")
+region_rect = Rect2(-50, 0, 6000, 4000)

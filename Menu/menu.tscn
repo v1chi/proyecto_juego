@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2r1irilspuyh"]
+
+[ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="1_qtrxv"]
+[ext_resource type="PackedScene" uid="uid://2sqerc471nvn" path="res://Menu/Fondo Menu.tscn" id="2_fyu3n"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchor_right = 3.867
+anchor_bottom = 3.081
+offset_right = -688.08
+offset_bottom = -280.935
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -81.5
+offset_right = 404.0
+offset_bottom = 295.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Jugar" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qtrxv")
+theme_override_font_sizes/font_size = 50
+text = "Jugar
+"
+
+[node name="Salir" type="Button" parent="VBoxBotones"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qtrxv")
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_fyu3n")]
