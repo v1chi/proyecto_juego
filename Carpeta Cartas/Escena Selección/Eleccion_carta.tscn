@@ -29,57 +29,9 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="Panel4" type="Panel" parent="GridContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_83018")
-metadata/_edit_group_ = true
-
-[node name="Card-flip" parent="GridContainer/Panel4" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
-
-[node name="Panel3" type="Panel" parent="GridContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_83018")
-metadata/_edit_group_ = true
-
-[node name="Card-flip" parent="GridContainer/Panel3" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
-
-[node name="Panel2" type="Panel" parent="GridContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_83018")
-metadata/_edit_group_ = true
-
-[node name="Card-flip" parent="GridContainer/Panel2" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
-
-[node name="Panel" type="Panel" parent="GridContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_83018")
-metadata/_edit_group_ = true
-
-[node name="Card-flip" parent="GridContainer/Panel" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
-
 [node name="Panel5" type="Panel" parent="GridContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
+custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -87,11 +39,23 @@ script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
 [node name="Card-flip" parent="GridContainer/Panel5" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
+position = Vector2(13, 18.625)
+
+[node name="Panel4" type="Panel" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(26.09, 37.95)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_83018")
+metadata/_edit_group_ = true
+
+[node name="Card-flip" parent="GridContainer/Panel4" instance=ExtResource("1_yhopl")]
+position = Vector2(13, 18.625)
 
 [node name="Panel6" type="Panel" parent="GridContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26.09, 36.385)
+custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -99,23 +63,59 @@ script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
 [node name="Card-flip" parent="GridContainer/Panel6" instance=ExtResource("1_yhopl")]
-position = Vector2(13, 18)
+position = Vector2(13, 18.625)
 
-[connection signal="gui_input" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_gui_input"]
-[connection signal="mouse_entered" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_mouse_exited"]
-[connection signal="gui_input" from="GridContainer/Panel3" to="GridContainer/Panel3" method="_on_gui_input"]
-[connection signal="mouse_entered" from="GridContainer/Panel3" to="GridContainer/Panel3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/Panel3" to="GridContainer/Panel3" method="_on_mouse_exited"]
-[connection signal="gui_input" from="GridContainer/Panel2" to="GridContainer/Panel2" method="_on_gui_input"]
-[connection signal="mouse_entered" from="GridContainer/Panel2" to="GridContainer/Panel2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/Panel2" to="GridContainer/Panel2" method="_on_mouse_exited"]
-[connection signal="gui_input" from="GridContainer/Panel" to="GridContainer/Panel" method="_on_gui_input"]
-[connection signal="mouse_entered" from="GridContainer/Panel" to="GridContainer/Panel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/Panel" to="GridContainer/Panel" method="_on_mouse_exited"]
+[node name="Panel7" type="Panel" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(26.09, 37.95)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_83018")
+metadata/_edit_group_ = true
+
+[node name="Card-flip" parent="GridContainer/Panel7" instance=ExtResource("1_yhopl")]
+position = Vector2(13, 18.625)
+
+[node name="Panel8" type="Panel" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(26.09, 37.95)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_83018")
+metadata/_edit_group_ = true
+
+[node name="Card-flip" parent="GridContainer/Panel8" instance=ExtResource("1_yhopl")]
+position = Vector2(13, 18.625)
+
+[node name="Panel9" type="Panel" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(26.09, 37.95)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_83018")
+metadata/_edit_group_ = true
+
+[node name="Card-flip" parent="GridContainer/Panel9" instance=ExtResource("1_yhopl")]
+position = Vector2(13, 18.625)
+
 [connection signal="gui_input" from="GridContainer/Panel5" to="GridContainer/Panel5" method="_on_gui_input"]
 [connection signal="mouse_entered" from="GridContainer/Panel5" to="GridContainer/Panel5" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer/Panel5" to="GridContainer/Panel5" method="_on_mouse_exited"]
+[connection signal="gui_input" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_gui_input"]
+[connection signal="mouse_entered" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Panel4" to="GridContainer/Panel4" method="_on_mouse_exited"]
 [connection signal="gui_input" from="GridContainer/Panel6" to="GridContainer/Panel6" method="_on_gui_input"]
 [connection signal="mouse_entered" from="GridContainer/Panel6" to="GridContainer/Panel6" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer/Panel6" to="GridContainer/Panel6" method="_on_mouse_exited"]
+[connection signal="gui_input" from="GridContainer/Panel7" to="GridContainer/Panel7" method="_on_gui_input"]
+[connection signal="mouse_entered" from="GridContainer/Panel7" to="GridContainer/Panel7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Panel7" to="GridContainer/Panel7" method="_on_mouse_exited"]
+[connection signal="gui_input" from="GridContainer/Panel8" to="GridContainer/Panel8" method="_on_gui_input"]
+[connection signal="mouse_entered" from="GridContainer/Panel8" to="GridContainer/Panel8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Panel8" to="GridContainer/Panel8" method="_on_mouse_exited"]
+[connection signal="gui_input" from="GridContainer/Panel9" to="GridContainer/Panel9" method="_on_gui_input"]
+[connection signal="mouse_entered" from="GridContainer/Panel9" to="GridContainer/Panel9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer/Panel9" to="GridContainer/Panel9" method="_on_mouse_exited"]
