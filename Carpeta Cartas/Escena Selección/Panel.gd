@@ -19,10 +19,12 @@ func _on_gui_input(event):
 
 func _on_mouse_entered():
 	print("AAAAAA")
+	set_position(Vector2(position.x, position.y - 4))
 	set_self_modulate(Color(0, 0, 0, 1))
 
 
 
 func _on_mouse_exited():
+	set_position(Vector2(position.x , position.y + 4))
 	set_self_modulate(Color(255, 255, 255, 0))
 

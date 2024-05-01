@@ -22,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -52.5
-offset_right = 75.76
-offset_bottom = 51.06
+offset_left = -32.0
+offset_top = -54.5
+offset_right = 118.76
+offset_bottom = 49.06
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
@@ -83,6 +83,20 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 79.0
+offset_bottom = 135.0
+color = Color(0.690196, 0.631373, 0.780392, 0.662745)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 79.0
+offset_bottom = 29.0
+text = "Escoge 
+2's
+cartas :)"
 
 [connection signal="gui_input" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_mouse_entered"]
