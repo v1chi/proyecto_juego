@@ -113,6 +113,20 @@ tracks/1/keys = {
 "method": &"activate_card_flip"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_card_created"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qd105"]
 _data = {
@@ -122,7 +136,7 @@ _data = {
 }
 
 [node name="parent_card" type="Node2D"]
-position = Vector2(16, 60)
+position = Vector2(13, 19)
 
 [node name="card" type="Node2D" parent="."]
 scale = Vector2(0.25, 0.25)

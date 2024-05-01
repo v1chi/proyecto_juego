@@ -10,13 +10,10 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if get_rect().has_point(event.global_position):
 			print("Click")
-
 
 
 
