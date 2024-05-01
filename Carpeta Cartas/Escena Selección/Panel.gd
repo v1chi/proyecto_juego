@@ -8,17 +8,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	pass
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if get_rect().has_point(event.global_position):
-			print("Click")
+		disconnect("mouse_entered", _on_mouse_entered)
+		disconnect("mouse_exited", _on_mouse_exited)
 
 
 
 func _on_mouse_entered():
-	print("AAAAAA")
 	set_position(Vector2(position.x, position.y - 4))
 	set_self_modulate(Color(0, 0, 0, 1))
 

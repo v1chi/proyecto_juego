@@ -90,13 +90,29 @@ offset_right = 79.0
 offset_bottom = 135.0
 color = Color(0.690196, 0.631373, 0.780392, 0.662745)
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_right = 79.0
-offset_bottom = 29.0
+[node name="ContenedorTexto" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/ContenedorTexto"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 11
 text = "Escoge 
 2's
 cartas :)"
+
+[node name="Label2" type="Label" parent="ColorRect/ContenedorTexto"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+text = "Descripción
+cartas"
+justification_flags = 162
 
 [connection signal="gui_input" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_mouse_entered"]
