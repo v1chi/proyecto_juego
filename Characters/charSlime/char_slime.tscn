@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cxnuk6na5qk54"]
 
-[ext_resource type="Texture2D" uid="uid://dedi52lqpdnog" path="res://Characters/slime.png" id="1_cd0ue"]
+[ext_resource type="Texture2D" uid="uid://dedi52lqpdnog" path="res://Characters/charSlime/slime.png" id="1_cd0ue"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
