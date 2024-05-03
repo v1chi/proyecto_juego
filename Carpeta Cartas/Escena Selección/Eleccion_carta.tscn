@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ufb1hjutfhcv"]
+[gd_scene load_steps=4 format=3 uid="uid://ufb1hjutfhcv"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel.gd" id="1_83018"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta.gd" id="1_fqvd7"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/DescripcionCarta.gd" id="3_m5da3"]
 
 [node name="EleccionCarta" type="Control"]
 layout_mode = 3
@@ -108,29 +109,47 @@ text = "Escoge
 2's
 cartas :)"
 
-[node name="Label2" type="Label" parent="ColorRect/ContenedorTexto"]
+[node name="DescripcionCarta" type="Label" parent="ColorRect/ContenedorTexto"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
 text = "Descripción
-cartas"
+cartas
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 justification_flags = 162
+clip_text = true
+script = ExtResource("3_m5da3")
 
+[connection signal="selection_finished" from="." to="." method="_on_selection_finished"]
+[connection signal="card_selected" from="Contenedor/Panel1" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel1" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_mouse_exited"]
+[connection signal="card_selected" from="Contenedor/Panel2" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel2" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel2" to="Contenedor/Panel2" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel2" to="Contenedor/Panel2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel2" to="Contenedor/Panel2" method="_on_mouse_exited"]
+[connection signal="card_selected" from="Contenedor/Panel3" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel3" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel3" to="Contenedor/Panel3" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel3" to="Contenedor/Panel3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel3" to="Contenedor/Panel3" method="_on_mouse_exited"]
+[connection signal="card_selected" from="Contenedor/Panel4" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel4" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel4" to="Contenedor/Panel4" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel4" to="Contenedor/Panel4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel4" to="Contenedor/Panel4" method="_on_mouse_exited"]
+[connection signal="card_selected" from="Contenedor/Panel5" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel5" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel5" to="Contenedor/Panel5" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel5" to="Contenedor/Panel5" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel5" to="Contenedor/Panel5" method="_on_mouse_exited"]
+[connection signal="card_selected" from="Contenedor/Panel6" to="." method="_on_panel_card_selected"]
+[connection signal="descrip_changed" from="Contenedor/Panel6" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="gui_input" from="Contenedor/Panel6" to="Contenedor/Panel6" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Contenedor/Panel6" to="Contenedor/Panel6" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contenedor/Panel6" to="Contenedor/Panel6" method="_on_mouse_exited"]

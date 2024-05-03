@@ -10,3 +10,4 @@ func _ready():
 
 func _init(): 
 	self.imagen_carta = load(path_carta_frontal)
+	self.descripcion_carta = "Carta 3"

@@ -5,7 +5,7 @@ extends Node2D
 var imagen_carta
 var sprite_carta
 var anim
-
+var descripcion_carta
 signal card_created
 
 
@@ -17,6 +17,10 @@ func on_card_created():
 
 func activar_efecto():
 	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO")
+	
+func get_descripcion():
+	return self.descripcion_carta
+
 
 func set_carta_frontal(texture_load):
 	assert(sprite_carta != null, "Nodo Sprite2D de la carta frontal es nulo")
