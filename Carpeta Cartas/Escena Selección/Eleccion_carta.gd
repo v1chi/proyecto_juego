@@ -1,10 +1,10 @@
 extends Control
 
 var panels = []
-var scene_card = load("res://Carpeta Cartas/Escena Carta/Card Scenes/card_flip.tscn")
 
 
 
+var controlador_cartas = preload("res://CardManager.gd").new()
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
@@ -17,13 +17,12 @@ func add_panels():
 
 
 func add_card_to_panel(panel_id):
-	var instance_card = scene_card.instantiate()
+	var instance_card = controlador_cartas.instantiate_card()
 	panels[panel_id - 1].add_child(instance_card)
 
 func create_deck():
 	for panel_id in range(1, 7, 1):
 		add_card_to_panel(panel_id)
-		print("Esperando")
 		await wait(0.25)
 
 

@@ -1,6 +1,6 @@
 extends AbstractCard
 
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/4.tres"
 
 func _ready():
 	super._ready()

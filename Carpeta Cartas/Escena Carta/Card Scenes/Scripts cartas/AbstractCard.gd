@@ -35,12 +35,11 @@ func activate_shift_animation():
 
 
 func _ready():
-	assert(get_node("AnimationPlayer") != null, "AnimationPlayer es nulo")
-	assert(get_node("cardback/frontal") != null, "Sprite2D de la carta frontal es nulo")
-	assert(imagen_carta != null, "Imagen de la carta es nulo")
+	assert(get_node("card/AnimationPlayer") != null, "AnimationPlayer es nulo")
+	assert(get_node("card/cardback/frontal") != null, "Sprite2D de la carta frontal es nulo")
 	
-	anim = get_node("AnimationPlayer")
-	sprite_carta = get_node("cardback/frontal")
+	anim = get_node("card/AnimationPlayer")
+	sprite_carta = get_node("card/cardback/frontal")
 	
 	activate_shift_animation()
 	set_carta_frontal(imagen_carta)
