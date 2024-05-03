@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c56o4mw4b53gy"]
+
+[ext_resource type="Texture2D" uid="uid://bm0m8ggqvm7jw" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/CuteCards.png" id="1_r7xe6"]
+
+[resource]
+atlas = ExtResource("1_r7xe6")
+region = Rect2(1000, 0, 100, 144)

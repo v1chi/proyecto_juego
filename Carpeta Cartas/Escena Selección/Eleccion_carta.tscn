@@ -32,6 +32,8 @@ columns = 3
 
 [node name="Panel1" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+light_mask = 16
+visibility_layer = 16
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 4
