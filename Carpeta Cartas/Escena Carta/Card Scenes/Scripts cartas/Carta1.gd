@@ -3,6 +3,8 @@ extends AbstractCard
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres"
 
 
+func activar_efecto():
+	print("Activa el efecto de la carta 1")
 
 
 

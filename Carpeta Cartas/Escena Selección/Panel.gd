@@ -1,25 +1,47 @@
 extends Control
 
+
+var card
+
+signal card_created(card: AbstractCard)
 signal descrip_changed(texto)
-signal card_selected(card)
+signal card_selected(card: AbstractCard)
+
+
+
+func set_card(card : AbstractCard):
+	self.card = card
+
+func get_card():
+	return card
+
+func descartar_carta():
+	card.activate_discard_card()
 
 func get_description():
-	assert(get_child(0) != null, "No existe la carta del panel: " + str(self.name))
-	var card = get_child(0)
 	return card.get_descripcion()
+
+
+func connect_mouse_event():
+	connect("mouse_entered", _on_mouse_entered)
+	connect("mouse_exited", _on_mouse_exited)
+	connect("gui_input", _on_gui_input)
 
 func disconnect_mouse_entered_exited():
 	if is_connected("mouse_entered", _on_mouse_entered):
 		disconnect("mouse_entered", _on_mouse_entered)
-
+		
 	if is_connected("mouse_exited", _on_mouse_exited):
 		disconnect("mouse_exited", _on_mouse_exited)
-
+		
+	if is_connected("gui_input", _on_gui_input):
+		disconnect("gui_input", _on_gui_input)
+		
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		disconnect_mouse_entered_exited()
-		card_selected.emit(null)
+		card_selected.emit(card)
 
 
 
@@ -36,4 +58,6 @@ func _on_mouse_exited():
 
 	
 
-
+func _on_card_created(card):
+	connect_mouse_event()
+	set_card(card)

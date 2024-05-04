@@ -2,22 +2,27 @@ class_name AbstractCard
 extends Node2D
 
 
-var imagen_carta
+var imagen_carta = preload("res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres")
 var sprite_carta
 var anim
 var descripcion_carta
+var id : int
 signal card_created
+
+
+
+
+func activar_efecto():
+	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: activar_efecto()")
+	
+func get_id():
+	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: get_id()")
 
 
 func on_card_created():
 	print("Carta creada ")
 	card_created.emit()
 
-
-
-func activar_efecto():
-	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO")
-	
 func get_descripcion():
 	return self.descripcion_carta
 
@@ -35,6 +40,9 @@ func activate_shift_animation():
 	assert(anim != null, "Animation player es nulo")
 	anim.play("shift")
 
+func activate_discard_card():
+	assert(anim != null, "Animation Player es nulo")
+	anim.play("discard_animation")
 
 
 
@@ -47,6 +55,4 @@ func _ready():
 	
 	activate_shift_animation()
 	set_carta_frontal(imagen_carta)
-
-
 
