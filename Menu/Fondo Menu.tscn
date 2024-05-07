@@ -13,7 +13,7 @@ motion_scale = Vector2(10240, 10240)
 motion_offset = Vector2(10240, 10240)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-6602.22, -6453.33)
-scale = Vector2(0.263282, 0.147502)
+position = Vector2(-4512.5, -4592.5)
+scale = Vector2(0.95, 0.55)
 texture = ExtResource("1_vlo1c")
-offset = Vector2(258.333, 201.34)
+region_rect = Rect2(-50, 0, 6000, 4000)
