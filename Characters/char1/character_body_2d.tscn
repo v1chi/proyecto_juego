@@ -300,6 +300,7 @@ _data = {
 size = Vector2(9, 3)
 
 [node name="char1" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_k8407")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -316,5 +317,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 14.5)
+y_sort_enabled = true
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_ow8hn")
