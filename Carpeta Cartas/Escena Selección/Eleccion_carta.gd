@@ -2,7 +2,7 @@ class_name Eleccion_carta
 extends Control
 
  
-signal selection_finished
+signal selection_finished(cartas)
 
 
 var panels = []
@@ -46,12 +46,12 @@ func _on_panel_card_selected(card):
 	add_cart_to_selected(card)
 	if count_selected_card >= 2:
 		await wait(0.25)
-		selection_finished.emit()
+		selection_finished.emit(lista_cartas_seleccionadas)
 		disconnect("card_selected", _on_panel_card_selected)
 
 
 
-func _on_selection_finished():
+func _on_selection_finished(cartas):
 	for panel in panels:
 		panel.disconnect_mouse_entered_exited()
 		if not(panel.get_card() in lista_cartas_seleccionadas):

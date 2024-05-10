@@ -3,8 +3,11 @@ extends Button
 
 var scene = preload("res://Scene/world.tscn").instantiate()
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 

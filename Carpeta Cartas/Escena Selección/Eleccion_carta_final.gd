@@ -6,6 +6,8 @@ var anim
 var eleccion_carta : Eleccion_carta
 var path_siguiente_piso : String
 
+var cartas_seleccionadas
+
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
 	pass
@@ -22,10 +24,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if Input.is_key_pressed(KEY_TAB):
+		print(cartas_seleccionadas[0].get_descripcion())
+	elif Input.is_key_pressed(KEY_Q):
+		print(cartas_seleccionadas[1].get_descripcion())
 	pass
 
 
-func _on_eleccion_carta_selection_finished():
+func _on_eleccion_carta_selection_finished(cartas):
+	cartas_seleccionadas = cartas
 	await wait(0.5)
 	get_node("EleccionCarta").set_visible(false)
 	get_node("PanelSalida").set_visible(true)

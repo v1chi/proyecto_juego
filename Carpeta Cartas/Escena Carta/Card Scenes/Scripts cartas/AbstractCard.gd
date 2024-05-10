@@ -5,9 +5,12 @@ extends Node2D
 var imagen_carta = preload("res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres")
 var sprite_carta
 var anim
-var descripcion_carta
+var descripcion_carta = "Carta abstracta"
 var id : int
+
 signal card_created
+signal card_effected
+
 
 
 
