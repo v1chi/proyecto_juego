@@ -9,8 +9,8 @@ signal card_selected(card: AbstractCard)
 
 
 
-func set_card(card : AbstractCard):
-	self.card = card
+func set_card(card1 : AbstractCard):
+	self.card = card1
 
 func get_card():
 	return card

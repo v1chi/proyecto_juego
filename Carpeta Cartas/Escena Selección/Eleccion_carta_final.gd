@@ -4,9 +4,11 @@ extends Control
 
 var anim
 var eleccion_carta : Eleccion_carta
+var path_siguiente_piso : String
 
-
-
+func wait(seconds):
+	await get_tree().create_timer(seconds).timeout
+	pass
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +26,14 @@ func _process(delta):
 
 
 func _on_eleccion_carta_selection_finished():
-	get_node("Panel").set_visible(true)
-	pass
+	await wait(0.5)
+	get_node("EleccionCarta").set_visible(false)
+	get_node("PanelSalida").set_visible(true)
 	
+	pass
+
+
+
+
+func _init(siguiente_piso = ''):
+	path_siguiente_piso = siguiente_piso

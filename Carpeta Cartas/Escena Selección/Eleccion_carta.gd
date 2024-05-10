@@ -6,7 +6,7 @@ signal selection_finished
 
 
 var panels = []
-var controlador_cartas = preload("res://CardManager.gd").new()
+var controlador_cartas = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/CardManager.gd").new()
 
 
 var count_selected_card = 0

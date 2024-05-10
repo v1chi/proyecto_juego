@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://0g7fgd2qhqs6"]
+[gd_scene load_steps=6 format=3 uid="uid://0g7fgd2qhqs6"]
 
 [ext_resource type="PackedScene" uid="uid://ufb1hjutfhcv" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta.tscn" id="1_85jaj"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.gd" id="1_xxjao"]
-[ext_resource type="Texture2D" uid="uid://cs1cfhl1i7fa7" path="res://icon.svg" id="2_u1ply"]
+[ext_resource type="Texture2D" uid="uid://c5kdi5cgqwuj4" path="res://Carpeta Cartas/UI Sprites/Banner_Horizontal.png" id="2_h7f5d"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/PanelSalida.gd" id="3_frmoi"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Button.gd" id="4_geu4k"]
 
 [node name="EleccionCartaFinal" type="Control"]
 layout_mode = 3
@@ -13,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xxjao")
 
-[node name="Panel" type="TextureRect" parent="."]
+[node name="PanelSalida" type="TextureRect" parent="."]
 visible = false
 light_mask = 524288
 visibility_layer = 524288
@@ -22,15 +24,48 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -42.0
+offset_right = 40.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_u1ply")
+texture = ExtResource("2_h7f5d")
+script = ExtResource("3_frmoi")
+
+[node name="Label" type="Label" parent="PanelSalida"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506
+anchor_top = 0.393
+anchor_right = 0.506
+anchor_bottom = 0.393
+offset_left = -60.414
+offset_top = -11.456
+offset_right = 72.586
+offset_bottom = 11.544
+text = "SIGUIENTE LVL"
+
+[node name="Button" type="Button" parent="PanelSalida"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.484
+anchor_top = 0.617
+anchor_right = 0.484
+anchor_bottom = 0.617
+offset_left = -54.396
+offset_top = -15.464
+offset_right = 54.604
+offset_bottom = 15.536
+text = "SIG"
+script = ExtResource("4_geu4k")
 
 [node name="EleccionCarta" parent="." instance=ExtResource("1_85jaj")]
 layout_mode = 1
 
 [node name="AnimationScene" type="AnimationPlayer" parent="."]
 
+[connection signal="pressed" from="PanelSalida/Button" to="PanelSalida/Button" method="_on_pressed"]
 [connection signal="selection_finished" from="EleccionCarta" to="." method="_on_eleccion_carta_selection_finished"]
 
 [editable path="EleccionCarta"]

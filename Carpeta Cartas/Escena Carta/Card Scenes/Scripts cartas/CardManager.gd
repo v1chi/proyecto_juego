@@ -6,7 +6,7 @@ var array_scripts
 var rng = RandomNumberGenerator.new()
 
 
-func instantiate_card():	
+func instantiate_card():
 	var card = escena_carta.instantiate()
 	var n = rng.randi_range(0,2)
 	card.set_script(array_scripts[n])
