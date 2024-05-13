@@ -1,10 +1,21 @@
 extends AbstractCard
 
+# Carta qie afecta la velocidad del jugador
+
+
+
+
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres"
+var player
 
 
-func activar_efecto():
-	print("Activa el efecto de la carta 1")
+func _activar_efecto_hijo():
+	player = get_node("/root/world/TileMap/char1")
+	player.speed = 100
+	
+	
+func get_id():
+	return id
 
 
 
@@ -15,5 +26,6 @@ func _ready():
 
 
 func _init(): 
+	self.id = 1
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Carta 1"

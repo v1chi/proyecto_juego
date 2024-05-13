@@ -1,7 +1,6 @@
 extends Control
 
 
-
 var anim
 var eleccion_carta : Eleccion_carta
 var path_siguiente_piso : String
@@ -26,9 +25,9 @@ func _ready():
 func _process(delta):
 	
 	if Input.is_key_pressed(KEY_TAB):
-		print(cartas_seleccionadas[0].get_descripcion())
+		print(cartas_seleccionadas[0].activar_efecto())
 	elif Input.is_key_pressed(KEY_Q):
-		print(cartas_seleccionadas[1].get_descripcion())
+		print(cartas_seleccionadas[1].activar_efecto())
 	pass
 
 

@@ -12,11 +12,14 @@ signal card_created
 signal card_effected
 
 
-
+func _activar_efecto_hijo():
+	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: activar_efecto_hijo()")
+	
 
 
 func activar_efecto():
-	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: activar_efecto()")
+	card_effected.emit()
+	_activar_efecto_hijo()
 	
 func get_id():
 	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: get_id()")
