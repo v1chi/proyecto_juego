@@ -2,26 +2,35 @@ extends CharacterBody2D
 
 @export var speed: int = 35
 @onready var animations = $AnimationPlayer
+@export var limit: float = 0.5
 
-func handleImput():
-	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = moveDirection*speed
+var startPosition
+var endPosition
 
+@onready var animationsChar = $AnimationPlayer
+
+func _ready():
+	startPosition = position
+	endPosition = startPosition + Vector2(0, 2*16)
+
+func changeDirection():
+	var tempEnd = endPosition
+	endPosition = startPosition
+	startPosition = tempEnd
+
+func updateVelocity():
+	var moveDirection = (endPosition - position)
+	if moveDirection.length() < limit:
+		changeDirection()
+	velocity = moveDirection.normalized()*speed
+	
 func updateAnimation():
-	if velocity.length() == 0:
-		animations.play("walkStand")
-	else:
-		var direction = "Down"
-		if velocity.x < 0: 
-			direction = "Left"
-		elif velocity.x > 0: 
-			direction = "Right"
-		elif velocity.y < 0: 
-			direction = "Up"
-			
-		animations.play("walk" + direction) 
-
+	var animationString = "walkUp"
+	if velocity.y > 0:
+		animationString = "walkDown"
+	animationsChar.play(animationString)
+	
 func _physics_process(delta):
-	handleImput()
+	updateVelocity()
 	move_and_slide()
 	updateAnimation()

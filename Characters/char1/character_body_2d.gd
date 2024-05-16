@@ -5,6 +5,9 @@ extends CharacterBody2D
 var lastAnimDirection: String = "Down"
 var isAttacking: bool = false
 
+@export var maxHealth = 3
+@onready var currentHealth: int = maxHealth
+
 func handleImput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection*speed
@@ -36,3 +39,11 @@ func _physics_process(delta):
 	handleImput()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_hurtbox_area_entered(area):
+	if area.name == "Hitbox":
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+		print_debug(currentHealth)
