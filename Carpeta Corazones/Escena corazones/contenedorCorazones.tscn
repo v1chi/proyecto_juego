@@ -1,5 +1,22 @@
-[gd_scene format=3 uid="uid://bhs5y07f5gpet"]
+[gd_scene load_steps=2 format=3 uid="uid://bhs5y07f5gpet"]
+
+[ext_resource type="PackedScene" uid="uid://be8smmu8uulv2" path="res://Carpeta Corazones/Escena corazones/corazon.tscn" id="1_q56bk"]
 
 [node name="contenedorCorazones" type="HBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Corazon" parent="." instance=ExtResource("1_q56bk")]
+layout_mode = 2
+
+[node name="Corazon2" parent="." instance=ExtResource("1_q56bk")]
+layout_mode = 2
+
+[node name="Corazon3" parent="." instance=ExtResource("1_q56bk")]
+layout_mode = 2
+
+[node name="Corazon4" parent="." instance=ExtResource("1_q56bk")]
+layout_mode = 2
+
+[node name="Corazon5" parent="." instance=ExtResource("1_q56bk")]
+layout_mode = 2

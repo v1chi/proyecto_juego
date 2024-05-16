@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6rv6l8rafnm"]
+[gd_scene load_steps=9 format=3 uid="uid://b6rv6l8rafnm"]
 
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="1_uhwxt"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_xcdej"]
 [ext_resource type="PackedScene" uid="uid://vswmellaeqwd" path="res://Characters/char2/char_2.tscn" id="3_7anfj"]
 [ext_resource type="Texture2D" uid="uid://c6gn7sq10ficq" path="res://TileSet/Pixel Art Top Down - Basic (1)/Texture/TX Props.png" id="3_7nojj"]
+[ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="5_ve4mq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_xcdej")
@@ -1082,3 +1083,7 @@ position = Vector2(114, 74)
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="contenedorCorazones" parent="CanvasLayer" instance=ExtResource("5_ve4mq")]
