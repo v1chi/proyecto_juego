@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djnn3hwgybffv"
+path="res://.godot/imported/Fart - Gaming Sound Effect (HD).mp3-7a8d3f72136f9eac7a2a286df7f1920c.mp3str"
+
+[deps]
+
+source_file="res://musica/Fart - Gaming Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Fart - Gaming Sound Effect (HD).mp3-7a8d3f72136f9eac7a2a286df7f1920c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

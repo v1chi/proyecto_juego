@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv5tnso1i0ben"]
+[gd_scene load_steps=5 format=3 uid="uid://bv5tnso1i0ben"]
 
 [ext_resource type="Script" path="res://Menu/Pausa.gd" id="1_cly77"]
 [ext_resource type="Script" path="res://Continuar.gd" id="2_apqj8"]
 [ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="2_bgfwe"]
+[ext_resource type="AudioStream" uid="uid://bek0ri1pt4jsq" path="res://musica/efecto de sonido POP.mp3" id="4_tvtjs"]
 
 [node name="Pausa" type="CanvasLayer"]
 process_mode = 3
@@ -51,6 +52,10 @@ offset_right = 166.0
 offset_bottom = 45.0
 theme_override_fonts/font = ExtResource("2_bgfwe")
 text = "Pausa"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tvtjs")
+volume_db = 10.306
 
 [connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer/SalidaMenu" to="." method="_on_salida_menu_pressed"]
