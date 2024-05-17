@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv5tnso1i0ben"]
+
+[ext_resource type="Script" path="res://Menu/Pausa.gd" id="1_cly77"]
+[ext_resource type="Script" path="res://Continuar.gd" id="2_apqj8"]
+[ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="2_bgfwe"]
+
+[node name="Pausa" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_cly77")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.109804, 0.109804, 0.109804, 0.403922)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 58.0
+offset_right = -24.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Continuar" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bgfwe")
+theme_override_font_sizes/font_size = 10
+text = "Continuar"
+script = ExtResource("2_apqj8")
+
+[node name="SalidaMenu" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bgfwe")
+theme_override_font_sizes/font_size = 10
+text = "Menu principal"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 98.0
+offset_top = 22.0
+offset_right = 166.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("2_bgfwe")
+text = "Pausa"
+
+[connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/SalidaMenu" to="." method="_on_salida_menu_pressed"]
+[connection signal="tree_entered" from="VBoxContainer/SalidaMenu" to="VBoxContainer/Continuar" method="_on_salida_menu_tree_entered"]
