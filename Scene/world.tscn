@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6rv6l8rafnm"]
+[gd_scene load_steps=10 format=3 uid="uid://b6rv6l8rafnm"]
 
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="1_uhwxt"]
+[ext_resource type="Script" path="res://Scene/world.gd" id="1_x4vg2"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_xcdej"]
 [ext_resource type="PackedScene" uid="uid://vswmellaeqwd" path="res://Characters/char2/char_2.tscn" id="3_7anfj"]
 [ext_resource type="Texture2D" uid="uid://c6gn7sq10ficq" path="res://TileSet/Pixel Art Top Down - Basic (1)/Texture/TX Props.png" id="3_7nojj"]
@@ -1057,6 +1058,7 @@ sources/0 = SubResource("TileSetAtlasSource_trrvo")
 sources/1 = SubResource("TileSetAtlasSource_4bs02")
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_x4vg2")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1087,3 +1089,7 @@ position_smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="contenedorCorazones" parent="CanvasLayer" instance=ExtResource("5_ve4mq")]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 108.0
+offset_bottom = 23.0

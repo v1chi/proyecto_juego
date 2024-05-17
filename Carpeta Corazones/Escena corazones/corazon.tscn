@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://be8smmu8uulv2"]
+[gd_scene load_steps=3 format=3 uid="uid://be8smmu8uulv2"]
 
 [ext_resource type="Texture2D" uid="uid://dcq170fm8itwy" path="res://Carpeta Corazones/Sprite/heart_animated_1.png" id="1_3nbvv"]
+[ext_resource type="Script" path="res://Carpeta Corazones/Escena corazones/corazon.gd" id="1_jqvxr"]
 
 [node name="Corazon" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(17, 17)
 offset_right = 17.0
 offset_bottom = 17.0
+script = ExtResource("1_jqvxr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.529412, 0.470588)
 texture = ExtResource("1_3nbvv")
 centered = false
 hframes = 5
+frame = 4
