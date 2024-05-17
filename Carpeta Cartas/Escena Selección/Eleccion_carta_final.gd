@@ -25,9 +25,9 @@ func _ready():
 func _process(delta):
 	
 	if Input.is_key_pressed(KEY_TAB):
-		print(cartas_seleccionadas[0].activar_efecto())
+		cartas_seleccionadas[0].activar_efecto()
 	elif Input.is_key_pressed(KEY_Q):
-		print(cartas_seleccionadas[1].activar_efecto())
+		cartas_seleccionadas[1].activar_efecto()
 	pass
 
 

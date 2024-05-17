@@ -1,11 +1,14 @@
 extends AbstractCard
 
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/3.tres"
-
-
+var player
+var damage = 2
 
 func _activar_efecto_hijo():
-	print("Activa el efecto de la carta 2")
+	player = get_node("/root/world/TileMap/char1")
+	player.currentHealth -= damage 
+	damage = 0
+	player.healthChanged.emit(player.currentHealth)
 	
 
 func get_id():
