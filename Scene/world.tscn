@@ -1096,3 +1096,5 @@ offset_right = 108.0
 offset_bottom = 23.0
 
 [node name="Pausa" parent="." instance=ExtResource("7_qyyis")]
+
+[node name="Node" type="Node" parent="."]
