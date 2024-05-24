@@ -43,10 +43,9 @@ func _physics_process(delta):
 
 
 func _on_hurtbox_area_entered(area):
-	if area.name == "Hitbox":
+	if area.name == "enemy_hitbox":
 		currentHealth -= 1
 		if currentHealth == 0:
-			#currentHealth = maxHealth
 			dead()
 		healthChanged.emit(currentHealth)
 

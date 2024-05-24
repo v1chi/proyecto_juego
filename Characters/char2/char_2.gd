@@ -1,36 +1,45 @@
 extends CharacterBody2D
 
-@export var speed: int = 35
+@export var speed: int = 20
 @onready var animations = $AnimationPlayer
-@export var limit: float = 0.5
+var player_chase = false
+var player = null
 
-var startPosition
-var endPosition
-
-@onready var animationsChar = $AnimationPlayer
-
-func _ready():
-	startPosition = position
-	endPosition = startPosition + Vector2(0, 2*16)
-
-func changeDirection():
-	var tempEnd = endPosition
-	endPosition = startPosition
-	startPosition = tempEnd
-
-func updateVelocity():
-	var moveDirection = (endPosition - position)
-	if moveDirection.length() < limit:
-		changeDirection()
-	velocity = moveDirection.normalized()*speed
-	
-func updateAnimation():
-	var animationString = "walkUp"
-	if velocity.y > 0:
-		animationString = "walkDown"
-	animationsChar.play(animationString)
-	
 func _physics_process(delta):
-	updateVelocity()
-	move_and_slide()
-	updateAnimation()
+	if player_chase:
+		var moveDirection = player.position - position
+		var velocity = moveDirection.normalized() * speed
+		position += velocity * delta
+		
+		updateAnimation(moveDirection)
+	else:
+		animations.play("RESET")
+
+func updateAnimation(direction):
+	var xComponent = abs(direction.x)
+	var yComponent = abs(direction.y)
+	var animationName = "idle"
+
+	if xComponent > yComponent:
+		if direction.x > 0:
+			animationName = "walkRight"
+		else:
+			animationName = "walkLeft"
+	else:
+		if direction.y > 0:
+			animationName = "walkDown"
+		else:
+			animationName = "walkUp"
+
+	animations.play(animationName)
+
+	
+func _on_detection_body_entered(body):
+	player = body
+	player_chase = true
+
+func _on_detection_body_exited(body):
+	player = null
+	player_chase = false
+
+

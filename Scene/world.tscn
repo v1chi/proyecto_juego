@@ -1079,9 +1079,9 @@ layer_1/tile_data = PackedInt32Array(196613, 589824, 5, 262149, 589824, 6, 19661
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="char2" parent="TileMap" instance=ExtResource("3_7anfj")]
+[node name="enemigo1" parent="TileMap" instance=ExtResource("3_7anfj")]
 y_sort_enabled = true
-position = Vector2(86, 71)
+position = Vector2(120, 200)
 
 [node name="char1" parent="TileMap" instance=ExtResource("1_uhwxt")]
 position = Vector2(114, 74)
