@@ -10,7 +10,8 @@ func _ready():
 func _process(delta):
 	pass
 
-var cambio = preload("res://Scene/world.tscn")
+var cambio1 = preload("res://Scene/world.tscn")
+var cambio = preload("res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn")
 
 func _on_pressed():
 	print("funciona")

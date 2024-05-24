@@ -1,28 +1,47 @@
 extends CharacterBody2D
 
-var speed = 40
+var speed = 20
 var playerChase = false
 var player = null
 var health = 1
 
 func _physics_process(delta):
 	if playerChase:
-		position += (player.position - position)/speed
+		var moveDirection = player.position - position
+		var velocity = moveDirection.normalized() * speed
+		var coll = move_and_collide(velocity*delta)
+		if coll:
+			
+			print(coll.get_collider().name)
 		
-		$AnimationPlayer.play("walkRight")
-		
-		if(player.position.x - position.x) < 0:
-			$AnimationPlayer.play("walkLeft")
+		updateAnimation(moveDirection)
 	else:
 		$AnimationPlayer.play("walkStand")
 
+func updateAnimation(direction):
+	var xComponent = abs(direction.x)
+	var yComponent = abs(direction.y)
+	var animationName = "walkRight"
+
+	if xComponent > yComponent:
+		if direction.x > 0:
+			animationName = "walkRight"
+		else:
+			animationName = "walkLeft"
+	else:
+		animationName  = "walkStand"
+
+	$AnimationPlayer.play(animationName)
+	
 func _on_detection_body_entered(body):
-	player = body
-	playerChase = true
+	if body.has_method("player"):
+		player = body
+		playerChase = true
 
 func _on_detection_body_exited(body):
-	player = null
-	playerChase = false
+	if body.has_method("player"):
+		player = null
+		playerChase = false
 	
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":

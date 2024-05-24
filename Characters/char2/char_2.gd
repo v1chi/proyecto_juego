@@ -9,9 +9,13 @@ var health = 2
 func _physics_process(delta):
 	if player_chase:
 		var moveDirection = player.position - position
-		var velocity = moveDirection.normalized() * speed
-		position += velocity * delta
+		var velocity1 = moveDirection.normalized() * speed
 		
+		#position += velocity * delta
+		var coll = move_and_collide(velocity1*delta)
+		if coll:
+			
+			print(coll.get_collider().name)
 		updateAnimation(moveDirection)
 	else:
 		animations.play("RESET")
@@ -38,12 +42,14 @@ func enemy():
 	pass
 	
 func _on_detection_body_entered(body):
-	player = body
-	player_chase = true
+	if body.has_method("player"):
+		player = body
+		player_chase = true
 
 func _on_detection_body_exited(body):
-	player = null
-	player_chase = false
+	if body.has_method("player"):
+		player = null
+		player_chase = false
 
 
 func _on_enemy_hitbox_area_entered(area):

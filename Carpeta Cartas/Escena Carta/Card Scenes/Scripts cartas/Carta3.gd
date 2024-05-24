@@ -13,7 +13,7 @@ func get_id():
 
 func _activar_efecto_hijo():
 	player = get_node("/root/world2/TileMap/char1")
-	player.speed = 30
+	player.speed = 80
 	
 
 func _init(): 

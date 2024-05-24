@@ -204,8 +204,6 @@ size = Vector2(28, 42)
 radius = 36.0555
 
 [node name="char2" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_afvd4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

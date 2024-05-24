@@ -63,6 +63,9 @@ script = ExtResource("4_geu4k")
 [node name="EleccionCarta" parent="." instance=ExtResource("1_85jaj")]
 layout_mode = 1
 
+[node name="ColorRect" parent="EleccionCarta" index="1"]
+visible = true
+
 [node name="AnimationScene" type="AnimationPlayer" parent="."]
 
 [connection signal="pressed" from="PanelSalida/Button" to="PanelSalida/Button" method="_on_pressed"]
