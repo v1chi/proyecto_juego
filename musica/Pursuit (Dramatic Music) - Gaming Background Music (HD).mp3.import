@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://chw7ko78u4ot4"
-path="res://.godot/imported/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3-1b645c618a23b83456eee8a1343b2762.mp3str"
+path="res://.godot/imported/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3-4d4277cc0cc3d9c4d9e163501fed0ec7.mp3str"
 
 [deps]
 
-source_file="res://musica/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3"
-dest_files=["res://.godot/imported/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3-1b645c618a23b83456eee8a1343b2762.mp3str"]
+source_file="res://Musica/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3"
+dest_files=["res://.godot/imported/Pursuit (Dramatic Music) - Gaming Background Music (HD).mp3-4d4277cc0cc3d9c4d9e163501fed0ec7.mp3str"]
 
 [params]
 

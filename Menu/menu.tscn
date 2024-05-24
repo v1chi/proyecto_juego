@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Menu/Salir.gd" id="3_gkby6"]
 [ext_resource type="Script" path="res://Menu/opciones.gd" id="3_ppii8"]
 [ext_resource type="PackedScene" uid="uid://r0g80odqfouv" path="res://Menu/prueba.tscn" id="7_r2etb"]
-[ext_resource type="AudioStream" uid="uid://cb8oca0l4mj6i" path="res://musica/Adventure Meme.mp3" id="8_kbenk"]
+[ext_resource type="AudioStream" uid="uid://cb8oca0l4mj6i" path="res://Musica/Adventure Meme.mp3" id="8_kbenk"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -48,6 +48,7 @@ text = "Jugar
 script = ExtResource("2_l7kgv")
 
 [node name="opciones" type="Button" parent="VBoxBotones"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qtrxv")
 theme_override_font_sizes/font_size = 4
