@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv5tnso1i0ben"]
 
-[ext_resource type="Script" path="res://Menu/Pausa.gd" id="1_cly77"]
-[ext_resource type="Script" path="res://Continuar.gd" id="2_apqj8"]
-[ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="2_bgfwe"]
-[ext_resource type="AudioStream" uid="uid://bek0ri1pt4jsq" path="res://musica/efecto de sonido POP.mp3" id="4_tvtjs"]
+[ext_resource type="Script" path="res://Menu/Pausa.gd" id="1_x0mwv"]
+[ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="2_85j5b"]
+[ext_resource type="Script" path="res://Menu/Continuar.gd" id="3_21y83"]
+[ext_resource type="AudioStream" uid="uid://bek0ri1pt4jsq" path="res://musica/efecto de sonido POP.mp3" id="4_t4srb"]
 
 [node name="Pausa" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_cly77")
+script = ExtResource("1_x0mwv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -32,15 +32,15 @@ grow_vertical = 2
 [node name="Continuar" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_bgfwe")
+theme_override_fonts/font = ExtResource("2_85j5b")
 theme_override_font_sizes/font_size = 10
 text = "Continuar"
-script = ExtResource("2_apqj8")
+script = ExtResource("3_21y83")
 
 [node name="SalidaMenu" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_bgfwe")
+theme_override_fonts/font = ExtResource("2_85j5b")
 theme_override_font_sizes/font_size = 10
 text = "Menu principal"
 
@@ -50,11 +50,11 @@ offset_left = 98.0
 offset_top = 22.0
 offset_right = 166.0
 offset_bottom = 45.0
-theme_override_fonts/font = ExtResource("2_bgfwe")
+theme_override_fonts/font = ExtResource("2_85j5b")
 text = "Pausa"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_tvtjs")
+stream = ExtResource("4_t4srb")
 volume_db = 10.306
 
 [connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
