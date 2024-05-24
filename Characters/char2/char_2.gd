@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: int = 20
+@export var speed: int = 15
 @onready var animations = $AnimationPlayer
 var player_chase = false
 var player = null

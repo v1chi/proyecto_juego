@@ -5,7 +5,7 @@ var player
 var damage = 2
 
 func _activar_efecto_hijo():
-	player = get_node("/root/world/TileMap/char1")
+	player = get_node("/root/world2/TileMap/char1")
 	player.currentHealth -= damage 
 	damage = 0
 	player.healthChanged.emit(player.currentHealth)

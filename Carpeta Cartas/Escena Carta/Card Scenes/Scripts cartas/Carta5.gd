@@ -1,6 +1,6 @@
 extends AbstractCard
 
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/4.tres"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres"
 var player 
 
 func _ready():
@@ -13,10 +13,10 @@ func get_id():
 
 func _activar_efecto_hijo():
 	player = get_node("/root/world2/TileMap/char1")
-	player.speed = 30
+	player.custom_speed = 0.65
 	
 
 func _init(): 
-	self.id = 3
+	self.id = 5
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Carta 3"
+	self.descripcion_carta = "Carta 5"

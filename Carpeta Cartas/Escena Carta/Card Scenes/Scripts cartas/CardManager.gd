@@ -14,14 +14,14 @@ func _connect_effect(card):
 
 func instantiate_card():
 	var card = escena_carta.instantiate()
-	var n = rng.randi_range(0,2)
+	var n = rng.randi_range(0, array_scripts.size() - 1)
 	card.set_script(array_scripts[n])
 	_connect_effect(card)
 	return card
 	
 	
 func _remove_card(id : int):
-	array_scripts.pop_at(id)
+	array_scripts.pop_at(array_scripts.find(id))
 
 
 func _init():
@@ -30,9 +30,11 @@ func _init():
 	array_scripts = [
 	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta1.gd"),
 	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta2.gd"),
-	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta3.gd")
+	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta3.gd"),
+	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta4.gd"),
+	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta5.gd"),
+	preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta6.gd")
 	]
-
 
 
 

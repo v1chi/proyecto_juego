@@ -577,7 +577,6 @@ script = ExtResource("1_k8407")
 texture_filter = 1
 position = Vector2(0, -1)
 texture = ExtResource("1_72ft7")
-flip_h = true
 hframes = 6
 vframes = 10
 
@@ -606,7 +605,7 @@ position = Vector2(-0.5, 6.5)
 shape = SubResource("RectangleShape2D_rkl7p")
 
 [node name="attack_cooldown" type="Timer" parent="."]
-wait_time = 2.344
+wait_time = 2.33
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
