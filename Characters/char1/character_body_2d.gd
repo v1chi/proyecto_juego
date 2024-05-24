@@ -4,10 +4,11 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 var lastAnimDirection: String = "Down"
 var isAttacking: bool = false
-
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 signal healthChanged
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
 
 func handleImput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -18,7 +19,7 @@ func handleImput():
 		isAttacking = true
 		await animations.animation_finished
 		isAttacking = false
-
+	
 func updateAnimation():
 	if isAttacking: return
 	
@@ -37,20 +38,34 @@ func updateAnimation():
 		lastAnimDirection = direction
 
 func _physics_process(delta):
+	if currentHealth == 0:
+		dead()
+	healthChanged.emit(currentHealth)
 	handleImput()
 	move_and_slide()
 	updateAnimation()
-
-
-func _on_hurtbox_area_entered(area):
-	if area.name == "enemy_hitbox":
-		currentHealth -= 1
-		if currentHealth == 0:
-			dead()
-		healthChanged.emit(currentHealth)
-
+	enemy_attack()
+	
 func dead():
 	set_physics_process(false)
 	animations.play("deathLeft")
 	await animations.animation_finished
 	queue_free()
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+		
+		
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown == true:
+		currentHealth -= 1
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		
+func _on_attack_cooldown_timeout():
+	enemy_attack_cooldown = true

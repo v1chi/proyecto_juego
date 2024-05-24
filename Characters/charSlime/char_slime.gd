@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 40
 var playerChase = false
 var player = null
+var health = 1
 
 func _physics_process(delta):
 	if playerChase:
@@ -21,4 +22,17 @@ func _on_detection_body_entered(body):
 
 func _on_detection_body_exited(body):
 	player = null
-	playerChase = true
+	playerChase = false
+	
+func _on_enemy_hitbox_area_entered(area):
+	if area.name == "WeaponArea2D":
+		health -= 1
+		if health == 0:
+			dead()
+
+func dead():
+	set_physics_process(false)
+	queue_free()
+
+func enemy():
+	pass

@@ -198,7 +198,7 @@ _data = {
 size = Vector2(11, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrcaq"]
-size = Vector2(20, 25)
+size = Vector2(28, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s01xc"]
 radius = 36.0555
@@ -226,7 +226,7 @@ shape = SubResource("RectangleShape2D_l4gui")
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0, 11.5)
+position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_lrcaq")
 
 [node name="detection" type="Area2D" parent="."]
@@ -235,5 +235,6 @@ shape = SubResource("RectangleShape2D_lrcaq")
 position = Vector2(3, 5)
 shape = SubResource("CircleShape2D_s01xc")
 
+[connection signal="area_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_entered"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 var player_chase = false
 var player = null
+var health = 2
 
 func _physics_process(delta):
 	if player_chase:
@@ -18,21 +19,23 @@ func _physics_process(delta):
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)
 	var yComponent = abs(direction.y)
-	var animationName = "idle"
+	var animationName = "attackDown"
 
 	if xComponent > yComponent:
 		if direction.x > 0:
-			animationName = "walkRight"
+			animationName = "attackRight"
 		else:
-			animationName = "walkLeft"
+			animationName = "attackLeft"
 	else:
 		if direction.y > 0:
-			animationName = "walkDown"
+			animationName = "attackDown"
 		else:
-			animationName = "walkUp"
+			animationName = "attackUp"
 
 	animations.play(animationName)
 
+func enemy():
+	pass
 	
 func _on_detection_body_entered(body):
 	player = body
@@ -43,3 +46,13 @@ func _on_detection_body_exited(body):
 	player_chase = false
 
 
+func _on_enemy_hitbox_area_entered(area):
+	if area.name == "WeaponArea2D":
+		health -= 1
+		if health == 0:
+			dead()
+
+func dead():
+	set_physics_process(false)
+	queue_free()
+		
