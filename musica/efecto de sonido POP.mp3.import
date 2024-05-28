@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bek0ri1pt4jsq"
-path="res://.godot/imported/efecto de sonido POP.mp3-c78afd6da4a9ab44f329059445fefa00.mp3str"
+path="res://.godot/imported/efecto de sonido POP.mp3-1b0266e0e6233a92909d36a9ae92a1c3.mp3str"
 
 [deps]
 
-source_file="res://Musica/efecto de sonido POP.mp3"
-dest_files=["res://.godot/imported/efecto de sonido POP.mp3-c78afd6da4a9ab44f329059445fefa00.mp3str"]
+source_file="res://musica/efecto de sonido POP.mp3"
+dest_files=["res://.godot/imported/efecto de sonido POP.mp3-1b0266e0e6233a92909d36a9ae92a1c3.mp3str"]
 
 [params]
 

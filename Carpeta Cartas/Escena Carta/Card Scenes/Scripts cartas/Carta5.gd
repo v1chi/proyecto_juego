@@ -16,6 +16,9 @@ func _activar_efecto_hijo():
 	player.custom_speed = 0.65
 	
 
+func get_icono():
+	return path_carta_frontal
+	
 func _init(): 
 	self.id = 5
 	self.imagen_carta = load(path_carta_frontal)

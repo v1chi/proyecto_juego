@@ -68,7 +68,7 @@ visible = true
 
 [node name="AnimationScene" type="AnimationPlayer" parent="."]
 
-[connection signal="pressed" from="PanelSalida/Button" to="PanelSalida/Button" method="_on_pressed"]
+[connection signal="pressed" from="PanelSalida/Button" to="." method="_on_button_pressed"]
 [connection signal="selection_finished" from="EleccionCarta" to="." method="_on_eleccion_carta_selection_finished"]
 
 [editable path="EleccionCarta"]

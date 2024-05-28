@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://devak5c8008uq"]
+
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/icono_carta.gd" id="1_3km8n"]
+
+[node name="ContenedorCartas" type="HBoxContainer"]
+anchors_preset = -1
+anchor_bottom = 0.274074
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_3km8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="ParentCard1" type="Node2D" parent="."]
+position = Vector2(8, 19)
+scale = Vector2(0.37, 0.37)
+
+[node name="ParentCard2" type="Node2D" parent="."]
+position = Vector2(27, 19)
+scale = Vector2(0.37, 0.37)

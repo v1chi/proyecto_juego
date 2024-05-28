@@ -3,7 +3,7 @@ extends Button
 
 var scene = preload("res://Scene/world.tscn").instantiate()
 
-
+var contenedor_carta
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +17,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_tree().root.add_child(scene)
-	get_tree().root.get_child(0).set_visible(false)
+	
 	pass # Replace with function body.

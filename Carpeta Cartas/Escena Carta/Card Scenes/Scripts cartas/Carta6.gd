@@ -16,6 +16,9 @@ func _activar_efecto_hijo():
 	enemy.speed = 33
 	
 
+func get_icono():
+	return path_carta_frontal
+	
 func _init(): 
 	self.id = 6
 	self.imagen_carta = load(path_carta_frontal)

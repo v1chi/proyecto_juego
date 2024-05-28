@@ -18,6 +18,8 @@ func get_id():
 	return id
 
 
+func get_icono():
+	return path_carta_frontal
 
 func _ready():
 	super._ready()

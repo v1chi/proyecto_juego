@@ -11,6 +11,9 @@ func _activar_efecto_hijo():
 	player.healthChanged.emit(player.currentHealth)
 	
 
+func get_icono():
+	return path_carta_frontal
+
 func get_id():
 	return id
 

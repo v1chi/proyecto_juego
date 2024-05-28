@@ -44,3 +44,16 @@ func _on_eleccion_carta_selection_finished(cartas):
 
 func _init(siguiente_piso = ''):
 	path_siguiente_piso = siguiente_piso
+
+var contenedor_carta
+var scene = preload("res://Scene/world.tscn").instantiate()
+func _on_button_pressed():
+	get_tree().root.add_child(scene)
+	contenedor_carta = get_node("/root/world2/CanvasLayer/ContenedorCartas")
+	contenedor_carta = contenedor_carta._setup_carta1(
+		load(cartas_seleccionadas[0].get_icono())
+	)._setup_carta2(
+		load(cartas_seleccionadas[1].get_icono())
+	)
+	contenedor_carta.add_cartas()
+	get_tree().root.get_child(0).set_visible(false)

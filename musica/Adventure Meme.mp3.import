@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cb8oca0l4mj6i"
-path="res://.godot/imported/Adventure Meme.mp3-d45c5ed000fba141096c51e88c423529.mp3str"
+path="res://.godot/imported/Adventure Meme.mp3-67c755826547fccde6b71313724cfc10.mp3str"
 
 [deps]
 
-source_file="res://Musica/Adventure Meme.mp3"
-dest_files=["res://.godot/imported/Adventure Meme.mp3-d45c5ed000fba141096c51e88c423529.mp3str"]
+source_file="res://musica/Adventure Meme.mp3"
+dest_files=["res://.godot/imported/Adventure Meme.mp3-67c755826547fccde6b71313724cfc10.mp3str"]
 
 [params]
 

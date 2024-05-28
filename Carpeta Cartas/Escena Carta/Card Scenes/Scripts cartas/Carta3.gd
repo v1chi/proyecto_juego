@@ -8,6 +8,10 @@ func _ready():
 	print("Ready de la clase concreta")
 	
 
+
+func get_icono():
+	return path_carta_frontal
+	
 func get_id():
 	return id
 

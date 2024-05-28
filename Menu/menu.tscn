@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Menu/Salir.gd" id="3_gkby6"]
 [ext_resource type="Script" path="res://Menu/opciones.gd" id="3_ppii8"]
 [ext_resource type="PackedScene" uid="uid://r0g80odqfouv" path="res://Menu/prueba.tscn" id="7_r2etb"]
-[ext_resource type="AudioStream" uid="uid://cb8oca0l4mj6i" path="res://Musica/Adventure Meme.mp3" id="8_kbenk"]
+[ext_resource type="AudioStream" uid="uid://cb8oca0l4mj6i" path="res://musica/Adventure Meme.mp3" id="8_kbenk"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

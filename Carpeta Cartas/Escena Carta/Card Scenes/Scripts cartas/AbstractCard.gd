@@ -11,6 +11,9 @@ var id : int
 signal card_created
 signal card_effected
 
+func get_icono():
+	pass
+	
 
 func _activar_efecto_hijo():
 	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: activar_efecto_hijo()")
