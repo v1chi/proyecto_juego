@@ -1055,7 +1055,6 @@ texture = ExtResource("2_ytol8")
 29:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_to0bx"]
-load_path = "res://.godot/imported/Tiles.png-5d88d0ec3505124e3f22d38cdccf3598.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2itx7"]
 texture = SubResource("CompressedTexture2D_to0bx")

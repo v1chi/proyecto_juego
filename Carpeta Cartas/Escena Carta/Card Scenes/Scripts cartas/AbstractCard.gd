@@ -1,7 +1,7 @@
 class_name AbstractCard 
 extends Node2D
 
-
+var path_script
 var imagen_carta = preload("res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres")
 var sprite_carta
 var anim
@@ -10,6 +10,14 @@ var id : int
 
 signal card_created
 signal card_effected
+
+
+func set_path_script(path):
+	path_script = path
+
+func get_path_script():
+	return path_script
+
 
 func get_icono():
 	pass

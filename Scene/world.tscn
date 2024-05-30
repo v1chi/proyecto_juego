@@ -1089,7 +1089,8 @@ y_sort_enabled = true
 position = Vector2(102, 356)
 
 [node name="char1" parent="TileMap" instance=ExtResource("1_uhwxt")]
-position = Vector2(114, 74)
+position = Vector2(-191, 3219)
+speed = 37
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)

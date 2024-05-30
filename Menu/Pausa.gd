@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var pop = $AudioStreamPlayer
-var cambioSalida = load("res://Menu/menu.tscn")
+var cambioSalida = "res://Menu/menu.tscn"
 
 func _ready():
 	$VBoxContainer/Continuar.connect("pressed", Callable(self, "_on_continuar_pressed"))
@@ -21,7 +21,7 @@ func _toggle_pause():
 
 func _on_salida_menu_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(cambioSalida)
+	Global.goto_scene(cambioSalida)
 
 func _on_continuar_pressed():
 	_toggle_pause()

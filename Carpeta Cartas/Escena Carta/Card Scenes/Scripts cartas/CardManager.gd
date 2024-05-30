@@ -16,6 +16,7 @@ func instantiate_card():
 	var card = escena_carta.instantiate()
 	var n = rng.randi_range(0, array_scripts.size() - 1)
 	card.set_script(array_scripts[n])
+	card.set_path_script(array_scripts[n].get_path())
 	_connect_effect(card)
 	return card
 	

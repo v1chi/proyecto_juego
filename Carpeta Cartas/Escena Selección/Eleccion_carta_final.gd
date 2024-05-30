@@ -4,6 +4,7 @@ extends Control
 var anim
 var eleccion_carta : Eleccion_carta
 var path_siguiente_piso : String
+var scene_path = "res://Scene/world.tscn"
 
 var cartas_seleccionadas
 
@@ -33,6 +34,8 @@ func _process(delta):
 
 func _on_eleccion_carta_selection_finished(cartas):
 	cartas_seleccionadas = cartas
+	GlobalCartas.set_carta(load(cartas[1].get_path_script()))
+	GlobalCartas.set_carta(load(cartas[0].get_path_script()))
 	await wait(0.5)
 	get_node("EleccionCarta").set_visible(false)
 	get_node("PanelSalida").set_visible(true)
@@ -46,14 +49,6 @@ func _init(siguiente_piso = ''):
 	path_siguiente_piso = siguiente_piso
 
 var contenedor_carta
-var scene = preload("res://Scene/world.tscn").instantiate()
+var scene = "res://Scene/world.tscn"
 func _on_button_pressed():
-	get_tree().root.add_child(scene)
-	contenedor_carta = get_node("/root/world2/CanvasLayer/ContenedorCartas")
-	contenedor_carta = contenedor_carta._setup_carta1(
-		load(cartas_seleccionadas[0].get_icono())
-	)._setup_carta2(
-		load(cartas_seleccionadas[1].get_icono())
-	)
-	contenedor_carta.add_cartas()
-	get_tree().root.get_child(0).set_visible(false)
+	Global.goto_scene(scene)
