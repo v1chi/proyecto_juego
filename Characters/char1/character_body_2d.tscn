@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cg4o1dqm08nvi"]
 
 [ext_resource type="Script" path="res://Characters/char1/character_body_2d.gd" id="1_k8407"]
-[ext_resource type="Texture2D" uid="uid://cxrn8qyygm37n" path="res://Characters/char1/Hooded knight_finalsheet-1.png.png" id="2_8af1u"]
+[ext_resource type="Texture2D" uid="uid://ddcnaxu1t2s1o" path="res://Characters/char1/Hooded knight_finalsheet-1.png (1).png" id="2_el8pd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlpf6"]
 size = Vector2(31.5, 16)
@@ -568,7 +568,7 @@ script = ExtResource("1_k8407")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -1)
-texture = ExtResource("2_8af1u")
+texture = ExtResource("2_el8pd")
 flip_h = true
 hframes = 10
 vframes = 15

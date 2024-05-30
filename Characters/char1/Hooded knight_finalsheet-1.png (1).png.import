@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxrn8qyygm37n"
-path="res://.godot/imported/Hooded knight_finalsheet-1.png.png-82ceb63babc2408927877fce9ac8251c.ctex"
+uid="uid://ddcnaxu1t2s1o"
+path="res://.godot/imported/Hooded knight_finalsheet-1.png (1).png-1fe64030dabb402da9c347301d65fe60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/char1/Hooded knight_finalsheet-1.png.png"
-dest_files=["res://.godot/imported/Hooded knight_finalsheet-1.png.png-82ceb63babc2408927877fce9ac8251c.ctex"]
+source_file="res://Characters/char1/Hooded knight_finalsheet-1.png (1).png"
+dest_files=["res://.godot/imported/Hooded knight_finalsheet-1.png (1).png-1fe64030dabb402da9c347301d65fe60.ctex"]
 
 [params]
 
