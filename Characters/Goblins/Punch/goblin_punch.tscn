@@ -68,7 +68,6 @@ atlas = ExtResource("1_mcdvy")
 region = Rect2(256, 192, 64, 64)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_88ky3"]
-load_path = "res://.godot/imported/gobu SpinAttack.png-d086e7cbf1e3b0f6ab38e1a174b1351a.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lstl4"]
 atlas = SubResource("CompressedTexture2D_88ky3")
