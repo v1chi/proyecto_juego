@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnhdok68p6528"]
+
+[ext_resource type="Script" path="res://Menu/pantalla carga.gd" id="1_e0pr6"]
+[ext_resource type="Texture2D" uid="uid://d3cr7q01wd75c" path="res://Menu/Slime bonito.png" id="2_vuxll"]
+[ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="3_imvxs"]
+
+[sub_resource type="Animation" id="Animation_r82dc"]
+resource_name = "new_animation"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Cargando", "Cargando.", "Cargando..", "Cargando..."]
+}
+
+[sub_resource type="Animation" id="Animation_awl0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Cargando"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbx01"]
+_data = {
+"RESET": SubResource("Animation_awl0k"),
+"new_animation": SubResource("Animation_r82dc")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0pr6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(119, 61)
+scale = Vector2(0.0340278, 0.0289352)
+texture = ExtResource("2_vuxll")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(120, 68)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 85.0
+offset_right = 175.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("3_imvxs")
+text = "Cargando"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pbx01")
+}
+autoplay = "new_animation"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
