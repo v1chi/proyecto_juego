@@ -12,5 +12,5 @@ func _ready():
 var cambioEscena = "res://Scene/world.tscn"
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://Scene/world.tscn")
+	Global.goto_scene(cambioEscena)
 	pass # Replace with function body.
