@@ -17,7 +17,6 @@ script = ExtResource("1_fqvd7")
 
 [node name="Contenedor" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(150.76, 103.56)
-layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -6,9 +6,6 @@ signal selection_finished(cartas)
 
 
 var panels = []
-var controlador_cartas = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/CardManager.gd").new()
-
-
 var count_selected_card = 0
 var lista_cartas_seleccionadas = []
 
@@ -21,8 +18,9 @@ func add_panels():
 		panels.append(get_node("Contenedor/Panel" + str(panel_id)))
 	
 func add_card_to_panel(panel_id):
-	var instance_card = controlador_cartas.instantiate_card()
+	var instance_card = GlobalCartas.instanciar_carta()
 	panels[panel_id - 1].add_child(instance_card)
+	instance_card.activate_shift_animation()
 	panels[panel_id - 1].card_created.emit(instance_card)
 
 func create_deck():

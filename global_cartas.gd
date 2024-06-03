@@ -1,33 +1,48 @@
 extends Node
 
-var carta1 : AbstractCard
-var carta2 : AbstractCard
-
-var count
-
-var escena_carta = load("res://Carpeta Cartas/Escena Carta/Card Scenes/card.tscn")
-
-func set_carta(script):
-	if count == 0:
-		carta1 = escena_carta.instantiate()
-		carta1.set_script(script)
-		count += 1
-	else:
-		carta2 = escena_carta.instantiate()
-		carta2.set_script(script)
-		count = 0
 
 
-func activar_efectos():
-	carta1.activar_efecto()
-	carta2.activar_efecto()
+const PATH_ESCENA_CARTA : String = "res://Carpeta Cartas/Escena Carta/Card Scenes/card.tscn"
+var array_scripts : Array
+var rng = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+var carta1 : AbstractCard 
+var carta2 : AbstractCard 
+
+
+func set_cartas_elegidas(carta1 : AbstractCard, carta2 : AbstractCard):
+	self.carta1 = carta1.clone()
+	self.carta2 = carta2.clone()
+	print("exito")
+
+func _on_card_effected(id):
+	print("Eliminando el Script de la carta con ID: " + str(id))
+	_remover_script(id)
 	
-	pass # Replace with function body.
+func instanciar_carta():
+	var carta = load(PATH_ESCENA_CARTA).instantiate()
+	var n = rng.randi_range(0, array_scripts.size() - 1)
+	carta.set_script(load(array_scripts[n]))
+	
+	return carta
+	
+func _remover_script(id : int):
+	array_scripts.pop_at(array_scripts.find(id))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _init():
+	# Path de los scripts de las cartas
+	array_scripts = [
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta1.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta2.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta3.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta4.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta5.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta6.gd"
+	]
+
+func _ready():
+	carta1 = load(PATH_ESCENA_CARTA).instantiate()
+	carta2 = load(PATH_ESCENA_CARTA).instantiate()
+
+

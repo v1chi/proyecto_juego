@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://fmiufgkv7xyp"]
+
+[ext_resource type="Texture2D" uid="uid://3i5vmti2mecl" path="res://Carpeta Cartas/Escena Carta/Assets/Book Desk/fondo_rojo_afuera1.png" id="1_25pch"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/CartasElegidas.gd" id="1_q3dlr"]
+[ext_resource type="Texture2D" uid="uid://i8rdw5un7al4" path="res://Carpeta Cartas/Escena Carta/Assets/Book Desk/fondo_rojo_circulo.png" id="2_et401"]
+
+[sub_resource type="Animation" id="Animation_x1rh5"]
+resource_name = "popup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fu77"]
+_data = {
+"popup": SubResource("Animation_x1rh5")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120, 67)
+script = ExtResource("1_q3dlr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120, 67)
+texture = ExtResource("1_25pch")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.5
+offset_right = 20.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_et401")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6fu77")
+}
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.27451)
+custom_minimum_size = Vector2(26, 38)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.437
+anchor_right = 0.75
+anchor_bottom = 0.437
+offset_left = -13.0
+offset_top = -18.995
+offset_right = 13.0
+offset_bottom = 19.005
+pivot_offset = Vector2(13, 19)
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.301961)
+custom_minimum_size = Vector2(26, 38)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.437
+anchor_right = 0.25
+anchor_bottom = 0.437
+offset_left = -13.0
+offset_top = -18.995
+offset_right = 13.0
+offset_bottom = 19.005
+pivot_offset = Vector2(13, 19)
