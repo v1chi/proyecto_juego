@@ -564,6 +564,7 @@ size = Vector2(12, 22.5)
 [node name="char1" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_k8407")
+speed = 70
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

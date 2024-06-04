@@ -3,7 +3,10 @@ extends CharacterBody2D
 var speed = 20
 var playerChase = false
 var player = null
-var health = 1
+var health = 4
+var attack_damage = 1
+
+signal death_signal
 
 func _physics_process(delta):
 	if playerChase:
@@ -45,8 +48,9 @@ func _on_detection_body_exited(body):
 	
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
-		health -= 1
+		health -= attack_damage
 		if health == 0:
+			death_signal.emit()
 			dead()
 
 func dead():

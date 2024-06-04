@@ -15,6 +15,8 @@ func _ready():
 	carta1 = GlobalCartas.carta1.clone()
 	carta2 = GlobalCartas.carta2.clone()
 	add_cartas_panel()
+	carta1.visible = false
+	carta2.visible = false
 	
 func add_cartas_panel():
 	$Panel.add_child(carta1)

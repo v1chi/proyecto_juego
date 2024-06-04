@@ -1110,8 +1110,11 @@ speed = 37
 position = Vector2(-1, 6)
 position_smoothing_enabled = true
 
-[node name="charSlime" parent="TileMap" instance=ExtResource("6_ceq41")]
-position = Vector2(143, 225)
+[node name="charSlime" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1133, 2265)
+
+[node name="charSlime2" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1235, 2281)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

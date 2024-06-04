@@ -29,3 +29,5 @@ func get_path_siguiente_piso():
 
 func _on_button_pressed():
 	Global.goto_scene(path_siguiente_piso)
+	
+	

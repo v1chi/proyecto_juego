@@ -1,7 +1,9 @@
 extends AbstractCard
 
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/Q.tres"
-var enemy 
+var flag = true
+var player
+var enemies_defeated_count
 
 func _ready():
 	super._ready()
@@ -12,15 +14,24 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
+	player = Global.get_node("/root/world2/TileMap/char1")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.speed = enemy * 1.25 
-	
+		enemy.death_signal.connect(_on_enemy_defeated)
+
+
+func _on_enemy_defeated():
+	enemies_defeated_count += 1
+	if enemies_defeated_count % 2 == 0:
+		player.currentHealth += 1
+		player.healthChanged.emit(player.currentHealth)
+
 
 func get_icono():
 	return path_carta_frontal
 	
 func _init(): 
-	self.id = 6
+	self.enemies_defeated_count = 0
+	self.id = 8
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Buff Velocidad Enemigos"
+	self.descripcion_carta = "REG VIDA"

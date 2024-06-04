@@ -203,7 +203,7 @@ size = Vector2(28, 42)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s01xc"]
 radius = 36.0555
 
-[node name="char2" type="CharacterBody2D"]
+[node name="char2" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_afvd4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

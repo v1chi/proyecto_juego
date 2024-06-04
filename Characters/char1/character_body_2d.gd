@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
-@export var speed: int = 35
+@export var speed: int = 45
 @onready var animations = $AnimationPlayer
 var lastAnimDirection: String = "Down"
 var isAttacking: bool = false
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
+
 signal healthChanged
+signal lowHealth
+
+
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
+
 var custom_speed = 1
 
 func handleImput():
@@ -39,7 +44,10 @@ func updateAnimation():
 		lastAnimDirection = direction
 
 func _physics_process(delta):
-	if currentHealth == 0:
+	
+	if  currentHealth == 1:
+		lowHealth.emit() 
+	elif currentHealth == 0:
 		dead()
 	healthChanged.emit(currentHealth)
 	handleImput()
