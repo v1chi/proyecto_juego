@@ -585,7 +585,6 @@ texture_filter = 1
 position = Vector2(-6.55651e-06, -3.21865e-06)
 scale = Vector2(1.21875, 1.1875)
 texture = ExtResource("2_el8pd")
-flip_h = true
 hframes = 10
 vframes = 15
 

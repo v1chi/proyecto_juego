@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 20
 var playerChase = false
 var player = null
-var health = 4
+var health = 2
 var attack_damage = 1
 
 signal death_signal
@@ -13,8 +13,7 @@ func _physics_process(delta):
 		var moveDirection = player.position - position
 		var velocity = moveDirection.normalized() * speed
 		var coll = move_and_collide(velocity*delta)
-		if coll:
-			
+		if coll:			
 			print(coll.get_collider().name)
 		
 		updateAnimation(moveDirection)
@@ -50,9 +49,9 @@ func _on_detection_body_exited(body):
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
 		health -= attack_damage
-		if health == 0:
+		if health == 0:			
+			$AnimationPlayer.play("deathRight")
 			death_signal.emit()
-			dead()
 
 func dead():
 	set_physics_process(false)

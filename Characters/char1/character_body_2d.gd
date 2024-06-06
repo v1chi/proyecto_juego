@@ -50,7 +50,7 @@ func _physics_process(delta):
 	if  currentHealth == 1:
 		lowHealth.emit() 
 	elif currentHealth == 0:
-		dead()
+		await dead()
 	healthChanged.emit(currentHealth)
 	handleImput()
 	move_and_slide()
