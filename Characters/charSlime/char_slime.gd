@@ -9,17 +9,21 @@ var attack_damage = 1
 signal death_signal
 
 func _physics_process(delta):
-	if playerChase:
-		var moveDirection = player.position - position
-		var velocity = moveDirection.normalized() * speed
-		var coll = move_and_collide(velocity*delta)
-		if coll:			
-			print(coll.get_collider().name)
-		
-		updateAnimation(moveDirection)
+	if health == 0:	
+			death_signal.emit()
+			await dead()
 	else:
-		$AnimationPlayer.play("walkStand")
-		
+		if playerChase:
+			var moveDirection = player.position - position
+			var velocity = moveDirection.normalized() * speed
+			var coll = move_and_collide(velocity*delta)
+			if coll:			
+				print(coll.get_collider().name)
+			
+			updateAnimation(moveDirection)
+		else:
+			$AnimationPlayer.play("walkStand")
+			
 
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)
@@ -49,12 +53,11 @@ func _on_detection_body_exited(body):
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
 		health -= attack_damage
-		if health == 0:			
-			$AnimationPlayer.play("deathRight")
-			death_signal.emit()
-
+	
 func dead():
 	set_physics_process(false)
+	$AnimationPlayer.play("deathRight")
+	await $AnimationPlayer.animation_finished
 	queue_free()
 
 func enemy():
