@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b50f2spgx0xcx"
-path="res://.godot/imported/Infected Hurt - invert.png-2cfe58f8f8da7f478f30f34cb253ac80.ctex"
+uid="uid://365qmkhtd3e4"
+path="res://.godot/imported/Hooded knight_finalsheet-1.png (2).png-0d8fb2ad005ea0af53dafd40cb2e80df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Goblins/Infected/infectedArt/Infected Hurt - invert.png"
-dest_files=["res://.godot/imported/Infected Hurt - invert.png-2cfe58f8f8da7f478f30f34cb253ac80.ctex"]
+source_file="res://Characters/GInfected/Hooded knight_finalsheet-1.png (2).png"
+dest_files=["res://.godot/imported/Hooded knight_finalsheet-1.png (2).png-0d8fb2ad005ea0af53dafd40cb2e80df.ctex"]
 
 [params]
 

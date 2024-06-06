@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcvtc48exxxdk"
-path="res://.godot/imported/Infected SpinOpenMouth - invert.png-6636f6c741c20af05225ea438d530b1e.ctex"
+uid="uid://cop3dkv54c30f"
+path="res://.godot/imported/Hooded knight_finalsheet-1.png (2).png-b6f444bdb0f83d122ca2e5d6bd928d66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Goblins/Infected/infectedArt/Infected SpinOpenMouth - invert.png"
-dest_files=["res://.godot/imported/Infected SpinOpenMouth - invert.png-6636f6c741c20af05225ea438d530b1e.ctex"]
+source_file="res://Characters/Goblins/Infected/infectedArt/Hooded knight_finalsheet-1.png (2).png"
+dest_files=["res://.godot/imported/Hooded knight_finalsheet-1.png (2).png-b6f444bdb0f83d122ca2e5d6bd928d66.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 20
 var playerChase = false
 var player = null
-var health = 2
+var health = 6
 var damaged = 6
 var attack_damage = 1
 
@@ -71,3 +71,4 @@ func enemy():
 func hurted():
 	$AnimationPlayer.play("hurted")
 	await $AnimationPlayer.animation_finished
+
