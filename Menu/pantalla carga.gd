@@ -6,7 +6,7 @@ extends Control
 func _ready():
 	animacion.play("new_animation")
 	tiempo.start()
-	tiempo.callable("timeout", self, "_on_timer_timeout")
+
 
 
 var cambioEscena = "res://Scene/world.tscn"

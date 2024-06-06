@@ -23,8 +23,10 @@ func handleImput():
 	if Input.is_action_just_pressed("attack"):
 		animations.play("attack" + lastAnimDirection, -1, custom_speed, false)
 		isAttacking = true
+		$audioAtaque.play()
 		await animations.animation_finished
 		isAttacking = false
+		
 	
 func updateAnimation():
 	if isAttacking: return
@@ -58,6 +60,7 @@ func _physics_process(delta):
 func dead():
 	set_physics_process(false)
 	animations.play("deathLeft")
+	$audioMuerte.play()
 	await animations.animation_finished
 	queue_free()
 
@@ -75,6 +78,7 @@ func enemy_attack():
 		currentHealth -= 1
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
+		
 		
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true

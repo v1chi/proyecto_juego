@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cxnuk6na5qk54"]
+[gd_scene load_steps=19 format=3 uid="uid://cxnuk6na5qk54"]
 
 [ext_resource type="Script" path="res://Characters/charSlime/char_slime.gd" id="1_3rome"]
 [ext_resource type="Texture2D" uid="uid://dedi52lqpdnog" path="res://Characters/charSlime/slime.png" id="1_cd0ue"]
+[ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_vv5ja"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -328,6 +329,9 @@ shape = SubResource("CircleShape2D_t73k3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_7080r")
+
+[node name="caminar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vv5ja")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

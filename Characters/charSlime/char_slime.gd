@@ -20,6 +20,7 @@ func _physics_process(delta):
 		updateAnimation(moveDirection)
 	else:
 		$AnimationPlayer.play("walkStand")
+		
 
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)

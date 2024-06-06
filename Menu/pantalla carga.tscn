@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://d3cr7q01wd75c" path="res://Menu/Slime bonito.png" id="2_vuxll"]
 [ext_resource type="FontFile" uid="uid://chbgnoiitsemq" path="res://Menu/04B_30__.TTF" id="3_imvxs"]
 
+[sub_resource type="Animation" id="Animation_awl0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Cargando"]
+}
+
 [sub_resource type="Animation" id="Animation_r82dc"]
 resource_name = "new_animation"
 length = 1.5
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": ["Cargando", "Cargando.", "Cargando..", "Cargando..."]
-}
-
-[sub_resource type="Animation" id="Animation_awl0k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Cargando"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbx01"]
