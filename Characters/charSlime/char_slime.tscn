@@ -270,21 +270,25 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
+visible = false
 
 [node name="detectionShape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jywya")
 
 [node name="attackShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_nump8")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="bodyShape" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_t73k3")
 
 [node name="footShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_7080r")
 
@@ -292,6 +296,7 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_vv5ja")
 
 [node name="attackdetector" type="Area2D" parent="."]
+visible = false
 
 [node name="attackDetectorShape2D" type="CollisionShape2D" parent="attackdetector"]
 position = Vector2(0, 2)

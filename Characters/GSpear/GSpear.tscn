@@ -437,17 +437,20 @@ visible = false
 shape = SubResource("CircleShape2D_jywya")
 
 [node name="attack shape" type="CollisionShape2D" parent="."]
+visible = false
 rotation = -1.56062
 shape = SubResource("CircleShape2D_utaar")
 disabled = true
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="body shape" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_t73k3")
 
 [node name="foot shape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, 11.5)
 shape = SubResource("RectangleShape2D_7080r")
 
@@ -455,6 +458,7 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_os0qw")
 
 [node name="attack detector" type="Area2D" parent="."]
+visible = false
 
 [node name="attack detector shape" type="CollisionShape2D" parent="attack detector"]
 position = Vector2(0, 3)
