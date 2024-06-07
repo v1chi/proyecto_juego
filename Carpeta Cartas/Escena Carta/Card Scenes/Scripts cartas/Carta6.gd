@@ -14,7 +14,7 @@ func get_id():
 func _activar_efecto_hijo():
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.speed = enemy * 1.25 
+		enemy.speed = enemy.speed * 1.25 
 	
 
 func get_icono():

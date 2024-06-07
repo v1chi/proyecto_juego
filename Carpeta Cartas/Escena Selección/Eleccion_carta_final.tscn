@@ -67,9 +67,6 @@ layout_mode = 1
 offset_top = 0.0
 offset_bottom = 10.0
 
-[node name="ColorRect" parent="EleccionCarta" index="1"]
-visible = true
-
 [node name="AnimationScene" type="AnimationPlayer" parent="."]
 
 [connection signal="pressed" from="PanelSalida/Button" to="." method="_on_button_pressed"]

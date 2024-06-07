@@ -14,14 +14,16 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
-	player = Global.get_tree().get_nodes_in_group("Player")
+	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.death_signal.connect(_on_enemy_defeated)
+		enemy.death_signal.connect(_on_enemy_defeated.bind(enemy))
 
 
-func _on_enemy_defeated():
+func _on_enemy_defeated(enemy):
+	enemy.death_signal.disconnect(_on_enemy_defeated)
 	enemies_defeated_count += 1
+	print(enemies_defeated_count)
 	if enemies_defeated_count % 2 == 0:
 		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)

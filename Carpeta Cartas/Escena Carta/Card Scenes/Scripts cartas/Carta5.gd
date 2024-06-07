@@ -12,7 +12,7 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
-	player = Global.get_tree().get_nodes_in_group("Player")
+	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	player.custom_speed = 0.65
 	
 

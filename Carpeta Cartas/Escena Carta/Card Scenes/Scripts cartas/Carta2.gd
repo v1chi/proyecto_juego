@@ -5,7 +5,7 @@ var player
 var damage = 2
 
 func _activar_efecto_hijo():
-	player = Global.get_tree().get_nodes_in_group("Player")
+	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	player.currentHealth -= damage 
 	damage = 0
 	player.healthChanged.emit(player.currentHealth)

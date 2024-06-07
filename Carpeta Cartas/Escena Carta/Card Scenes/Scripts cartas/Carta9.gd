@@ -24,7 +24,7 @@ func wait(seconds):
 
 func _activar_efecto_hijo():
 	
-	player = Global.get_tree().get_nodes_in_group("Player")
+	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	if !player.lowHealth.is_connected(_on_low_health_player):
 		player.lowHealth.connect(_on_low_health_player)
 

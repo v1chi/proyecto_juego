@@ -16,9 +16,8 @@ func _ready():
 
 func _on_eleccion_carta_selection_finished(cartas):
 	GlobalCartas.set_cartas_elegidas(cartas[0], cartas[1])
-	await wait(0.5)
-	get_node("EleccionCarta").set_visible(false)
-	get_node("PanelSalida").set_visible(true)
+	await wait(1)
+	Global.goto_scene(path_siguiente_piso)
 
 
 func set_path_siguiente_piso(path : String):

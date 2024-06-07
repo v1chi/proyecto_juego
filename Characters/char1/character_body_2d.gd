@@ -7,6 +7,8 @@ var isAttacking: bool = false
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 
+
+var path_menu = "res://Menu/menu.tscn"
 signal healthChanged
 signal lowHealth
 
@@ -17,7 +19,7 @@ var enemy_attack_cooldown = true
 var custom_speed = 1
 
 func handleImput():
-	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var moveDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = moveDirection*speed*2
 	
 	if Input.is_action_just_pressed("attack"):
@@ -56,13 +58,20 @@ func _physics_process(delta):
 	move_and_slide()
 	updateAnimation()
 	enemy_attack()
+
+
+func wait(seconds):
+	await get_tree().create_timer(seconds).timeout
+	pass
 	
 func dead():
 	set_physics_process(false)
 	animations.play("deathLeft")
 	$audioMuerte.play()
 	await animations.animation_finished
-	queue_free()
+	await wait(1)
+	Global.goto_scene(path_menu)
+	#queue_free()
 
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):

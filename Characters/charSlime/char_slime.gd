@@ -11,10 +11,12 @@ var attack_damage = 1
 signal death_signal
 
 func _physics_process(delta):
-	if health == 0:
-		death_signal.emit()
+	if health <= 0:
+		self.death_signal.emit()
 		await hurted()
 		await dead()
+		print("pasa")
+		
 	else:
 		if damaged != health:
 			await hurted()

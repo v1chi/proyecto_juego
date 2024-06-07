@@ -47,9 +47,9 @@ func _init():
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta9.gd"
 	]
 
-func _ready():
-	carta1 = load(PATH_ESCENA_CARTA).instantiate()
-	carta2 = load(PATH_ESCENA_CARTA).instantiate()
+#func _ready():
+#	carta1 = load(PATH_ESCENA_CARTA).instantiate()
+#	carta2 = load(PATH_ESCENA_CARTA).instantiate()
 
 
 

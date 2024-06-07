@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ufb1hjutfhcv"]
+[gd_scene load_steps=21 format=3 uid="uid://ufb1hjutfhcv"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel.gd" id="1_83018"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta.gd" id="1_fqvd7"]
-[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/DescripcionCarta.gd" id="3_m5da3"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/RichTextLabel.gd" id="3_s0yn4"]
+[ext_resource type="Theme" uid="uid://cnq38gpyrr5nb" path="res://Carpeta Cartas/Escena Carta/Assets/new_theme.tres" id="4_2vm88"]
+[ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="5_f1nuo"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel_NO_input.gd" id="5_p3hhk"]
 
 [sub_resource type="Animation" id="Animation_tnjx6"]
 resource_name = "Panel1_show"
@@ -131,6 +133,39 @@ _data = {
 "Panel6_show": SubResource("Animation_k4mtx")
 }
 
+[sub_resource type="Animation" id="Animation_p1yvr"]
+resource_name = "shader"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 35), Vector2(242, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vefi1"]
+_data = {
+"shader": SubResource("Animation_p1yvr")
+}
+
 [node name="EleccionCarta" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -150,10 +185,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -54.5
-offset_right = 118.76
-offset_bottom = 49.06
+offset_left = -75.0
+offset_top = -35.5
+offset_right = 75.76
+offset_bottom = 68.06
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
@@ -162,6 +197,7 @@ columns = 3
 self_modulate = Color(1, 1, 1, 0)
 light_mask = 16
 visibility_layer = 16
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -194,6 +230,7 @@ libraries = {
 
 [node name="Panel2" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -226,6 +263,7 @@ libraries = {
 
 [node name="Panel3" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -257,6 +295,7 @@ libraries = {
 
 [node name="Panel4" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -288,6 +327,7 @@ libraries = {
 
 [node name="Panel5" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -319,6 +359,7 @@ libraries = {
 
 [node name="Panel6" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(26.09, 37.95)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -348,58 +389,55 @@ libraries = {
 "": SubResource("AnimationLibrary_at1a1")
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+clip_contents = true
 layout_mode = 0
-offset_right = 79.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 241.0
+offset_bottom = 34.0
+theme = ExtResource("4_2vm88")
+script = ExtResource("5_p3hhk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 249.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("5_f1nuo")
+text = "Selecciona 2 cartas"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vefi1")
+}
+autoplay = "shader"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+custom_minimum_size = Vector2(240, 135)
+layout_mode = 0
+offset_right = 240.0
 offset_bottom = 135.0
-color = Color(0.690196, 0.631373, 0.780392, 0.662745)
-
-[node name="ContenedorTexto" type="VBoxContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="ColorRect/ContenedorTexto"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 11
-text = "Escoge 
-2's
-cartas :)"
-
-[node name="DescripcionCarta" type="Label" parent="ColorRect/ContenedorTexto"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 13
-text = "Descripción
-cartas
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-justification_flags = 162
-clip_text = true
-script = ExtResource("3_m5da3")
+mouse_filter = 2
+color = Color(0.258824, 0.431373, 1, 0.309804)
 
 [connection signal="selection_finished" from="." to="." method="_on_selection_finished"]
 [connection signal="card_created" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel1" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel1" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="card_created" from="Contenedor/Panel2" to="Contenedor/Panel2" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel2" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel2" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="card_created" from="Contenedor/Panel3" to="Contenedor/Panel3" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel3" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel3" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="card_created" from="Contenedor/Panel4" to="Contenedor/Panel4" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel4" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel4" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="card_created" from="Contenedor/Panel5" to="Contenedor/Panel5" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel5" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel5" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
 [connection signal="card_created" from="Contenedor/Panel6" to="Contenedor/Panel6" method="_on_card_created"]
 [connection signal="card_selected" from="Contenedor/Panel6" to="." method="_on_panel_card_selected"]
-[connection signal="descrip_changed" from="Contenedor/Panel6" to="ColorRect/ContenedorTexto/DescripcionCarta" method="_on_panel_descrip_changed"]
