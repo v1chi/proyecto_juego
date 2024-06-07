@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 20
 var playerChase = false
+var toAttack = false
 var player = null
 var health = 2
 var damaged = 6
@@ -17,6 +18,8 @@ func _physics_process(delta):
 		if damaged != health:			
 			await hurted()
 			damaged = health
+		if toAttack == true:
+			await attack()
 		procesamiento(delta)
 
 func procesamiento(delta):
@@ -34,7 +37,6 @@ func updateAnimation(direction):
 	var xComponent = abs(direction.x)
 	var yComponent = abs(direction.y)
 	var animationName = "walkRight"
-
 	if xComponent > yComponent:
 		if direction.x > 0:
 			animationName = "walkRight"
@@ -42,7 +44,6 @@ func updateAnimation(direction):
 			animationName = "walkLeft"
 	else:
 		animationName = "walkStand"
-
 	$AnimationPlayer.play(animationName)
 
 func _on_detection_body_entered(body):
@@ -71,3 +72,13 @@ func enemy():
 func hurted():
 	$AnimationPlayer.play("hurted")
 	await $AnimationPlayer.animation_finished
+
+func attack():
+	set_physics_process(false)
+	$AnimationPlayer.play("attack")
+	await $AnimationPlayer.animation_finished
+	set_physics_process(true)
+	toAttack = false
+
+func _on_attackdetector_body_entered(body):
+	toAttack = true
