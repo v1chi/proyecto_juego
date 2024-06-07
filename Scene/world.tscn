@@ -1119,16 +1119,260 @@ position = Vector2(1133, 2265)
 [node name="charSlime2" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
 position = Vector2(1235, 2281)
 
+[node name="charSlime3" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(695, 2335)
+
+[node name="charSlime4" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(582, 2400)
+
+[node name="charSlime5" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1124, 2784)
+
+[node name="charSlime6" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1440, 2695)
+
+[node name="charSlime7" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-92, 3259)
+
+[node name="charSlime8" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-235, 3207)
+
+[node name="charSlime9" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-620, 3026)
+
+[node name="charSlime10" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(86, 2412)
+
+[node name="charSlime11" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(257, 2314)
+
+[node name="charSlime12" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-842, 2205)
+
+[node name="charSlime13" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-1016, 2077)
+
+[node name="charSlime14" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(794, 1832)
+
+[node name="charSlime15" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(786, 1756)
+
+[node name="charSlime16" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-115, 1656)
+
+[node name="charSlime17" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-805, 1352)
+
+[node name="charSlime18" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-72, 1257)
+
+[node name="charSlime19" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(273, 1055)
+
+[node name="charSlime20" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(679, 1023)
+
+[node name="charSlime21" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1226, 1758)
+
+[node name="charSlime22" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1209, 859)
+
+[node name="charSlime23" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1073, 562)
+
+[node name="charSlime24" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(821, 479)
+
+[node name="charSlime25" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-40, 629)
+
+[node name="charSlime26" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-435, 539)
+
+[node name="charSlime27" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-737, 648)
+
+[node name="charSlime28" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(0, 910)
+
+[node name="charSlime29" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-438, 281)
+
+[node name="charSlime30" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-546, 129)
+
+[node name="charSlime31" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-790, 466)
+
+[node name="charSlime32" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(1194, 295)
+
+[node name="charSlime33" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-673, 1610)
+
+[node name="charSlime34" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(-673, 1610)
+
 [node name="GInfected" parent="TileMap" instance=ExtResource("7_oyr2k")]
-position = Vector2(1120, 2183)
+position = Vector2(1511, 2769)
+metadata/_edit_group_ = true
+
+[node name="GInfected2" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(1013, 2798)
+metadata/_edit_group_ = true
+
+[node name="GInfected3" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(723, 1830)
+metadata/_edit_group_ = true
+
+[node name="GInfected4" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(1277, 1724)
+metadata/_edit_group_ = true
+
+[node name="GInfected5" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(738, 1764)
+metadata/_edit_group_ = true
+
+[node name="GInfected6" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-955, 2123)
+metadata/_edit_group_ = true
+
+[node name="GInfected7" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-84, 3165)
+metadata/_edit_group_ = true
+
+[node name="GInfected8" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-692, 2447)
+metadata/_edit_group_ = true
+
+[node name="GInfected9" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-490, 1775)
+metadata/_edit_group_ = true
+
+[node name="GInfected10" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-230, 3093)
+metadata/_edit_group_ = true
+
+[node name="GInfected11" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-850, 1253)
+metadata/_edit_group_ = true
+
+[node name="GInfected12" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(123, 1233)
+metadata/_edit_group_ = true
+
+[node name="GInfected13" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(1123, 921)
+metadata/_edit_group_ = true
+
+[node name="GInfected14" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(176, 979)
+metadata/_edit_group_ = true
+
+[node name="GInfected15" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(1191, 1256)
+metadata/_edit_group_ = true
+
+[node name="GInfected16" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-809, 262)
+metadata/_edit_group_ = true
+
+[node name="GInfected17" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-300, 134)
+metadata/_edit_group_ = true
+
+[node name="GInfected18" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(1251, 388)
+metadata/_edit_group_ = true
+
+[node name="GInfected19" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(818, 371)
+metadata/_edit_group_ = true
+
+[node name="GInfected20" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(668, 473)
+metadata/_edit_group_ = true
+
+[node name="GInfected21" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(-36, 507)
+metadata/_edit_group_ = true
+
+[node name="GInfected22" parent="TileMap" instance=ExtResource("7_oyr2k")]
+position = Vector2(45, 991)
 metadata/_edit_group_ = true
 
 [node name="GSword" parent="TileMap" instance=ExtResource("8_nhmca")]
-position = Vector2(1278, 2160)
+position = Vector2(1555, 2733)
+metadata/_edit_group_ = true
+
+[node name="GSword2" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(974, 2815)
+metadata/_edit_group_ = true
+
+[node name="GSword3" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(130, 2331)
+metadata/_edit_group_ = true
+
+[node name="GSword4" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(-260, 3281)
+metadata/_edit_group_ = true
+
+[node name="GSword5" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(256, 590)
+metadata/_edit_group_ = true
+
+[node name="GSword6" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(106, 84)
 metadata/_edit_group_ = true
 
 [node name="GSpear" parent="TileMap" instance=ExtResource("9_eynsc")]
-position = Vector2(1019, 2281)
+position = Vector2(976, 2256)
+metadata/_edit_group_ = true
+
+[node name="GSpear2" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(15, 2361)
+metadata/_edit_group_ = true
+
+[node name="GSpear3" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(89, 2147)
+metadata/_edit_group_ = true
+
+[node name="GSpear4" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-813, 1999)
+metadata/_edit_group_ = true
+
+[node name="GSpear5" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-125, 3323)
+metadata/_edit_group_ = true
+
+[node name="GSpear6" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-801, 345)
+metadata/_edit_group_ = true
+
+[node name="GSpear7" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(273, 411)
+metadata/_edit_group_ = true
+
+[node name="GSpear8" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(597, 879)
+metadata/_edit_group_ = true
+
+[node name="GSpear9" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-459, 63)
+metadata/_edit_group_ = true
+
+[node name="GSpear10" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(141, 169)
+metadata/_edit_group_ = true
+
+[node name="GSpear11" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-443, 761)
+metadata/_edit_group_ = true
+
+[node name="GSpear12" parent="TileMap" instance=ExtResource("9_eynsc")]
+position = Vector2(-977, 2718)
 metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -18,7 +18,7 @@ var custom_speed = 1
 
 func handleImput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = moveDirection*speed
+	velocity = moveDirection*speed*2
 	
 	if Input.is_action_just_pressed("attack"):
 		animations.play("attack" + lastAnimDirection, -1, custom_speed, false)
