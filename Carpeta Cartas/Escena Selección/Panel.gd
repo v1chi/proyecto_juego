@@ -2,15 +2,21 @@ extends Control
 
 
 var card
-
+var anim : AnimationPlayer
+var text 
 signal card_created(card: AbstractCard)
 signal descrip_changed(texto)
 signal card_selected(card: AbstractCard)
 
 
+func wait(seconds):
+	await get_tree().create_timer(seconds).timeout
+	pass
+
 
 func set_card(card1 : AbstractCard):
 	self.card = card1
+	
 
 func get_card():
 	return card
@@ -38,6 +44,17 @@ func disconnect_mouse_entered_exited():
 		disconnect("gui_input", _on_gui_input)
 		
 
+
+func _show_description(name_panel):
+	anim.play(name_panel+"_show")
+
+
+func _hide_description(name_panel):
+	anim.play_backwards(name_panel + "_show")
+	
+	
+
+
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		disconnect_mouse_entered_exited()
@@ -46,18 +63,28 @@ func _on_gui_input(event):
 
 
 func _on_mouse_entered():
+	disconnect("mouse_exited", _on_mouse_exited)
 	set_position(Vector2(position.x, position.y - 4))
 	set_self_modulate(Color(0, 0, 0, 1))
-	descrip_changed.emit(get_description())
+	_show_description(name)
+	#descrip_changed.emit(get_description())
+	text.set_text(get_description())
+	connect("mouse_exited", _on_mouse_exited)
 
 
 
 func _on_mouse_exited():
 	set_position(Vector2(position.x , position.y + 4))
 	set_self_modulate(Color(255, 255, 255, 0))
-
-	
+	_hide_description(name)
 
 func _on_card_created(card):
 	connect_mouse_event()
 	set_card(card)
+
+
+
+func _ready():
+	anim = $RichTextLabel/AnimationPlayer
+	text = $RichTextLabel
+	

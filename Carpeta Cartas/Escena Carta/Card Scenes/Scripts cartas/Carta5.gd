@@ -12,7 +12,7 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
-	player = get_node("/root/world2/TileMap/char1")
+	player = Global.get_tree().get_nodes_in_group("Player")
 	player.custom_speed = 0.65
 	
 
@@ -22,4 +22,4 @@ func get_icono():
 func _init(): 
 	self.id = 5
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Nerf VEL"
+	self.descripcion_carta = "Nerf velocidad  de ataque"

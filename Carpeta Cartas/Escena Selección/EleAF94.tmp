@@ -1,134 +1,100 @@
-[gd_scene load_steps=17 format=3 uid="uid://ufb1hjutfhcv"]
+[gd_scene load_steps=9 format=3 uid="uid://ufb1hjutfhcv"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel.gd" id="1_83018"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta.gd" id="1_fqvd7"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/DescripcionCarta.gd" id="3_m5da3"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/RichTextLabel.gd" id="3_s0yn4"]
 
-[sub_resource type="Animation" id="Animation_tnjx6"]
-resource_name = "Panel1_show"
+[sub_resource type="Animation" id="Animation_gi8xm"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Contenedor/Panel1/RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Contenedor/Panel1/RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_6nmkj"]
+resource_name = "panel1_desc_hide"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Contenedor/Panel1/RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.08),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Contenedor/Panel1/RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 36.95), Vector2(0, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_57e7g"]
+resource_name = "panel1_desc"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Contenedor/Panel1/RichTextLabel:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Contenedor/Panel1/RichTextLabel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 14), Vector2(0, 36.95)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ud7no"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4kws"]
 _data = {
-"Panel1_show": SubResource("Animation_tnjx6")
-}
-
-[sub_resource type="Animation" id="Animation_jij3h"]
-resource_name = "Panel2_show"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 14), Vector2(0, 36.95)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjuml"]
-_data = {
-"Panel2_show": SubResource("Animation_jij3h")
-}
-
-[sub_resource type="Animation" id="Animation_knyjj"]
-resource_name = "Panel3_show"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 14), Vector2(0, 36.95)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6iap"]
-_data = {
-"Panel3_show": SubResource("Animation_knyjj")
-}
-
-[sub_resource type="Animation" id="Animation_r3eh1"]
-resource_name = "Panel4_show"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 14), Vector2(0, 36.95)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jijc0"]
-_data = {
-"Panel4_show": SubResource("Animation_r3eh1")
-}
-
-[sub_resource type="Animation" id="Animation_44dci"]
-resource_name = "Panel5_show"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 14), Vector2(0, 36.95)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4j6a5"]
-_data = {
-"Panel5_show": SubResource("Animation_44dci")
-}
-
-[sub_resource type="Animation" id="Animation_k4mtx"]
-resource_name = "Panel6_show"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 14), Vector2(0, 36.95)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_at1a1"]
-_data = {
-"Panel6_show": SubResource("Animation_k4mtx")
+"Panel1_hide": SubResource("Animation_6nmkj"),
+"Panel1_show": SubResource("Animation_57e7g"),
+"RESET": SubResource("Animation_gi8xm")
 }
 
 [node name="EleccionCarta" type="Control"]
@@ -170,6 +136,7 @@ script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel1"]
+visible = false
 layout_mode = 0
 offset_top = 14.0
 offset_right = 26.09
@@ -182,15 +149,7 @@ theme_override_font_sizes/bold_italics_font_size = 0
 theme_override_font_sizes/mono_font_size = 0
 text = "carta good"
 scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel1/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_ud7no")
-}
 
 [node name="Panel2" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
@@ -201,29 +160,6 @@ size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel2"]
-layout_mode = 0
-offset_top = 14.0
-offset_right = 26.09
-offset_bottom = 24.0
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 5
-theme_override_font_sizes/bold_font_size = 0
-theme_override_font_sizes/italics_font_size = 0
-theme_override_font_sizes/bold_italics_font_size = 0
-theme_override_font_sizes/mono_font_size = 0
-text = "carta good"
-scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel2/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_vjuml")
-}
-
 [node name="Panel3" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(26.09, 37.95)
@@ -232,28 +168,6 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel3"]
-layout_mode = 0
-offset_right = 26.09
-offset_bottom = 10.0
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 5
-theme_override_font_sizes/bold_font_size = 0
-theme_override_font_sizes/italics_font_size = 0
-theme_override_font_sizes/bold_italics_font_size = 0
-theme_override_font_sizes/mono_font_size = 0
-text = "carta good"
-scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel3/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_b6iap")
-}
 
 [node name="Panel4" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
@@ -264,28 +178,6 @@ size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel4"]
-layout_mode = 0
-offset_right = 26.09
-offset_bottom = 10.0
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 5
-theme_override_font_sizes/bold_font_size = 0
-theme_override_font_sizes/italics_font_size = 0
-theme_override_font_sizes/bold_italics_font_size = 0
-theme_override_font_sizes/mono_font_size = 0
-text = "carta good"
-scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel4/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_jijc0")
-}
-
 [node name="Panel5" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(26.09, 37.95)
@@ -295,28 +187,6 @@ size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel5"]
-layout_mode = 0
-offset_right = 26.09
-offset_bottom = 10.0
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 5
-theme_override_font_sizes/bold_font_size = 0
-theme_override_font_sizes/italics_font_size = 0
-theme_override_font_sizes/bold_italics_font_size = 0
-theme_override_font_sizes/mono_font_size = 0
-text = "carta good"
-scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel5/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_4j6a5")
-}
-
 [node name="Panel6" type="Panel" parent="Contenedor"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(26.09, 37.95)
@@ -325,28 +195,6 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_83018")
 metadata/_edit_group_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Contenedor/Panel6"]
-layout_mode = 0
-offset_right = 26.09
-offset_bottom = 10.0
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 5
-theme_override_font_sizes/bold_font_size = 0
-theme_override_font_sizes/italics_font_size = 0
-theme_override_font_sizes/bold_italics_font_size = 0
-theme_override_font_sizes/mono_font_size = 0
-text = "carta good"
-scroll_active = false
-shortcut_keys_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-script = ExtResource("3_s0yn4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Contenedor/Panel6/RichTextLabel"]
-libraries = {
-"": SubResource("AnimationLibrary_at1a1")
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -383,6 +231,12 @@ vertical_alignment = 1
 justification_flags = 162
 clip_text = true
 script = ExtResource("3_m5da3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j4kws")
+}
+autoplay = "RESET"
 
 [connection signal="selection_finished" from="." to="." method="_on_selection_finished"]
 [connection signal="card_created" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_card_created"]

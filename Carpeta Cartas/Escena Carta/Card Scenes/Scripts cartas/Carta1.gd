@@ -10,8 +10,8 @@ var player
 
 
 func _activar_efecto_hijo():
-	player = get_node("/root/world2/TileMap/char1")
-	player.speed = 100
+	player = Global.get_tree().get_nodes_in_group("Player")
+	player.speed = player.speed + 7;
 	
 	
 func get_id():
@@ -30,4 +30,4 @@ func _ready():
 func _init(): 
 	self.id = 1
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Carta 1"
+	self.descripcion_carta = "boost velocidad"

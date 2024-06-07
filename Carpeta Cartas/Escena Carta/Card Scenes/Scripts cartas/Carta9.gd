@@ -24,7 +24,7 @@ func wait(seconds):
 
 func _activar_efecto_hijo():
 	
-	player = Global.get_node("/root/world2/TileMap/char1")
+	player = Global.get_tree().get_nodes_in_group("Player")
 	if !player.lowHealth.is_connected(_on_low_health_player):
 		player.lowHealth.connect(_on_low_health_player)
 

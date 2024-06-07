@@ -14,7 +14,7 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
-	player = Global.get_node("/root/world2/TileMap/char1")
+	player = Global.get_tree().get_nodes_in_group("Player")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
 		enemy.death_signal.connect(_on_enemy_defeated)
@@ -34,4 +34,4 @@ func _init():
 	self.enemies_defeated_count = 0
 	self.id = 8
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "REG VIDA"
+	self.descripcion_carta = "Regeneración de vida"

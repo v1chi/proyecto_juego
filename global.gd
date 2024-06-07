@@ -29,10 +29,10 @@ func _deferred_goto_scene(path):
 	get_tree().root.add_child(current_scene)
 	
 	#################### Codigo Temporal
-	#var contenedor_carta = get_node("/root/world2/CanvasLayer/ContenedorCartas")
-	#if(contenedor_carta != null):
-		#contenedor_carta = contenedor_carta._setup_carta1(load(GlobalCartas.carta1.get_icono()))._setup_carta2(load(GlobalCartas.carta2.get_icono()))
-		#contenedor_carta.add_cartas()
+	var contenedor_carta = get_node("/root/world2/CanvasLayer/ContenedorCartas")
+	if(contenedor_carta != null and GlobalCartas.carta1 != null):
+		contenedor_carta = contenedor_carta._setup_carta1(load(GlobalCartas.carta1.get_icono()))._setup_carta2(load(GlobalCartas.carta2.get_icono()))
+		contenedor_carta.add_cartas()
 	######################
 	
 	get_tree().current_scene = current_scene

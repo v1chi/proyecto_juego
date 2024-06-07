@@ -5,7 +5,7 @@ var player
 var damage = 2
 
 func _activar_efecto_hijo():
-	player = get_node("/root/world2/TileMap/char1")
+	player = Global.get_tree().get_nodes_in_group("Player")
 	player.currentHealth -= damage 
 	damage = 0
 	player.healthChanged.emit(player.currentHealth)
@@ -26,4 +26,4 @@ func _ready():
 func _init(): 
 	self.id = 2
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Carta 2"
+	self.descripcion_carta = "Empiezas con -2 de vida"

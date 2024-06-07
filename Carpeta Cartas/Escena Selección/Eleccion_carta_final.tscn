@@ -63,6 +63,10 @@ script = ExtResource("4_geu4k")
 [node name="EleccionCarta" parent="." instance=ExtResource("1_85jaj")]
 layout_mode = 1
 
+[node name="RichTextLabel" parent="EleccionCarta/Contenedor/Panel2" index="0"]
+offset_top = 0.0
+offset_bottom = 10.0
+
 [node name="ColorRect" parent="EleccionCarta" index="1"]
 visible = true
 
