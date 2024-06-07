@@ -1106,7 +1106,7 @@ y_sort_enabled = true
 position = Vector2(-141, 3148)
 
 [node name="char1" parent="TileMap" groups=["Player"] instance=ExtResource("1_uhwxt")]
-position = Vector2(1201, 2152)
+position = Vector2(122, 43)
 speed = 37
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
@@ -1324,7 +1324,7 @@ position = Vector2(256, 590)
 metadata/_edit_group_ = true
 
 [node name="GSword6" parent="TileMap" instance=ExtResource("8_nhmca")]
-position = Vector2(106, 84)
+position = Vector2(117, 371)
 metadata/_edit_group_ = true
 
 [node name="GSpear" parent="TileMap" instance=ExtResource("9_eynsc")]
@@ -1364,7 +1364,7 @@ position = Vector2(-459, 63)
 metadata/_edit_group_ = true
 
 [node name="GSpear10" parent="TileMap" instance=ExtResource("9_eynsc")]
-position = Vector2(141, 169)
+position = Vector2(-35, 408)
 metadata/_edit_group_ = true
 
 [node name="GSpear11" parent="TileMap" instance=ExtResource("9_eynsc")]

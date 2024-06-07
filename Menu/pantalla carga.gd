@@ -9,7 +9,7 @@ func _ready():
 
 
 
-var cambioEscena = "res://Scene/world.tscn"
+var cambioEscena = "res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn"
 
 func _on_timer_timeout():
 	Global.goto_scene(cambioEscena)
