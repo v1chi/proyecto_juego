@@ -407,7 +407,7 @@ radius = 11.9892
 height = 31.9983
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t73k3"]
-radius = 8.0
+radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
 size = Vector2(7, 3)

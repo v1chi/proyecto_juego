@@ -214,12 +214,13 @@ radius = 22.9991
 height = 59.9976
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t73k3"]
+radius = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
 size = Vector2(7, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msyfa"]
-radius = 12.8062
+radius = 11.4018
 
 [node name="GInfected" type="CharacterBody2D"]
 position = Vector2(2, 1)

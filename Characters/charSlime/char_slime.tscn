@@ -246,13 +246,13 @@ radius = 52.0096
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t73k3"]
-radius = 9.05539
+radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
 size = Vector2(12, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gd2j"]
-radius = 12.1655
+radius = 11.0
 
 [node name="charSlime" type="CharacterBody2D"]
 position = Vector2(2, 1)
@@ -275,7 +275,7 @@ libraries = {
 shape = SubResource("CircleShape2D_jywya")
 
 [node name="attackShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_nump8")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
@@ -294,7 +294,7 @@ stream = ExtResource("3_vv5ja")
 [node name="attackdetector" type="Area2D" parent="."]
 
 [node name="attackDetectorShape2D" type="CollisionShape2D" parent="attackdetector"]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_0gd2j")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]

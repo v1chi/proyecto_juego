@@ -406,7 +406,6 @@ radius = 62.0081
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t73k3"]
-radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
 size = Vector2(7, 3)
@@ -445,7 +444,7 @@ disabled = true
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="body shape" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_t73k3")
 
 [node name="foot shape" type="CollisionShape2D" parent="."]
