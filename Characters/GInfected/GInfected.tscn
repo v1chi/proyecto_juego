@@ -210,17 +210,16 @@ _data = {
 radius = 62.0081
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk116"]
-radius = 17.9997
-height = 51.9991
+radius = 22.9991
+height = 59.9976
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t73k3"]
-radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
 size = Vector2(7, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msyfa"]
-radius = 11.4018
+radius = 12.8062
 
 [node name="GInfected" type="CharacterBody2D"]
 position = Vector2(2, 1)
@@ -239,13 +238,14 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
+visible = false
 
 [node name="detection shape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jywya")
 
 [node name="attack shape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
-rotation = -1.57673
+rotation = -1.56177
 shape = SubResource("CapsuleShape2D_hk116")
 disabled = true
 

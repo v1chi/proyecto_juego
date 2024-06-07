@@ -14,13 +14,14 @@ func _physics_process(delta):
 	if health == 0:
 		death_signal.emit()
 		await hurted()
+		await attack()	
 		await dead()
 	else:
 		if damaged != health:
 			await hurted()
 			damaged = health
-		if toAttack == true:
-			await attack()		
+	#	if toAttack == true:
+	#		await attack()		
 		procesamiento(delta)
 
 func procesamiento(delta):
