@@ -36,14 +36,19 @@ func procesamiento(delta):
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)
 	var yComponent = abs(direction.y)
-	var animationName = "walkRight"
+	var animationName = "walkStand"
 	if xComponent > yComponent:
 		if direction.x > 0:
 			animationName = "walkRight"
 		else:
 			animationName = "walkLeft"
 	else:
-		animationName = "walkStand"
+		if direction.y > 0:
+			animationName = "walkRight" #down
+		elif direction.y < 0:
+			animationName = "walkLeft" #up
+		else:
+			animationName = "walkStand"
 	$AnimationPlayer.play(animationName)
 
 func _on_detection_body_entered(body):
