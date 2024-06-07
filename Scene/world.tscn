@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6rv6l8rafnm"]
+[gd_scene load_steps=17 format=3 uid="uid://b6rv6l8rafnm"]
 
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="1_uhwxt"]
 [ext_resource type="Script" path="res://Scene/world.gd" id="1_x4vg2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxnuk6na5qk54" path="res://Characters/charSlime/char_slime.tscn" id="6_ceq41"]
 [ext_resource type="Script" path="res://Scene/Area2D.gd" id="7_1lbf2"]
 [ext_resource type="PackedScene" uid="uid://di6csugfnhws6" path="res://Characters/GInfected/GInfected.tscn" id="7_oyr2k"]
+[ext_resource type="PackedScene" uid="uid://iym17sokqjvk" path="res://Characters/GSword/GSword.tscn" id="8_nhmca"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="8_pwyce"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="8_yqyop"]
 
@@ -1119,6 +1120,10 @@ position = Vector2(1235, 2281)
 
 [node name="GInfected" parent="TileMap" instance=ExtResource("7_oyr2k")]
 position = Vector2(1120, 2183)
+metadata/_edit_group_ = true
+
+[node name="GSword" parent="TileMap" instance=ExtResource("8_nhmca")]
+position = Vector2(1278, 2160)
 metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

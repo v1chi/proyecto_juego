@@ -5,7 +5,7 @@ var playerChase = false
 var toAttack = false
 var player = null
 var health = 2
-var damaged = 6
+var damaged = 2
 var attack_damage = 1
 
 signal death_signal
@@ -13,13 +13,14 @@ signal death_signal
 func _physics_process(delta):
 	if health == 0:
 		death_signal.emit()
+		await hurted()
 		await dead()
 	else:
-		if damaged != health:			
+		if damaged != health:
 			await hurted()
 			damaged = health
 		if toAttack == true:
-			await attack()
+			await attack()		
 		procesamiento(delta)
 
 func procesamiento(delta):
@@ -78,12 +79,12 @@ func hurted():
 	$AnimationPlayer.play("hurted")
 	await $AnimationPlayer.animation_finished
 
+func _on_attack_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	toAttack = true
+
 func attack():
 	set_physics_process(false)
 	$AnimationPlayer.play("attack")
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false
-
-func _on_attackdetector_body_entered(body):
-	toAttack = true

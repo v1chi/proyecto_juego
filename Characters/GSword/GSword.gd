@@ -10,6 +10,8 @@ var attack_damage = 1
 
 signal death_signal
 
+var last_direction = Vector2.ZERO
+
 func _physics_process(delta):
 	if health == 0:
 		death_signal.emit()
@@ -26,6 +28,7 @@ func _physics_process(delta):
 func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
+		last_direction = moveDirection.normalized()  # Guardar la última dirección de movimiento
 		var velocity = moveDirection.normalized() * speed
 		var coll = move_and_collide(velocity * delta)
 		if coll:
@@ -45,9 +48,9 @@ func updateAnimation(direction):
 			animationName = "walkLeft"
 	else:
 		if direction.y > 0:
-			animationName = "walkRight" #down
+			animationName = "walkDown"
 		elif direction.y < 0:
-			animationName = "walkLeft" #up
+			animationName = "walkUp"
 		else:
 			animationName = "walkStand"
 	$AnimationPlayer.play(animationName)
@@ -84,7 +87,18 @@ func _on_attack_detector_area_shape_entered(area_rid, area, area_shape_index, lo
 
 func attack():
 	set_physics_process(false)
-	$AnimationPlayer.play("attack")
+	var attack_animation = "attackDown"  # Valor por defecto
+	if abs(last_direction.x) > abs(last_direction.y):
+		if last_direction.x > 0:
+			attack_animation = "attackRight"
+		else:
+			attack_animation = "attackLeft"
+	else:
+		if last_direction.y > 0:
+			attack_animation = "attackDown"
+		else:
+			attack_animation = "attackUp"
+	$AnimationPlayer.play(attack_animation)
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false

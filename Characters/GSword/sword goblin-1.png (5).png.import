@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80n6ij3ra6mm"
-path="res://.godot/imported/gobu attack sword.png-33f9bb9bf843f97e3227ec583021d0e4.ctex"
+uid="uid://cdri2xvifb04v"
+path="res://.godot/imported/sword goblin-1.png (5).png-619538a6b0957fbb3894cef742d4fdd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Goblins/Sword/swordArt/gobu attack sword.png"
-dest_files=["res://.godot/imported/gobu attack sword.png-33f9bb9bf843f97e3227ec583021d0e4.ctex"]
+source_file="res://Characters/GSword/sword goblin-1.png (5).png"
+dest_files=["res://.godot/imported/sword goblin-1.png (5).png-619538a6b0957fbb3894cef742d4fdd5.ctex"]
 
 [params]
 
