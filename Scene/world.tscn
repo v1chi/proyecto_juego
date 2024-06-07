@@ -1103,7 +1103,7 @@ metadata/_edit_group_ = true
 
 [node name="enemigo1" parent="TileMap" instance=ExtResource("3_7anfj")]
 y_sort_enabled = true
-position = Vector2(102, 356)
+position = Vector2(-141, 3148)
 
 [node name="char1" parent="TileMap" groups=["Player"] instance=ExtResource("1_uhwxt")]
 position = Vector2(1201, 2152)

@@ -23,4 +23,4 @@ func _activar_efecto_hijo():
 func _init(): 
 	self.id = 3
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Nerfeo de velocidad"
+	self.descripcion_carta = "Disminuye tu velocidad en -7"

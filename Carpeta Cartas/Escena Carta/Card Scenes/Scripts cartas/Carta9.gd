@@ -72,4 +72,4 @@ func _init():
 	self.contador_efectos = 0
 	self.id = 9
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "DON SUP"
+	self.descripcion_carta = "Entras en un estado de supervivencia al estar con 1 corazón"

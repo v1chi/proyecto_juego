@@ -34,4 +34,4 @@ func _init():
 	self.enemies_defeated_count = 0
 	self.id = 8
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Regeneración de vida"
+	self.descripcion_carta = "Recuperas una vida al matar dos enemigos"

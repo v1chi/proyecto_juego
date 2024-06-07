@@ -26,4 +26,4 @@ func _ready():
 func _init(): 
 	self.id = 2
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Empiezas con -2 de vida"
+	self.descripcion_carta = "Empiezas con -2 de vida al iniciar la mazmorra"

@@ -23,4 +23,4 @@ func get_icono():
 func _init(): 
 	self.id = 7
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Buff Ataque"
+	self.descripcion_carta = "Los enemigos reciben el doble de daño"

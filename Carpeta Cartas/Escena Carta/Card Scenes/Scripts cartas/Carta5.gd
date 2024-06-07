@@ -22,4 +22,4 @@ func get_icono():
 func _init(): 
 	self.id = 5
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Nerf velocidad  de ataque"
+	self.descripcion_carta = "Tu ataque disminuye en un 35%"

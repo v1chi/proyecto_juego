@@ -22,4 +22,4 @@ func get_icono():
 func _init(): 
 	self.id = 4
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Atacas más rápido"
+	self.descripcion_carta = "Atacas el doble de rápido"
