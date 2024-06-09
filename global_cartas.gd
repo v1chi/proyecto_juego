@@ -11,8 +11,6 @@ var carta2 : AbstractCard
 
 
 
-
-
 func set_cartas_elegidas(carta1 : AbstractCard, carta2 : AbstractCard):
 	self.carta1 = carta1.clone()
 	self.carta2 = carta2.clone()
@@ -44,7 +42,8 @@ func _init():
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta6.gd",
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta7.gd",
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta8.gd",
-	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta9.gd"
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta9.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta11.gd"
 	]
 
 #func _ready():

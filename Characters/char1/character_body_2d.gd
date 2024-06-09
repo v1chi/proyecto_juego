@@ -49,11 +49,12 @@ func updateAnimation():
 
 func _physics_process(delta):
 	
+	healthChanged.emit(currentHealth)
 	if  currentHealth == 1:
 		lowHealth.emit() 
 	elif currentHealth == 0:
 		await dead()
-	healthChanged.emit(currentHealth)
+	
 	handleImput()
 	move_and_slide()
 	updateAnimation()

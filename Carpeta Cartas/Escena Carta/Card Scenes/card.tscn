@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg7aqgxy5o4tp"]
+[gd_scene load_steps=12 format=3 uid="uid://cg7aqgxy5o4tp"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/AbstractCard.gd" id="1_mmww8"]
-[ext_resource type="Texture2D" uid="uid://c6b67du5ld3wj" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/backcard.png" id="2_8q64h"]
+[ext_resource type="Texture2D" uid="uid://c6b67du5ld3wj" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/backcard.png" id="2_shbp0"]
+[ext_resource type="Texture2D" uid="uid://dryiwfyxgbbdp" path="res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres" id="3_2f31y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dr5"]
 size = Vector2(100, 145)
@@ -286,13 +287,18 @@ shape = SubResource("RectangleShape2D_p6dr5")
 
 [node name="cardback" type="Sprite2D" parent="card"]
 z_index = -1
-texture = ExtResource("2_8q64h")
+
+[node name="trasera" type="Sprite2D" parent="card/cardback"]
+texture = ExtResource("2_shbp0")
 
 [node name="frontal" type="Sprite2D" parent="card/cardback"]
 z_index = -1
+position = Vector2(0, 1)
+scale = Vector2(0.961, 1)
+texture = ExtResource("3_2f31y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="card"]
 libraries = {
 "": SubResource("AnimationLibrary_qd105")
 }
-autoplay = "RESET"
+autoplay = "card_flip"

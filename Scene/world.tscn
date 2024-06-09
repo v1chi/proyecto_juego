@@ -1112,8 +1112,9 @@ y_sort_enabled = true
 position = Vector2(-141, 3148)
 
 [node name="char1" parent="TileMap" groups=["Player"] instance=ExtResource("1_uhwxt")]
-position = Vector2(140, 2239)
+position = Vector2(116, 86)
 speed = 37
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)

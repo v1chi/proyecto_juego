@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx10e20k0thv6"
-path="res://.godot/imported/Don_sup.png-1bc6bcc9f8db6645325fcc93b08c4b38.ctex"
+uid="uid://d0htsb1be3epd"
+path="res://.godot/imported/LightSprite.png-d4c442ebae01e7afd27f73ae968ccd92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Carpeta Cartas/Escena Carta/Card Scenes/Don_sup.png"
-dest_files=["res://.godot/imported/Don_sup.png-1bc6bcc9f8db6645325fcc93b08c4b38.ctex"]
+source_file="res://Carpeta Cartas/Escena Carta/Assets/LightSprite.png"
+dest_files=["res://.godot/imported/LightSprite.png-d4c442ebae01e7afd27f73ae968ccd92.ctex"]
 
 [params]
 

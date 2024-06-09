@@ -3,7 +3,7 @@ extends Node2D
 
 
 const PATH_ESCENA_CARTA : String = "res://Carpeta Cartas/Escena Carta/Card Scenes/card.tscn"
-var imagen_carta : Resource = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/Don_sup.png")
+var imagen_carta : Resource = preload("res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres")
 
 
 var sprite_carta : Sprite2D
