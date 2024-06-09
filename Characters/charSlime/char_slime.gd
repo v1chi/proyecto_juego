@@ -4,9 +4,9 @@ var speed = 20
 var playerChase = false
 var toAttack = false
 var player = null
-var health = 2
+var health = 8
 var damaged = 2
-var attack_damage = 1
+var attack_damage = 4
 
 signal death_signal
 
