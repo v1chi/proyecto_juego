@@ -1121,7 +1121,19 @@ position = Vector2(-1, 6)
 position_smoothing_enabled = true
 
 [node name="charSlime" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
-position = Vector2(1133, 2265)
+position = Vector2(98, 224)
+
+[node name="charSlime35" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(129, 248)
+
+[node name="charSlime36" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(102, 266)
+
+[node name="charSlime37" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(129, 296)
+
+[node name="charSlime38" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
+position = Vector2(103, 320)
 
 [node name="charSlime2" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_ceq41")]
 position = Vector2(1235, 2281)
