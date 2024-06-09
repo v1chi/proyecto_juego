@@ -13,6 +13,7 @@ signal healthChanged
 signal lowHealth
 
 
+var received_damage = 1
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 
@@ -52,7 +53,7 @@ func _physics_process(delta):
 	healthChanged.emit(currentHealth)
 	if  currentHealth == 1:
 		lowHealth.emit() 
-	elif currentHealth == 0:
+	elif currentHealth <= 0:
 		await dead()
 	
 	handleImput()
@@ -85,7 +86,7 @@ func _on_player_hitbox_body_exited(body):
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		currentHealth -= 1
+		currentHealth -= received_damage
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		

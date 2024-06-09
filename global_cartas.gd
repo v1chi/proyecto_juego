@@ -46,7 +46,8 @@ func _init():
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta10.gd",
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta11.gd",
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta12.gd",
-	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta13.gd"
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta13.gd",
+	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta14.gd"
 	]
 
 #func _ready():
