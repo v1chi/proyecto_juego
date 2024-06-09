@@ -24,18 +24,20 @@ func wait(seconds):
 
 func _activar_efecto_hijo():
 	player = Global.get_tree().get_nodes_in_group("Player")[0]
-	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
-	for enemy in enemies:
-		enemy.death_signal.connect(_on_enemy_defeated.bind(enemy))
+	var idle_timer = player.get_node("IdleTimer")
+	if not(idle_timer.timeout.is_connected(_on_idle_timeout)):
+		idle_timer.timeout.connect(_on_idle_timeout)
 
 
-func _on_enemy_defeated(enemy):
-	enemy.death_signal.disconnect(_on_enemy_defeated)
-	enemies_defeated_count += 1
-	print(enemies_defeated_count)
-	if enemies_defeated_count % 5 == 0:
-		player.currentHealth -= 1
+
+func _on_idle_timeout():
+	if player.currentHealth < player.maxHealth:
+		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)
+	
+	pass
+
+
 
 
 
@@ -48,4 +50,4 @@ func _init():
 	self.contador_efectos = 0
 	self.id = 13
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Recibes daño al matar 5 enemigos"
+	self.descripcion_carta = "Recuperas vida cuando te quedas quieto"

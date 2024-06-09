@@ -19,6 +19,21 @@ var enemy_attack_cooldown = true
 
 var custom_speed = 1
 
+
+## Carta impl idle
+signal idle
+@onready var idle_timer = $IdleTimer
+
+func start_timer_idle():
+	if idle_timer.is_stopped():
+		idle_timer.start()
+
+func stop_timer_idle():
+	if not(idle_timer.is_stopped()):
+		idle_timer.stop()
+
+## Carta impl idle
+
 func handleImput():
 	var moveDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = moveDirection*speed*2
@@ -36,7 +51,10 @@ func updateAnimation():
 	
 	if velocity.length() == 0:
 		animations.play("walkStand")
+		start_timer_idle()
+	
 	else:
+		stop_timer_idle()
 		var direction = "Down"
 		if velocity.x < 0: 
 			direction = "Left"
@@ -96,3 +114,4 @@ func _on_attack_cooldown_timeout():
 	
 func player():
 	pass
+
