@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 func setMaxHearts(max: int):
+	remove_children()
 	for i in range(max):
 		var heart = ClaseInterfazCorazon.instantiate()
 		add_child(heart)
@@ -24,3 +25,10 @@ func updateHearts(currentHealth: int):
 	for i in range(currentHealth, hearts.size()):
 		hearts[i].update(false)
 	
+func remove_children():
+	var children = get_children()
+	if children == null:
+		return
+	for child in children:
+		remove_child(child)
+		child.queue_free()
