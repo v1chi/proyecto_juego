@@ -22,9 +22,10 @@ func _activar_efecto_hijo():
 
 func _on_enemy_defeated(enemy):
 	enemy.death_signal.disconnect(_on_enemy_defeated)
+	anim.play("activa_inst")
 	enemies_defeated_count += 1
 	print(enemies_defeated_count)
-	if enemies_defeated_count % 2 == 0:
+	if enemies_defeated_count % 2 == 0 and player.currentHealth < player.maxHealth:
 		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)
 

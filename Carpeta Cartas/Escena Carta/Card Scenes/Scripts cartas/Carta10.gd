@@ -25,6 +25,7 @@ func wait(seconds):
 
 func _activar_efecto_hijo():
 	if flag:
+		anim.play("palpeo")
 		player = Global.get_tree().get_nodes_in_group("Player")[0]
 		contenedor_corazon = Global.get_tree().get_nodes_in_group("ContenedorCorazon")[0]
 		player.maxHealth = 3

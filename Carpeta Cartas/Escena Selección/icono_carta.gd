@@ -12,18 +12,19 @@ func add_cartas():
 	
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)
+	
+	carta1.anim.play("no_activa")
+	carta2.anim.play("no_activa")
+
+	
 	pass
 
 func _setup_carta1(carta1):
-	self.carta1 = Sprite2D.new()
-	self.carta1.set_texture(carta1)
-	self.carta1.set_scale(Vector2(0.35, 0.35))
+	self.carta1 = carta1
 	return self
 	
 func _setup_carta2(carta2):
-	self.carta2 = Sprite2D.new()
-	self.carta2.set_texture(carta2)
-	self.carta2.set_scale(Vector2(0.35, 0.35))
+	self.carta2 = carta2
 	return self
 
 # Called when the node enters the scene tree for the first time.

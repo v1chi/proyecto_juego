@@ -23,6 +23,7 @@ func wait(seconds):
 
 
 func _activar_efecto_hijo():
+	anim.play("palpeo")
 	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	player.received_damage = 2
 

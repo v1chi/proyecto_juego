@@ -25,6 +25,7 @@ func _activar_efecto_hijo():
 	if !flag:
 		return 
 	flag = false
+	anim.play("palpeo")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
 		enemy.attack_damage = enemy.attack_damage/2

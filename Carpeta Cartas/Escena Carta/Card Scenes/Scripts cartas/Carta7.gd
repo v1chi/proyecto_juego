@@ -14,6 +14,7 @@ func get_id():
 func _activar_efecto_hijo():
 	if !flag:
 		return 
+	anim.play("palpeo")
 	flag = false
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:

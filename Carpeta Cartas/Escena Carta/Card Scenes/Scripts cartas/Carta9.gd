@@ -29,6 +29,7 @@ func _activar_efecto_hijo():
 		player.lowHealth.connect(_on_low_health_player)
 
 func _on_timer_timeout_efecto(timer_):
+	anim.play("no_activa")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
 		enemy.attack_damage = 1
@@ -41,13 +42,15 @@ func _on_timer_timeout_efecto(timer_):
 		_activar_efecto_hijo()
 
 func _on_low_health_player():
+	player.lowHealth.disconnect(_on_low_health_player)
+	anim.play("palpeo")
 	player.currentHealth += 3
 	player.healthChanged.emit(player.currentHealth)
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
 		enemy.attack_damage = 2
 	
-	player.lowHealth.disconnect(_on_low_health_player)
+	
 	timer = _get_timer()
 	timer.start()
 	

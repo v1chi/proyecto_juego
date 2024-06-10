@@ -23,6 +23,7 @@ func wait(seconds):
 
 func _activar_efecto_hijo():
 	if flag:
+		anim.play("palpeo")
 		player = Global.get_tree().get_nodes_in_group("Player")[0]
 		player.add_child(load(escena_reducida).instantiate())
 	flag = false
