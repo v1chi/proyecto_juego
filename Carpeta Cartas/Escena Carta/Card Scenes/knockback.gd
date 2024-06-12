@@ -15,7 +15,7 @@ func _ready():
 	pass # Replace with function body.
 
 var knockback = Vector2.ZERO
-var knockback_strength = 100
+var knockback_strength = 150
 func _on_body_entered(body):
 	if body.has_method("enemy"):
 		var direction = global_position.direction_to(body.global_position).normalized()

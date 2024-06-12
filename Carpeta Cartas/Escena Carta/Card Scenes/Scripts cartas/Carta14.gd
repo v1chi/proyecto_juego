@@ -34,6 +34,6 @@ func get_icono():
 func _init():
 	self.enemies_defeated_count = 0
 	self.contador_efectos = 0
-	self.id = 13
+	self.id = 14
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Recibes el doble de daño de los enemigos"

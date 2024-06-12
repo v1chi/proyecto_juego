@@ -11,7 +11,7 @@ var isAttacking: bool = false
 var path_menu = "res://Menu/menu.tscn"
 signal healthChanged
 signal lowHealth
-
+signal revivePlayer
 
 var received_damage = 1
 var enemy_inattack_range = false
@@ -20,9 +20,9 @@ var enemy_attack_cooldown = true
 var custom_speed = 1
 var knockback = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/knockback.tscn").instantiate()
 
-
+var can_revive = false
 ## Carta impl idle
-signal idle
+
 @onready var idle_timer = $IdleTimer
 
 func start_timer_idle():
@@ -91,17 +91,22 @@ func dead():
 	animations.play("deathLeft")
 	$audioMuerte.play()
 	await animations.animation_finished
-	await _on_revive_card()
+	await wait(0.6)
+	if can_revive:
+		await _on_revive_card()
+	else:
+		Global.goto_scene(path_menu)
 	
 
 func _on_revive_card():
+	revivePlayer.emit()
+	enemy_attack_cooldown = false
 	animations.play_backwards("deathLeft")
 	add_child(knockback)
 	currentHealth = maxHealth
 	healthChanged.emit(currentHealth)
 	await animations.animation_finished 
 	remove_child(knockback)
-	enemy_attack_cooldown = false
 	$attack_cooldown.start()
 	set_physics_process(true)
 	
