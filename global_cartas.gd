@@ -58,9 +58,9 @@ func _init():
 
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_TAB):
-		GlobalCartas.carta1.activar_efecto()
-	elif Input.is_key_pressed(KEY_Q):
-		GlobalCartas.carta2.activar_efecto()
-
+	#if Input.is_key_pressed(KEY_TAB):
+		#GlobalCartas.carta1.activar_efecto()
+	#elif Input.is_key_pressed(KEY_Q):
+		#GlobalCartas.carta2.activar_efecto()
+	pass
 

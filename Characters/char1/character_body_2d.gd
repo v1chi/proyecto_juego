@@ -18,6 +18,7 @@ var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 
 var custom_speed = 1
+var knockback = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/knockback.tscn").instantiate()
 
 
 ## Carta impl idle
@@ -73,6 +74,7 @@ func _physics_process(delta):
 		lowHealth.emit() 
 	elif currentHealth <= 0:
 		await dead()
+		
 	
 	handleImput()
 	move_and_slide()
@@ -89,9 +91,22 @@ func dead():
 	animations.play("deathLeft")
 	$audioMuerte.play()
 	await animations.animation_finished
-	await wait(1)
-	Global.goto_scene(path_menu)
-	#queue_free()
+	await _on_revive_card()
+	
+
+func _on_revive_card():
+	animations.play_backwards("deathLeft")
+	add_child(knockback)
+	currentHealth = maxHealth
+	healthChanged.emit(currentHealth)
+	await animations.animation_finished 
+	remove_child(knockback)
+	enemy_attack_cooldown = false
+	$attack_cooldown.start()
+	set_physics_process(true)
+	
+	
+	
 
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):

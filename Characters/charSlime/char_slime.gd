@@ -8,6 +8,9 @@ var health = 8
 var damaged = 2
 var attack_damage = 4
 
+
+var knockback = Vector2.ZERO
+
 signal death_signal
 
 func _physics_process(delta):
@@ -24,17 +27,25 @@ func _physics_process(delta):
 		if toAttack == true:
 			await attack()		
 		procesamiento(delta)
-
+		
+#velocity = direction * speed + knockback
+#look_at(get_global_mouse_position())
+#move_and_slide()
+#knockback = lerp(knockback, Vector2.ZERO, 0.1)
 func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
-		var velocity = moveDirection.normalized() * speed
+		var velocity = moveDirection.normalized() * speed + knockback
 		var coll = move_and_collide(velocity * delta)
 		if coll:
 			print(coll.get_collider().name)
 		updateAnimation(moveDirection)
 	else:
+		var moveDirection = Vector2.ZERO
+		var velocity = moveDirection.normalized() * speed + knockback
+		var coll = move_and_collide(velocity * delta)
 		$AnimationPlayer.play("walkStand")
+	knockback = lerp(knockback, Vector2.ZERO, 0.05)
 
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)
@@ -90,3 +101,4 @@ func attack():
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false
+
