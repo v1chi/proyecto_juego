@@ -1,6 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://bentwn41s8uf"]
+[gd_scene load_steps=8 format=3 uid="uid://bentwn41s8uf"]
 
 [ext_resource type="Script" path="res://Scene/scorer.gd" id="1_ontb4"]
+[ext_resource type="Theme" uid="uid://cnq38gpyrr5nb" path="res://Carpeta Cartas/Escena Carta/Assets/new_theme.tres" id="2_vbi2r"]
+[ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel_NO_input.gd" id="3_7ogau"]
+[ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="4_s55hk"]
+
+[sub_resource type="Animation" id="Animation_k4x45"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParentPanel/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParentPanel/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.729412, 0.729412, 0.729412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ulqod"]
+resource_name = "add"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ParentPanel/Panel/RichTextLabel:theme_override_colors/default_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.903598, 0.903598, 0.903598, 1), Color(0.687214, 0.687215, 0.687215, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParentPanel/Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParentPanel/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.728822, 0.728822, 0.728822, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xawjm"]
+_data = {
+"RESET": SubResource("Animation_k4x45"),
+"add": SubResource("Animation_ulqod")
+}
 
 [node name="Scorer" type="Control"]
 layout_mode = 3
@@ -11,15 +88,53 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ontb4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xawjm")
+}
+autoplay = "RESET"
+
+[node name="ParentPanel" type="Node2D" parent="."]
+position = Vector2(187, 8)
+
+[node name="Panel" type="Panel" parent="ParentPanel"]
+modulate = Color(0.729412, 0.729412, 0.729412, 1)
+offset_right = 63.0
+offset_bottom = 23.0
+theme = ExtResource("2_vbi2r")
+script = ExtResource("3_7ogau")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ParentPanel/Panel"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -66.0
-offset_bottom = 40.0
-grow_horizontal = 0
-theme_override_font_sizes/normal_font_size = 10
-text = "Score:  0"
+anchors_preset = -1
+offset_left = 21.0
+offset_top = -8.0
+offset_right = 44.0
+offset_bottom = 8.0
+theme_override_fonts/normal_font = ExtResource("4_s55hk")
+theme_override_font_sizes/normal_font_size = 14
+text = "Score"
 fit_content = true
 scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ParentPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -6.5
+offset_right = 18.5
+offset_bottom = 6.5
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.903598, 0.903598, 0.903598, 1)
+theme_override_fonts/normal_font = ExtResource("4_s55hk")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+text_direction = 2
