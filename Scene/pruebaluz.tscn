@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dowku0grnnogv" path="res://TileSet/mystic_woods_free_2.2/sprites/objects/objects.png" id="7_voqft"]
 [ext_resource type="Texture2D" uid="uid://dvyvk08tho704" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_01.png" id="8_rc8b0"]
 [ext_resource type="Texture2D" uid="uid://dwtwuhtfjc83k" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_02.png" id="9_ejfmc"]
-[ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="10_ybwwf"]
+[ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/Player/character_body_2d.tscn" id="10_ybwwf"]
 [ext_resource type="PackedScene" uid="uid://bjh6jitubkpda" path="res://Carpeta Cartas/vision_reducida.tscn" id="11_nsnae"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="11_wxcgy"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="12_gxaf5"]

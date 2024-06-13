@@ -1,8 +1,12 @@
-extends Button
+extends Control
 
+
+var text_score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	text_score = $RichTextLabel
+	Global.update_score.connect(_on_update_score)
 	pass # Replace with function body.
 
 
@@ -10,11 +14,7 @@ func _ready():
 func _process(delta):
 	pass
 
-var cambio1 = ("res://Menu/pantalla carga.tscn")
-var cambio = "res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn"
 
-func _on_pressed():
-	Global.score = 0
-	Global.goto_scene(cambio1)
-
-
+func _on_update_score():
+	text_score.text = "Score: " + str(Global.score)
+	print(Global.score)

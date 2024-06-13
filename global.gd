@@ -1,6 +1,18 @@
 extends Node
 
 var current_scene = null
+var score : int = 0
+
+signal update_score
+
+func set_score_zero():
+	score = 0
+	update_score.emit()
+
+
+func score_agregate(score):
+	self.score += score
+	update_score.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

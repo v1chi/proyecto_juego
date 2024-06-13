@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjgl3lby2raa4"
-path="res://.godot/imported/spear goblin.png-cebca80a631adc5bcc180088a0c16630.ctex"
+uid="uid://dedi52lqpdnog"
+path="res://.godot/imported/slime.png-c686a2fdf4f02d0791b42f6fa259950d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/GSpear/spear goblin.png"
-dest_files=["res://.godot/imported/spear goblin.png-cebca80a631adc5bcc180088a0c16630.ctex"]
+source_file="res://Characters/Enemies/charSlime/slime.png"
+dest_files=["res://.godot/imported/slime.png-c686a2fdf4f02d0791b42f6fa259950d.ctex"]
 
 [params]
 

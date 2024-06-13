@@ -1,24 +1,15 @@
-extends CharacterBody2D
-
-var speed = 20
-var playerChase = false
-var toAttack = false
-var player = null
-var health = 8
-var damaged = 2
-var attack_damage = 4
+extends AbstractEnemy
 
 
-var knockback = Vector2.ZERO
-
-signal death_signal
+func _ready():
+	score = 5
 
 func _physics_process(delta):
 	if health <= 0:
+		set_physics_process(false)
 		self.death_signal.emit()
 		await hurted()
 		await dead()
-		print("pasa")
 		
 	else:
 		if damaged != health:
@@ -27,18 +18,13 @@ func _physics_process(delta):
 		if toAttack == true:
 			await attack()		
 		procesamiento(delta)
-		
-#velocity = direction * speed + knockback
-#look_at(get_global_mouse_position())
-#move_and_slide()
-#knockback = lerp(knockback, Vector2.ZERO, 0.1)
+
+
 func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
 		var velocity = moveDirection.normalized() * speed + knockback
 		var coll = move_and_collide(velocity * delta)
-		if coll:
-			print(coll.get_collider().name)
 		updateAnimation(moveDirection)
 	else:
 		var moveDirection = Vector2.ZERO
@@ -77,16 +63,15 @@ func _on_detection_body_exited(body):
 
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
-		health -= attack_damage
+		receive_damage(attack_damage)
 
 func dead():
 	set_physics_process(false)
 	$AnimationPlayer.play("deathRight")
 	await $AnimationPlayer.animation_finished
+	Global.score_agregate(score)
 	queue_free()
-
-func enemy():
-	pass
+	
 
 func hurted():
 	$AnimationPlayer.play("hurted")
@@ -96,9 +81,10 @@ func _on_attack_detector_area_shape_entered(area_rid, area, area_shape_index, lo
 	toAttack = true
 
 func attack():
+	set_process(false)
 	set_physics_process(false)
 	$AnimationPlayer.play("attack")
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false
-
+	

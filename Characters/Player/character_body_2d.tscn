@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cg4o1dqm08nvi"]
 
-[ext_resource type="Script" path="res://Characters/char1/character_body_2d.gd" id="1_k8407"]
-[ext_resource type="Texture2D" uid="uid://ddcnaxu1t2s1o" path="res://Characters/char1/Hooded knight_finalsheet-1.png (1).png" id="2_el8pd"]
+[ext_resource type="Script" path="res://Characters/Player/character_body_2d.gd" id="1_k8407"]
+[ext_resource type="Texture2D" uid="uid://ddcnaxu1t2s1o" path="res://Characters/Player/Hooded knight_finalsheet-1.png (1).png" id="2_el8pd"]
 [ext_resource type="AudioStream" uid="uid://dme72q61b4bfy" path="res://musica/aaa.mp3" id="3_n0y2h"]
 [ext_resource type="AudioStream" uid="uid://ck1hkrs37gccd" path="res://musica/Efectos de Sonido - Grito de Muerte Hombre 4.mp3" id="4_6dl53"]
 

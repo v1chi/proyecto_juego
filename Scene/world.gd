@@ -6,8 +6,3 @@ extends Node2D
 func _ready():
 	contenedorCorazones.setMaxHearts(player.maxHealth)
 	player.healthChanged.connect(contenedorCorazones.updateHearts)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	pass

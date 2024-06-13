@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6gn7sq10ficq" path="res://TileSet/Pixel Art Top Down - Basic (1)/Texture/TX Props.png" id="2_ytol8"]
 [ext_resource type="Texture2D" uid="uid://cqerhbfxddn4x" path="res://TileSet/Pixel Art Top Down - Basic (1)/Farm Game Dungeon Cellar Tileset/Tilesets/FG_Cellar.png" id="3_hegyp"]
 [ext_resource type="Texture2D" uid="uid://k011qrr80d3x" path="res://TileSet/Pixel Art Top Down - Basic (1)/Farm Game Dungeon Cellar Tileset/suelo.png" id="4_klbix"]
-[ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/char1/character_body_2d.tscn" id="4_wgo8d"]
+[ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/Player/character_body_2d.tscn" id="4_wgo8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("1_j75tr")

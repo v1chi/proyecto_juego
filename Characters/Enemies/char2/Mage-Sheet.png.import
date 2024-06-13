@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdri2xvifb04v"
-path="res://.godot/imported/sword goblin-1.png (5).png-619538a6b0957fbb3894cef742d4fdd5.ctex"
+uid="uid://bg3usb2n21pug"
+path="res://.godot/imported/Mage-Sheet.png-f42eeee0fbd6e65cc98cbd697e317e41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/GSword/sword goblin-1.png (5).png"
-dest_files=["res://.godot/imported/sword goblin-1.png (5).png-619538a6b0957fbb3894cef742d4fdd5.ctex"]
+source_file="res://Characters/Enemies/char2/Mage-Sheet.png"
+dest_files=["res://.godot/imported/Mage-Sheet.png-f42eeee0fbd6e65cc98cbd697e317e41.ctex"]
 
 [params]
 

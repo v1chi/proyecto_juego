@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://di6csugfnhws6"]
 
-[ext_resource type="Script" path="res://Characters/GInfected/GInfected.gd" id="1_cwoff"]
-[ext_resource type="Texture2D" uid="uid://365qmkhtd3e4" path="res://Characters/GInfected/Hooded knight_finalsheet-1.png (2).png" id="2_ak3m6"]
+[ext_resource type="Script" path="res://Characters/Enemies/GInfected/GInfected.gd" id="1_cwoff"]
+[ext_resource type="Texture2D" uid="uid://365qmkhtd3e4" path="res://Characters/Enemies/GInfected/Hooded knight_finalsheet-1.png (2).png" id="2_ak3m6"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_y15qt"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
@@ -267,7 +267,6 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_y15qt")
 
 [node name="attack detector" type="Area2D" parent="."]
-visible = false
 
 [node name="attack detector shape" type="CollisionShape2D" parent="attack detector"]
 position = Vector2(0, 3)

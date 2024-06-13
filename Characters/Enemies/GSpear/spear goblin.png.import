@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg3usb2n21pug"
-path="res://.godot/imported/Mage-Sheet.png-da5544a86999b033f143a7487f146f80.ctex"
+uid="uid://bjgl3lby2raa4"
+path="res://.godot/imported/spear goblin.png-9cd1b6c5bd24f2317db842981fc1ba98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/char2/Mage-Sheet.png"
-dest_files=["res://.godot/imported/Mage-Sheet.png-da5544a86999b033f143a7487f146f80.ctex"]
+source_file="res://Characters/Enemies/GSpear/spear goblin.png"
+dest_files=["res://.godot/imported/spear goblin.png-9cd1b6c5bd24f2317db842981fc1ba98.ctex"]
 
 [params]
 

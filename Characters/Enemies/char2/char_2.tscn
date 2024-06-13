@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://vswmellaeqwd"]
 
-[ext_resource type="Script" path="res://Characters/char2/char_2.gd" id="1_afvd4"]
-[ext_resource type="Texture2D" uid="uid://bg3usb2n21pug" path="res://Characters/char2/Mage-Sheet.png" id="2_tl4bu"]
+[ext_resource type="Script" path="res://Characters/Enemies/char2/char_2.gd" id="1_afvd4"]
+[ext_resource type="Texture2D" uid="uid://bg3usb2n21pug" path="res://Characters/Enemies/char2/Mage-Sheet.png" id="2_tl4bu"]
 
 [sub_resource type="Animation" id="Animation_i5l3a"]
 length = 0.001
