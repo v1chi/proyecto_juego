@@ -16,6 +16,8 @@ var id : int
 signal card_created
 signal card_effected
 
+func abstract_card():
+	pass
 
 func clone():
 	var path_script = self.get_script().get_path()
