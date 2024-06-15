@@ -18,7 +18,7 @@ func add_panels():
 		panels.append(get_node("Contenedor/Panel" + str(panel_id)))
 	
 func add_card_to_panel(panel_id):
-	var instance_card = GlobalCartas.instanciar_carta()
+	var instance_card = GlobalCartas.instanciar_carta_no_repetida()
 	panels[panel_id - 1].add_child(instance_card)
 	instance_card.activate_shift_animation()
 	panels[panel_id - 1].card_created.emit(instance_card)

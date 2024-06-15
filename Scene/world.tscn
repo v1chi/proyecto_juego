@@ -1123,117 +1123,155 @@ position_smoothing_enabled = true
 
 [node name="charSlime" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(98, 224)
+speed = null
 
 [node name="charSlime35" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(129, 248)
+speed = null
 
 [node name="charSlime36" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(102, 266)
+speed = null
 
 [node name="charSlime37" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(129, 296)
+speed = null
 
 [node name="charSlime38" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(103, 320)
+speed = null
 
 [node name="charSlime2" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1235, 2281)
+speed = null
 
 [node name="charSlime3" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(695, 2335)
+speed = null
 
 [node name="charSlime4" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(582, 2400)
+speed = null
 
 [node name="charSlime5" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1124, 2784)
+speed = null
 
 [node name="charSlime6" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1440, 2695)
+speed = null
 
 [node name="charSlime7" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-92, 3259)
+speed = null
 
 [node name="charSlime8" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-235, 3207)
+speed = null
 
 [node name="charSlime9" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-620, 3026)
+speed = null
 
 [node name="charSlime10" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(86, 2412)
+speed = null
 
 [node name="charSlime11" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(257, 2314)
+speed = null
 
 [node name="charSlime12" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-842, 2205)
+speed = null
 
 [node name="charSlime13" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-1016, 2077)
+speed = null
 
 [node name="charSlime14" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(794, 1832)
+speed = null
 
 [node name="charSlime15" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(786, 1756)
+speed = null
 
 [node name="charSlime16" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-115, 1656)
+speed = null
 
 [node name="charSlime17" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-805, 1352)
+speed = null
 
 [node name="charSlime18" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-72, 1257)
+speed = null
 
 [node name="charSlime19" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(273, 1055)
+speed = null
 
 [node name="charSlime20" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(679, 1023)
+speed = null
 
 [node name="charSlime21" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1226, 1758)
+speed = null
 
 [node name="charSlime22" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1209, 859)
+speed = null
 
 [node name="charSlime23" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1073, 562)
+speed = null
 
 [node name="charSlime24" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(821, 479)
+speed = null
 
 [node name="charSlime25" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-40, 629)
+speed = null
 
 [node name="charSlime26" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-435, 539)
+speed = null
 
 [node name="charSlime27" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-737, 648)
+speed = null
 
 [node name="charSlime28" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(0, 910)
+speed = null
 
 [node name="charSlime29" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-438, 281)
+speed = null
 
 [node name="charSlime30" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-546, 129)
+speed = null
 
 [node name="charSlime31" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-790, 466)
+speed = null
 
 [node name="charSlime32" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(1194, 295)
+speed = null
 
 [node name="charSlime33" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-673, 1610)
+speed = null
 
 [node name="charSlime34" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(-673, 1610)
+speed = null
 
 [node name="GInfected" parent="TileMap" instance=ExtResource("7_163yc")]
 position = Vector2(1511, 2769)

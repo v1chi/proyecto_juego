@@ -34,7 +34,7 @@ func _fade_out_cartas():
 	pass 
 
 func _fade_in_cartas():
-	var carta1 = GlobalCartas.instanciar_carta()
+	var carta1 = GlobalCartas.instanciar_carta_no_repetida()
 	var carta2 = GlobalCartas.instanciar_carta()
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)

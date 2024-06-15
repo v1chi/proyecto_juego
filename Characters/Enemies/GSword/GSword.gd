@@ -65,8 +65,8 @@ func _on_enemy_hitbox_area_entered(area):
 		receive_damage(attack_damage)
 
 func dead():
-	set_physics_process(false)
 	$AnimationPlayer.play("deathRight")
+	mostrar_score()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
 	queue_free()
