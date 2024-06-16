@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6rv6l8rafnm"]
+[gd_scene load_steps=20 format=3 uid="uid://b6rv6l8rafnm"]
 
 [ext_resource type="Script" path="res://Scene/world.gd" id="1_x4vg2"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_xcdej"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="8_yqyop"]
 [ext_resource type="PackedScene" uid="uid://cvg6q6xtwcqlu" path="res://Characters/Enemies/GSpear/GSpear.tscn" id="9_pqff6"]
 [ext_resource type="PackedScene" uid="uid://bentwn41s8uf" path="res://Scene/scorer.tscn" id="12_0t13y"]
+[ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="15_yw14c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_xcdej")
@@ -1432,6 +1433,12 @@ metadata/_edit_group_ = true
 [node name="GSpear12" parent="TileMap" instance=ExtResource("9_pqff6")]
 position = Vector2(-977, 2718)
 metadata/_edit_group_ = true
+
+[node name="ParentPocion" parent="TileMap" instance=ExtResource("15_yw14c")]
+position = Vector2(161, 95)
+
+[node name="ParentPocion2" parent="TileMap" instance=ExtResource("15_yw14c")]
+position = Vector2(66, 97)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

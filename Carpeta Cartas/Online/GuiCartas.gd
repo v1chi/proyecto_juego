@@ -48,7 +48,7 @@ func _on_timer_timeout():
 	$AnimationPlayer.play("aviso_entrada")
 	await wait(2)
 	_fade_in_cartas()
-	await wait(3)
+	await wait(1)
 	$AnimationPlayer.play_backwards("aviso_entrada")
 	
 
