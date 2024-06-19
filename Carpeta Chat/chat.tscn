@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://h47vtxbhekvh"]
+
+[ext_resource type="Script" path="res://Carpeta Chat/chat.gd" id="1_ydxnp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ydxnp")
+
+[node name="Host" type="Button" parent="."]
+offset_right = 51.0
+offset_bottom = 31.0
+text = "HOST"
+
+[node name="Join" type="Button" parent="."]
+offset_left = 52.0
+offset_right = 95.0
+offset_bottom = 31.0
+text = "JOIN"
+
+[node name="Username" type="LineEdit" parent="."]
+offset_left = 96.0
+offset_right = 240.0
+offset_bottom = 31.0
+placeholder_text = "Username"
+
+[node name="Send" type="Button" parent="."]
+offset_left = 2.0
+offset_top = -32.0
+offset_right = 53.0
+offset_bottom = -1.0
+text = "SEND"
+
+[node name="Message" type="LineEdit" parent="."]
+offset_left = 55.0
+offset_top = -32.0
+offset_right = 240.0
+offset_bottom = -1.0
+placeholder_text = "Message"
+
+[node name="Messages" type="TextEdit" parent="."]
+offset_left = 2.0
+offset_top = -160.0
+offset_right = 240.0
+offset_bottom = -33.0
+editable = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(111, -64)
+scale = Vector2(154.738, 573.379)
+zoom = Vector2(0.7, 0.7)
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
