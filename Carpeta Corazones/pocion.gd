@@ -28,3 +28,7 @@ func _on_area_pocion_body_entered(body):
 
 func _on_area_acercamiento_body_exited(body):
 	fuerza = Vector2.ZERO
+
+
+func _play_levitamiento():
+	$AnimationPlayer.play("levitamiento")

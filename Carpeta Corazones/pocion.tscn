@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwv15aawmtw4i"]
+[gd_scene load_steps=11 format=3 uid="uid://bwv15aawmtw4i"]
 
 [ext_resource type="Script" path="res://Carpeta Corazones/pocion.gd" id="1_4gigc"]
 [ext_resource type="Texture2D" uid="uid://clnetbfm3iam2" path="res://Carpeta Cartas/Escena Carta/Assets/pocion.png" id="1_ksq8t"]
@@ -14,6 +14,108 @@ radius = 27.0185
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdyqa"]
 atlas = ExtResource("2_kiy18")
 region = Rect2(568, 154, 3, 3)
+
+[sub_resource type="Animation" id="Animation_771jq"]
+resource_name = "aparecer"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sombra:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.176471, 0.176471, 0.176471, 0), Color(0.176471, 0.176471, 0.176471, 0), Color(0.176419, 0.176419, 0.176419, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pocion:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D2:amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CPUParticles2D:amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CPUParticles2D:speed_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CPUParticles2D2:speed_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 1.0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_levitamiento"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CPUParticles2D:spread")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_64ian"]
 resource_name = "levitamiento"
@@ -46,6 +148,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4chrs"]
 _data = {
+"aparecer": SubResource("Animation_771jq"),
 "levitamiento": SubResource("Animation_64ian")
 }
 
@@ -65,14 +168,15 @@ position = Vector2(-1, 3)
 shape = SubResource("CircleShape2D_g7n2m")
 
 [node name="Sombra" type="Sprite2D" parent="."]
-modulate = Color(0.176419, 0.176419, 0.176419, 1)
+modulate = Color(0.176471, 0.176471, 0.176471, 0)
 position = Vector2(1, 5)
-scale = Vector2(0.507223, 0.5)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hcuyl")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 skew = -0.829031
 amount = 2
+speed_scale = 10.0
 texture = SubResource("AtlasTexture_vdyqa")
 emission_shape = 1
 emission_sphere_radius = 4.0
@@ -83,7 +187,7 @@ scale_amount_max = 0.7
 color = Color(1, 1, 0, 1)
 
 [node name="Pocion" type="Sprite2D" parent="."]
-position = Vector2(0, -0.0565754)
+modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ksq8t")
 
@@ -91,11 +195,12 @@ texture = ExtResource("1_ksq8t")
 libraries = {
 "": SubResource("AnimationLibrary_4chrs")
 }
-autoplay = "levitamiento"
+autoplay = "aparecer"
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 skew = -0.829031
 amount = 2
+speed_scale = 10.0
 texture = SubResource("AtlasTexture_vdyqa")
 emission_shape = 1
 emission_sphere_radius = 4.0
