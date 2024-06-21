@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cg4o1dqm08nvi"]
+[gd_scene load_steps=26 format=3 uid="uid://cg4o1dqm08nvi"]
 
 [ext_resource type="Script" path="res://Characters/Player/character_body_2d.gd" id="1_k8407"]
 [ext_resource type="Texture2D" uid="uid://ddcnaxu1t2s1o" path="res://Characters/Player/Hooded knight_finalsheet-1.png (1).png" id="2_el8pd"]
@@ -385,6 +385,23 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_jjel5"]
+resource_name = "hurted"
+length = 0.07
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 6), Vector2i(3, 6), Vector2i(2, 6)]
+}
+
 [sub_resource type="Animation" id="Animation_eswyb"]
 resource_name = "walkDown"
 loop_mode = 1
@@ -562,6 +579,7 @@ _data = {
 "attackUp": SubResource("Animation_ffxtq"),
 "deathLeft": SubResource("Animation_hrd2l"),
 "deathRight": SubResource("Animation_786wn"),
+"hurted": SubResource("Animation_jjel5"),
 "walkDown": SubResource("Animation_eswyb"),
 "walkLeft": SubResource("Animation_uvu0b"),
 "walkRight": SubResource("Animation_fr6ct"),
@@ -578,8 +596,6 @@ size = Vector2(12, 26)
 [node name="char1" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_k8407")
-speed = 70
-maxHealth = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

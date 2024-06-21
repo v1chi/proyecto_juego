@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 var lastAnimDirection: String = "Down"
 var isAttacking: bool = false
+var damaged = 5
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
-
 
 var path_menu = "res://Menu/menu.tscn"
 signal healthChanged
@@ -21,9 +21,12 @@ var custom_speed = 1
 var knockback = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/knockback.tscn").instantiate()
 
 var can_revive = false
-## Carta impl idle
 
 @onready var idle_timer = $IdleTimer
+@onready var attack_cooldown_timer = $attack_cooldown
+
+func _ready():
+	attack_cooldown_timer.wait_time = 0.5  
 
 func start_timer_idle():
 	if idle_timer.is_stopped():
@@ -33,27 +36,27 @@ func stop_timer_idle():
 	if not(idle_timer.is_stopped()):
 		idle_timer.stop()
 
-## Carta impl idle
-
-func handleImput():
+func handleInput():
 	var moveDirection = Input.get_vector("left", "right", "up", "down")
-	velocity = moveDirection*speed*2
+	velocity = moveDirection * speed * 2
 	
 	if Input.is_action_just_pressed("attack"):
-		animations.play("attack" + lastAnimDirection, -1, custom_speed, false)
-		isAttacking = true
-		$audioAtaque.play()
-		await animations.animation_finished
-		isAttacking = false
-		
+		if not isAttacking and enemy_attack_cooldown:
+			isAttacking = true
+			enemy_attack_cooldown = false
+			animations.play("attack" + lastAnimDirection, -1, custom_speed, false)
+			$audioAtaque.play()
+			await animations.animation_finished
+			isAttacking = false
+			attack_cooldown_timer.start()
 	
 func updateAnimation():
-	if isAttacking: return
+	if isAttacking:
+		return
 	
 	if velocity.length() == 0:
 		animations.play("walkStand")
 		start_timer_idle()
-	
 	else:
 		stop_timer_idle()
 		var direction = "Down"
@@ -68,19 +71,20 @@ func updateAnimation():
 		lastAnimDirection = direction
 
 func _physics_process(delta):
-	
 	healthChanged.emit(currentHealth)
-	if  currentHealth == 1:
+	if currentHealth == 1:
 		lowHealth.emit() 
+	if damaged != currentHealth:
+		await hurted()
+		damaged = currentHealth
 	elif currentHealth <= 0:
+		await hurted()
 		await dead()
-		
 	
-	handleImput()
+	handleInput()
 	move_and_slide()
 	updateAnimation()
 	enemy_attack()
-
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
@@ -97,7 +101,6 @@ func dead():
 	else:
 		Global.goto_scene(path_menu)
 	
-
 func _on_revive_card():
 	revivePlayer.emit()
 	enemy_attack_cooldown = false
@@ -107,31 +110,28 @@ func _on_revive_card():
 	healthChanged.emit(currentHealth)
 	await animations.animation_finished 
 	remove_child(knockback)
-	$attack_cooldown.start()
 	set_physics_process(true)
-	
-	
-	
 
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
-		
 		
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
 
 func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown == true:
+	if enemy_inattack_range and enemy_attack_cooldown:
 		currentHealth -= received_damage
 		enemy_attack_cooldown = false
-		$attack_cooldown.start()
-		
+		attack_cooldown_timer.start()
 		
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 	
+func hurted():
+	$AnimationPlayer.play("hurted")
+	await $AnimationPlayer.animation_finished
+	
 func player():
 	pass
-
