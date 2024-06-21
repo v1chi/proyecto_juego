@@ -1,4 +1,6 @@
 extends AbstractEnemy
+
+
 var last_direction = Vector2.ZERO
 
 func _init():

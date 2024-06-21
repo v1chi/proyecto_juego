@@ -385,7 +385,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jywya"]
-radius = 83.006
+radius = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_utaar"]
 radius = 6.32456
@@ -397,7 +397,7 @@ size = Vector2(15, 32)
 size = Vector2(9, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msyfa"]
-radius = 30.6105
+radius = 17.6918
 
 [node name="Mague" type="CharacterBody2D"]
 position = Vector2(2, 1)
