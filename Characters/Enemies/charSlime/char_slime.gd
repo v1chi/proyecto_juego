@@ -1,8 +1,13 @@
 extends AbstractEnemy
 
+@export var patrol_speed: int = 10
+@export var patrol_distance: int = 200
+var patrol_direction: int = 1
+var start_position: Vector2
 
 func _ready():
 	score = 5
+	start_position = position
 
 func _physics_process(delta):
 	if health <= 0:
@@ -10,7 +15,6 @@ func _physics_process(delta):
 		self.death_signal.emit()
 		await hurted()
 		await dead()
-		
 	else:
 		if damaged != health:
 			await hurted()
@@ -19,7 +23,6 @@ func _physics_process(delta):
 			await attack()		
 		procesamiento(delta)
 
-
 func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
@@ -27,10 +30,7 @@ func procesamiento(delta):
 		var coll = move_and_collide(velocity * delta)
 		updateAnimation(moveDirection)
 	else:
-		var moveDirection = Vector2.ZERO
-		var velocity = moveDirection.normalized() * speed + knockback
-		var coll = move_and_collide(velocity * delta)
-		$AnimationPlayer.play("walkStand")
+		patrullar(delta)
 	knockback = lerp(knockback, Vector2.ZERO, 0.05)
 
 func updateAnimation(direction):
@@ -47,8 +47,6 @@ func updateAnimation(direction):
 			animationName = "walkRight" #down
 		elif direction.y < 0:
 			animationName = "walkLeft" #up
-		else:
-			animationName = "walkStand"
 	$AnimationPlayer.play(animationName)
 
 func _on_detection_body_entered(body):
@@ -65,15 +63,13 @@ func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
 		receive_damage(attack_damage)
 
-
 func dead():
 	set_physics_process(false)
 	$AnimationPlayer.play("deathRight")
 	mostrar_score()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
-	queue_free()
-	
+	queue_free()	
 
 func hurted():
 	$AnimationPlayer.play("hurted")
@@ -88,5 +84,17 @@ func attack():
 	$AnimationPlayer.play("attack")
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
-	toAttack = false
+	toAttack = false	
+
+func patrullar(delta):
+	var moveDirection = Vector2(patrol_direction, 0)
+	var velocity = moveDirection * patrol_speed * delta
+	var coll = move_and_collide(velocity)
 	
+	if coll:
+		patrol_direction *= -1
+
+	if abs(position.x - start_position.x) > patrol_distance:
+		patrol_direction *= -1
+
+	updateAnimation(moveDirection)
