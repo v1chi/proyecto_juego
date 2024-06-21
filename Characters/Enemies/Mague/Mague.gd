@@ -1,10 +1,8 @@
 extends AbstractEnemy
-
-
 var last_direction = Vector2.ZERO
 
 func _init():
-	speed = 20
+	speed = 30
 	score = 50
 
 func _physics_process(delta):
@@ -23,7 +21,7 @@ func _physics_process(delta):
 
 func procesamiento(delta):
 	if playerChase:
-		var moveDirection = player.position - position
+		var moveDirection = -player.position + position
 		last_direction = moveDirection.normalized()  # Guardar la última dirección de movimiento
 		var velocity = moveDirection.normalized() * speed + knockback
 		var coll = move_and_collide(velocity * delta)
@@ -82,12 +80,12 @@ func attack():
 	set_physics_process(false)
 	var attack_animation = "attackDown"  # Valor por defecto
 	if abs(last_direction.x) > abs(last_direction.y):
-		if last_direction.x > 0:
+		if last_direction.x < 0:
 			attack_animation = "attackRight"
 		else:
 			attack_animation = "attackLeft"
 	else:
-		if last_direction.y > 0:
+		if last_direction.y < 0:
 			attack_animation = "attackDown"
 		else:
 			attack_animation = "attackUp"
@@ -95,4 +93,3 @@ func attack():
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false
-

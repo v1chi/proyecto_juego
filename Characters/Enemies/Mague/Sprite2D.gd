@@ -1,15 +1,17 @@
-extends AbstractEnemy
+extends CharacterBody2D
 
+var speed = 20
+var playerChase = false
+var toAttack = false
+var player = null
+var health = 3
+var damaged = 3
+var attack_damage = 1
 
-var last_direction = Vector2.ZERO
-
-func _init():
-	speed = 20
-	score = 50
+signal death_signal
 
 func _physics_process(delta):
-	if health <= 0:
-		set_physics_process(false)
+	if health == 0:
 		death_signal.emit()
 		await hurted()
 		await dead()
@@ -24,13 +26,13 @@ func _physics_process(delta):
 func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
-		last_direction = moveDirection.normalized()  # Guardar la última dirección de movimiento
-		var velocity = moveDirection.normalized() * speed + knockback
+		var velocity = moveDirection.normalized() * speed
 		var coll = move_and_collide(velocity * delta)
+		if coll:
+			print(coll.get_collider().name)
 		updateAnimation(moveDirection)
 	else:
 		$AnimationPlayer.play("walkStand")
-	knockback = lerp(knockback, Vector2.ZERO, 0.05)
 
 func updateAnimation(direction):
 	var xComponent = abs(direction.x)
@@ -43,9 +45,9 @@ func updateAnimation(direction):
 			animationName = "walkLeft"
 	else:
 		if direction.y > 0:
-			animationName = "walkDown"
+			animationName = "walkRight" #down
 		elif direction.y < 0:
-			animationName = "walkUp"
+			animationName = "walkLeft" #up
 		else:
 			animationName = "walkStand"
 	$AnimationPlayer.play(animationName)
@@ -62,14 +64,16 @@ func _on_detection_body_exited(body):
 
 func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
-		receive_damage(attack_damage)
+		health -= attack_damage
 
 func dead():
+	set_physics_process(false)
 	$AnimationPlayer.play("deathRight")
-	mostrar_score()
 	await $AnimationPlayer.animation_finished
-	Global.score_agregate(score)
 	queue_free()
+
+func enemy():
+	pass
 
 func hurted():
 	$AnimationPlayer.play("hurted")
@@ -80,19 +84,7 @@ func _on_attack_detector_area_shape_entered(area_rid, area, area_shape_index, lo
 
 func attack():
 	set_physics_process(false)
-	var attack_animation = "attackDown"  # Valor por defecto
-	if abs(last_direction.x) > abs(last_direction.y):
-		if last_direction.x > 0:
-			attack_animation = "attackRight"
-		else:
-			attack_animation = "attackLeft"
-	else:
-		if last_direction.y > 0:
-			attack_animation = "attackDown"
-		else:
-			attack_animation = "attackUp"
-	$AnimationPlayer.play(attack_animation)
+	$AnimationPlayer.play("attack")
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)
 	toAttack = false
-
