@@ -9,6 +9,7 @@ func _ready():
 	score = 5
 	start_position = position
 
+
 func _physics_process(delta):
 	if health <= 0:
 		set_physics_process(false)

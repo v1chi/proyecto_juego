@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://0ik8344ikmfh"]
+[gd_scene load_steps=23 format=3 uid="uid://0ik8344ikmfh"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/Mague/Mague.gd" id="1_cj8qp"]
 [ext_resource type="Texture2D" uid="uid://dqlkkt5281u" path="res://Characters/Enemies/Mague/Mage-Sheet.png" id="2_fvpvc"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_51d7h"]
+[ext_resource type="Script" path="res://Characters/Enemies/Mague/Zonas de spawn.gd" id="4_cpjmi"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -416,6 +417,7 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
+visible = false
 
 [node name="detection shape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jywya")
@@ -426,6 +428,7 @@ shape = SubResource("CircleShape2D_utaar")
 disabled = true
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="body shape" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(-0.5, 5)
@@ -439,11 +442,18 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_51d7h")
 
 [node name="attack detector" type="Area2D" parent="."]
+visible = false
 
 [node name="attack detector shape" type="CollisionShape2D" parent="attack detector"]
 position = Vector2(0, 3)
 rotation = -0.649836
 shape = SubResource("CircleShape2D_msyfa")
+
+[node name="Zonas de spawn" type="Node2D" parent="."]
+script = ExtResource("4_cpjmi")
+
+[node name="Area2D" type="Node2D" parent="Zonas de spawn"]
+position = Vector2(19, -6)
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

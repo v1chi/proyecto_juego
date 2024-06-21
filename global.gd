@@ -10,6 +10,11 @@ func set_score_zero():
 	update_score.emit()
 
 
+func wait(seconds):
+	await get_tree().create_timer(seconds).timeout
+	pass
+
+
 func score_agregate(score):
 	self.score += score
 	update_score.emit()

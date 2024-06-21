@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://di6csugfnhws6"]
+[gd_scene load_steps=18 format=3 uid="uid://di6csugfnhws6"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/GInfected/GInfected.gd" id="1_cwoff"]
 [ext_resource type="Texture2D" uid="uid://365qmkhtd3e4" path="res://Characters/Enemies/GInfected/Hooded knight_finalsheet-1.png (2).png" id="2_ak3m6"]
@@ -17,6 +17,33 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vqgxd"]
+resource_name = "aparecer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_8as7f"]
@@ -184,6 +211,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6lxx2"]
 _data = {
 "RESET": SubResource("Animation_7cxmw"),
+"aparecer": SubResource("Animation_vqgxd"),
 "attack": SubResource("Animation_8as7f"),
 "deathRight": SubResource("Animation_er0rn"),
 "hurted": SubResource("Animation_4u2en"),

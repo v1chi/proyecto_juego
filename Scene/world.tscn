@@ -1093,6 +1093,7 @@ sources/1 = SubResource("TileSetAtlasSource_4bs02")
 size = Vector2(288.5, 27)
 
 [node name="world2" type="Node2D" groups=["World"]]
+position = Vector2(-1, 0)
 script = ExtResource("1_x4vg2")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1130,7 +1131,7 @@ position_smoothing_enabled = true
 position = Vector2(98, 224)
 
 [node name="charSlime35" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
-position = Vector2(129, 248)
+position = Vector2(121, 60)
 
 [node name="charSlime36" parent="TileMap" groups=["Enemies"] instance=ExtResource("6_8is44")]
 position = Vector2(102, 266)

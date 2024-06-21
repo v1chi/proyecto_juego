@@ -15,6 +15,7 @@ var knockback = Vector2.ZERO
 var score = 10
 var path_puntuacion = "res://Characters/Enemies/puntuacion.tscn"
 var show_score = false
+var anim
 signal death_signal
 
 
@@ -37,6 +38,12 @@ func hurted():
 # Abstracto
 func attack():
 	pass
+
+
+func desactivar_fisicas(time):
+	set_physics_process(false)
+	await Global.wait(time)
+	set_physics_process(true)
 
 
 func mostrar_score():

@@ -33,6 +33,7 @@ func _ready():
 	# Función para spawnear enemigos
 func _spawn_enemy():
 	var random_enemy = enemy_scenes[randi() % enemy_scenes.size()]
+	
 	var instancia = load(random_enemy).instantiate()
 
 	var spawn_position
@@ -48,6 +49,7 @@ func _spawn_enemy():
 	
 	instancia.position = spawn_position
 	$TileMap.add_child(instancia)
+	_generar_particula(instancia)
 
 func time_left_alive():
 	var time_left = timer.time_left
@@ -57,6 +59,17 @@ func time_left_alive():
 
 func _process(delta):
 	label.text = "%02d:%02d" % time_left_alive()
+
+var particula = load("res://Carpeta Cartas/Escena Carta/Assets/Effect and Bullet 16x16 (1)/efecto_entrada.tscn")
+func _generar_particula(instancia):
+	var par = particula.instantiate()
+	instancia.add_child(par)
+	instancia.get_node("AnimationPlayer").play("aparecer")
+	par.set_emitting(true)
+	instancia.desactivar_fisicas(1)
+
+
+
 
 # Asegurarse de que el random number generator está inicializado
 func _init():

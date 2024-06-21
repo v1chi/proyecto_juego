@@ -26,7 +26,7 @@ var can_revive = false
 @onready var attack_cooldown_timer = $attack_cooldown
 
 func _ready():
-	attack_cooldown_timer.wait_time = 0.5  
+	attack_cooldown_timer.wait_time = 0.7  
 
 func start_timer_idle():
 	if idle_timer.is_stopped():
@@ -78,6 +78,7 @@ func _physics_process(delta):
 		await hurted()
 		damaged = currentHealth
 	elif currentHealth <= 0:
+		set_physics_process(false)
 		await hurted()
 		await dead()
 	
@@ -85,13 +86,14 @@ func _physics_process(delta):
 	move_and_slide()
 	updateAnimation()
 	enemy_attack()
+	set_physics_process(true)
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
 	pass
 	
 func dead():
-	set_physics_process(false)
+	
 	animations.play("deathLeft")
 	$audioMuerte.play()
 	await animations.animation_finished
