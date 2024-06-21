@@ -4526,7 +4526,7 @@ sources/2 = SubResource("TileSetAtlasSource_2itx7")
 sources/7 = SubResource("TileSetAtlasSource_bjcx2")
 sources/8 = SubResource("TileSetAtlasSource_3nghd")
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" groups=["World"]]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

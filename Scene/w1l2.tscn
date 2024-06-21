@@ -3905,7 +3905,7 @@ sources/7 = SubResource("TileSetAtlasSource_7yjux")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3t2"]
 size = Vector2(122, 168.688)
 
-[node name="world2" type="Node2D"]
+[node name="world2" type="Node2D" groups=["World"]]
 script = ExtResource("1_4muhk")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3941,7 +3941,7 @@ offset_top = 6.0
 offset_right = 108.0
 offset_bottom = 23.0
 
-[node name="ContenedorCartas" parent="CanvasLayer" instance=ExtResource("12_0gl21")]
+[node name="ContenedorCartas" parent="CanvasLayer" groups=["ContenedorCarta"] instance=ExtResource("12_0gl21")]
 
 [node name="Node" type="Node" parent="."]
 

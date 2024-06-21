@@ -15,9 +15,9 @@ script = ExtResource("1_3km8n")
 metadata/_edit_use_anchors_ = true
 
 [node name="ParentCard1" type="Node2D" parent="."]
-position = Vector2(8, 19)
-scale = Vector2(0.37, 0.37)
+position = Vector2(1, 14)
+scale = Vector2(0.6, 0.6)
 
 [node name="ParentCard2" type="Node2D" parent="."]
-position = Vector2(27, 19)
-scale = Vector2(0.37, 0.37)
+position = Vector2(25, 14)
+scale = Vector2(0.6, 0.6)

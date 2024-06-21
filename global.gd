@@ -39,13 +39,22 @@ func _deferred_goto_scene(path):
 	var s = ResourceLoader.load(path)
 	current_scene = s.instantiate()
 	get_tree().root.add_child(current_scene)
+
+	if _is_world_scene():
+		_setup_card_in_world()
+		
+	get_tree().current_scene = current_scene
 	
-	#################### Codigo Temporal
-	var contenedor_carta = get_node("/root/world2/CanvasLayer/ContenedorCartas")
+
+func _is_world_scene():
+	var array_world = get_tree().get_nodes_in_group("World")
+	if array_world.size() == 0:
+		return false 
+	return true
+
+func _setup_card_in_world():
+	var contenedor_carta = get_tree().get_nodes_in_group("ContenedorCarta")[0]
 	if(contenedor_carta != null and GlobalCartas.carta1 != null):
 		contenedor_carta = contenedor_carta._setup_carta1(GlobalCartas.carta1)._setup_carta2(GlobalCartas.carta2)
 		contenedor_carta.add_cartas()
-	######################
-	
-	get_tree().current_scene = current_scene
 	
