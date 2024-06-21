@@ -4,7 +4,6 @@ extends Node2D
 @onready var player = $TileMap/char1
 
 @onready var spawn_timer = Timer.new()
-var spawn_range = 90  # Puedes ajustar este valor según lo necesites
 
 @onready var label = $CanvasLayer2/Control/Label
 @onready var timer = $CanvasLayer2/Control/Timer
@@ -39,17 +38,14 @@ func _spawn_enemy():
 	var spawn_position
 	var random_position = randi() % 4
 	if random_position == 0:
-		spawn_position = $SquaresLimits/TopLeft.position
+		spawn_position = $SquaresLimits.get_pos_valida_top_left()
 	elif random_position == 1:
-		spawn_position = $SquaresLimits/TopRight.position
+		spawn_position = $SquaresLimits.get_pos_valida_top_right()
 	elif random_position == 2:
-		spawn_position = $SquaresLimits/BottomLeft.position
+		spawn_position = $SquaresLimits.get_pos_valida_bottom_left()
 	else:
-		spawn_position = $SquaresLimits/BottomRight.position
+		spawn_position = $SquaresLimits.get_pos_valida_bottom_right()
 	
-	# Añadir aleatoriedad a la posición de spawn
-	spawn_position += Vector2(randf_range(-(spawn_range), spawn_range), randf_range(-spawn_range, spawn_range))
-
 	instancia.position = spawn_position
 	$TileMap.add_child(instancia)
 
