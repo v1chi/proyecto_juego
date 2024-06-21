@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2sqerc471nvn"]
 
 [ext_resource type="Script" path="res://Menu/Fondo Menu.gd" id="1_qq1k0"]
-[ext_resource type="Texture2D" uid="uid://qaflgffqf7" path="res://Menu/Fondo juego.png" id="1_vlo1c"]
+[ext_resource type="Texture2D" uid="uid://n2ys7dqti816" path="res://Menu/Fondo.png" id="2_wqx5c"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("1_qq1k0")
@@ -14,6 +14,6 @@ motion_offset = Vector2(10240, 10240)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(-6602.22, -6453.33)
-scale = Vector2(0.263282, 0.147502)
-texture = ExtResource("1_vlo1c")
+scale = Vector2(0.26, 0.19)
+texture = ExtResource("2_wqx5c")
 offset = Vector2(258.333, 201.34)
