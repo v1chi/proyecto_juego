@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq7jvu45ukye1"]
+[gd_scene load_steps=9 format=3 uid="uid://bq7jvu45ukye1"]
 
 [ext_resource type="Script" path="res://Online/leaderboard.gd" id="1_0rrhx"]
+[ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="2_5fthr"]
+[ext_resource type="PackedScene" uid="uid://cuoydvy8gief3" path="res://Carpeta Chat/scroll_container.tscn" id="2_evdpn"]
+[ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="3_o0ky5"]
+
+[sub_resource type="Theme" id="Theme_fdpkv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vs68"]
+texture = ExtResource("2_5fthr")
+texture_margin_left = 30.4125
+texture_margin_right = 29.7421
+region_rect = Rect2(145, 81, 46, 14)
+
+[sub_resource type="Animation" id="Animation_fs1f5"]
+resource_name = "cargando"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[center]Cargando[/center]", "[center]Cargando.[/center]", "[center]Cargando..[/center]", "[center]Cargando...[/center]", "[center]Cargando[/center]"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1w7n"]
+_data = {
+"cargando": SubResource("Animation_fs1f5")
+}
 
 [node name="Listado" type="Control"]
 layout_mode = 3
@@ -11,33 +44,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0rrhx")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Tabla"
-horizontal_alignment = 1
+[node name="LabelTitulo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_right = 245.0
+offset_bottom = 24.0
+theme = SubResource("Theme_fdpkv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vs68")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.585
-anchor_right = 0.5
-anchor_bottom = 0.585
-offset_left = -120.0
-offset_top = -55.975
-offset_right = 120.0
-offset_bottom = 56.025
-
-[node name="ContenedorTabla" type="RichTextLabel" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_font_sizes/normal_font_size = 6
+[node name="RichTextLabel" type="RichTextLabel" parent="LabelTitulo"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 24.0
+theme_override_fonts/normal_font = ExtResource("3_o0ky5")
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
+text = "[center][color=white]Leaderboard[/color][/center]"
+scroll_active = false
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 198.0
+offset_bottom = 91.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center]Cargando[/center]"
 fit_content = true
 
+[node name="ScrollContainer" parent="." instance=ExtResource("2_evdpn")]
+layout_mode = 1
+offset_left = 48.0
+offset_top = 24.0
+offset_right = -42.0
+offset_bottom = -44.0
+follow_focus = true
+
+[node name="VBoxContainer" parent="ScrollContainer" index="0"]
+size_flags_horizontal = 4
+alignment = 0
+
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y1w7n")
+}
+autoplay = "cargando"
+
+[editable path="ScrollContainer"]

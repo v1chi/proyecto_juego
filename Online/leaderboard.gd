@@ -26,13 +26,16 @@ func _on_request_completed(result, response_code, headers, body):
 	listado_player.sort_custom(_sort_dict_descendiente)
 	_crear_tabla()
 	
-
+var path_score_label = "res://Online/scorelabel.tscn"
 func _crear_tabla():
-	var tabla = $ScrollContainer/ContenedorTabla
-	var text_tabla = ""
+	var tabla = $ScrollContainer/VBoxContainer
 	var i = 1
 	for player in listado_player:
-		text_tabla = text_tabla + str(i) + "- " + player["playerName"] + "																				" + "Score: " + str(player["score"]) + "\n"
+		var player_label = load(path_score_label).instantiate()
+		tabla.add_child(player_label)
+		player_label.set_text_pos( "[center]#" + str(i) + "[/center]")
+		player_label.set_text_name("[left]" + player["playerName"] + "[/left]")
+		player_label.set_text_score("[center]" + str(player["score"]) + "[/center]")
 		i += 1
-	tabla.text = text_tabla
+	
 

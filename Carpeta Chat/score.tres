@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c6i6y0oy33ysu"]
+
+[ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="1_kncko"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwqnb"]
+texture = ExtResource("1_kncko")
+texture_margin_left = 0.810783
+region_rect = Rect2(144.512, 113, 46.4882, 14)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_rwqnb")

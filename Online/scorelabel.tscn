@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://oxycpvpo6yhp"]
+
+[ext_resource type="Script" path="res://Online/scorelabel.gd" id="1_nmqkw"]
+[ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="1_tjdbx"]
+[ext_resource type="Theme" uid="uid://c6i6y0oy33ysu" path="res://Carpeta Chat/score.tres" id="2_ijyt5"]
+[ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="3_ft231"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1y2vg"]
+texture = ExtResource("1_tjdbx")
+texture_margin_right = 2.16209
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="ScoreLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+grow_vertical = 2
+pivot_offset = Vector2(74, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_nmqkw")
+
+[node name="PLabel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 149.0
+offset_bottom = 12.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1y2vg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PLabel"]
+layout_mode = 1
+offset_top = 2.0
+offset_right = 148.0
+offset_bottom = 12.0
+alignment = 1
+
+[node name="PPos" type="Panel" parent="PLabel/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ijyt5")
+
+[node name="Pos" type="RichTextLabel" parent="PLabel/HBoxContainer/PPos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ft231")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[center]#1[/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="PName" type="Panel" parent="PLabel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ijyt5")
+
+[node name="Name" type="RichTextLabel" parent="PLabel/HBoxContainer/PName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ft231")
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+text = "[left]name[/left]"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="PScore" type="Panel" parent="PLabel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ijyt5")
+
+[node name="Score" type="RichTextLabel" parent="PLabel/HBoxContainer/PScore"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ft231")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "[center]#1[/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false

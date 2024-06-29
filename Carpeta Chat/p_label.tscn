@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://col53uafayjgo"]
+
+[ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="1_fec2p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iolel"]
+texture = ExtResource("1_fec2p")
+texture_margin_right = 2.16209
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="PLabel" type="Panel"]
+offset_top = -2.0
+offset_right = 148.0
+offset_bottom = 12.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iolel")
