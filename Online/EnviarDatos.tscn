@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://efy7jo8hg7en"]
+
+[ext_resource type="Script" path="res://Online/EnviarDatos.gd" id="1_v5lo1"]
+
+[node name="EnviarDatos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5lo1")
+
+[node name="nombre" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -10.5
+offset_right = 42.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+placeholder_text = "nombre:"
+expand_to_text_length = true
+
+[node name="NombreInvalido" type="RichTextLabel" parent="nombre"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 45.0
+offset_top = -7.0
+offset_right = 119.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 3
+text = "Nombre inválido:
+- El nombre del jugador no debe superar los 10 caracteres.
+- El nombre del jugador solo puede tener carácteres alfanuméricos (0-9 y A-Z)"
+fit_content = true
+
+[node name="puntuacion" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 7.5
+offset_right = 42.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+placeholder_text = "puntuación:"
+expand_to_text_length = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Introduce tu nombre"
+horizontal_alignment = 1
+
+[node name="OK" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.5
+offset_top = -26.0
+offset_right = 13.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+text = "OK"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="OK"]
+
+[connection signal="focus_exited" from="nombre" to="." method="_on_nombre_focus_exited"]
+[connection signal="button_up" from="OK" to="." method="_on_ok_button_up"]
