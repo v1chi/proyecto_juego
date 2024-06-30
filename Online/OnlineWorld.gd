@@ -53,8 +53,8 @@ func _spawn_enemy():
 
 func time_left_alive():
 	var time_left = timer.time_left
-	var minutes = floor(time_left / 60)
-	var seconds = int(minutes) % 60
+	var minutes = int(time_left / 60)
+	var seconds = int(abs(minutes*60 - time_left))
 	return [minutes, seconds]
 
 func _process(delta):

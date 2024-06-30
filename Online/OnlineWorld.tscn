@@ -1156,9 +1156,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="CanvasLayer2/Control"]
-wait_time = 30.0
+wait_time = 90.0
 one_shot = true
-autostart = true
 
 [node name="Label" type="Label" parent="CanvasLayer2/Control"]
 layout_mode = 0
