@@ -20,6 +20,7 @@ size_flags_vertical = 4
 script = ExtResource("1_nmqkw")
 
 [node name="PLabel" type="Panel" parent="."]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 0
 offset_top = -2.0
 offset_right = 149.0
@@ -34,7 +35,7 @@ offset_bottom = 12.0
 alignment = 1
 
 [node name="PPos" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(20, 0)
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")
@@ -60,7 +61,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="PName" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")
@@ -83,7 +84,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="PScore" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")
