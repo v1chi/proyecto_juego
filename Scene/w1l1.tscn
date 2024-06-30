@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ugr0v7dy1egw"]
+[gd_scene load_steps=26 format=3 uid="uid://ugr0v7dy1egw"]
 
 [ext_resource type="Script" path="res://Scene/world.gd" id="1_unw0i"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_afmhv"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cpslrly3sp6q0" path="res://TileSet/mystic_woods_free_2.2/sprites/tilesets/grass.png" id="5_akqhu"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="6_alup6"]
 [ext_resource type="Texture2D" uid="uid://dowku0grnnogv" path="res://TileSet/mystic_woods_free_2.2/sprites/objects/objects.png" id="7_4yfpc"]
-[ext_resource type="Script" path="res://Scene/Area2D.gd" id="7_t5d8q"]
 [ext_resource type="Texture2D" uid="uid://dvyvk08tho704" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_01.png" id="8_0jt10"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="8_r622l"]
 [ext_resource type="Texture2D" uid="uid://dwtwuhtfjc83k" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_02.png" id="9_lewwe"]
@@ -3902,8 +3901,35 @@ sources/5 = SubResource("TileSetAtlasSource_qefgm")
 sources/6 = SubResource("TileSetAtlasSource_l4bpw")
 sources/7 = SubResource("TileSetAtlasSource_7yjux")
 
+[sub_resource type="GDScript" id="GDScript_y8o6p"]
+script/source = "extends Area2D
+
+# Ruta de la nueva escena
+const SECONDARY_SCENE_PATH = \"res://Scene/w1l2.tscn\"
+var menu = \"res://Menu/menu.tscn\"
+
+
+# Función que se ejecuta cuando un cuerpo entra en el área
+func _on_Area2D_body_entered(body):
+	# Verifica si el cuerpo que entra es el personaje \"Char1\"
+	if body.name == \"char1\":
+		change_scene(\"res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn\")
+
+# Función para cambiar de escena
+func change_scene(scene_path):
+	Global.goto_scene(scene_path)
+
+# Conectar la señal del área para detectar la entrada de un cuerpo
+func _ready():
+	connect(\"body_entered\", Callable(self, \"_on_Area2D_body_entered\"))
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3t2"]
-size = Vector2(122, 24.75)
+size = Vector2(122, 33.0049)
+
+[sub_resource type="GDScript" id="GDScript_xbgl1"]
+script/source = "extends CollisionShape2D
+"
 
 [node name="world2" type="Node2D" groups=["World"]]
 script = ExtResource("1_unw0i")
@@ -3947,10 +3973,11 @@ offset_bottom = 23.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(318, -1943)
-script = ExtResource("7_t5d8q")
+script = SubResource("GDScript_y8o6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-215, 3247.63)
+position = Vector2(-208, 3230)
 shape = SubResource("RectangleShape2D_ee3t2")
+script = SubResource("GDScript_xbgl1")
 
 [node name="Pausa" parent="." instance=ExtResource("8_r622l")]

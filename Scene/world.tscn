@@ -1120,7 +1120,7 @@ y_sort_enabled = true
 position = Vector2(-141, 3148)
 
 [node name="char1" parent="TileMap" groups=["Player"] instance=ExtResource("5_nf1od")]
-position = Vector2(116, 93)
+position = Vector2(115, 91)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
@@ -1422,6 +1422,7 @@ offset_bottom = 23.0
 [node name="Node" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 16)
 script = ExtResource("7_1lbf2")
 metadata/_edit_group_ = true
 
