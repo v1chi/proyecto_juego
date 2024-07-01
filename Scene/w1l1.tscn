@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ugr0v7dy1egw"]
+[gd_scene load_steps=27 format=3 uid="uid://ugr0v7dy1egw"]
 
 [ext_resource type="Script" path="res://Scene/world.gd" id="1_unw0i"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_afmhv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dvyvk08tho704" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_01.png" id="8_0jt10"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="8_r622l"]
 [ext_resource type="Texture2D" uid="uid://dwtwuhtfjc83k" path="res://TileSet/Joyquest_demo_v1.5.6(ASSETS)/PNG/buildings/ob_house_02.png" id="9_lewwe"]
+[ext_resource type="Script" path="res://Scene/Cambios Escenas/w1l1.gd" id="13_cmono"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_afmhv")
@@ -3905,7 +3906,7 @@ sources/7 = SubResource("TileSetAtlasSource_7yjux")
 script/source = "extends Area2D
 
 # Ruta de la nueva escena
-const SECONDARY_SCENE_PATH = \"res://Scene/w1l2.tscn\"
+var secondary_scene_path = \"\"
 var menu = \"res://Menu/menu.tscn\"
 
 
@@ -3916,12 +3917,15 @@ func _on_Area2D_body_entered(body):
 		change_scene(\"res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn\")
 
 # Función para cambiar de escena
-func change_scene(scene_path):
-	Global.goto_scene(scene_path)
+func change_scene(scene_card_path):
+	Global.goto_scene_card_to_world(scene_card_path, secondary_scene_path)
 
 # Conectar la señal del área para detectar la entrada de un cuerpo
 func _ready():
 	connect(\"body_entered\", Callable(self, \"_on_Area2D_body_entered\"))
+	secondary_scene_path = \"res://Scene/w1l2.tscn\"
+	
+
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3t2"]
@@ -3952,8 +3956,8 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="char1" parent="TileMap" instance=ExtResource("4_oq0tj")]
-position = Vector2(115, 92)
-speed = 37
+position = Vector2(104, 1154)
+speed = 41
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)
@@ -3976,6 +3980,15 @@ position = Vector2(318, -1943)
 script = SubResource("GDScript_y8o6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-208, 3230)
+shape = SubResource("RectangleShape2D_ee3t2")
+script = SubResource("GDScript_xbgl1")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(318, -1943)
+script = ExtResource("13_cmono")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-208, 3230)
 shape = SubResource("RectangleShape2D_ee3t2")
 script = SubResource("GDScript_xbgl1")

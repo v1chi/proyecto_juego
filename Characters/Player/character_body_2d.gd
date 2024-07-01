@@ -26,6 +26,7 @@ var can_revive = false
 @onready var attack_cooldown_timer = $attack_cooldown
 
 func _ready():
+	add_to_group("Player")
 	attack_cooldown_timer.wait_time = 0.7  
 
 func start_timer_idle():

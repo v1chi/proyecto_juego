@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/Player/character_body_2d.tscn" id="10_1jb1p"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="11_qm2ha"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="12_sj74d"]
-[ext_resource type="Script" path="res://Scene/Area2D.gd" id="13_85oi4"]
+[ext_resource type="Script" path="res://Scene/Cambios Escenas/w1l3.gd" id="13_m42d2"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="14_7acbw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
@@ -3947,10 +3947,10 @@ offset_bottom = 23.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(318, -1943)
-script = ExtResource("13_85oi4")
+script = ExtResource("13_m42d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-215, 3247.63)
+position = Vector2(-194, 2116)
 shape = SubResource("RectangleShape2D_ee3t2")
 
 [node name="Pausa" parent="." instance=ExtResource("14_7acbw")]

@@ -24,7 +24,23 @@ func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	
+
+func goto_scene_card_to_world(path_card, path_world):
+	call_deferred("_deferred_goto_scene_card_to_world", path_card, path_world)
+
+func _deferred_goto_scene_card_to_world(path_card, path_world):
+	current_scene.free()
+	var s = ResourceLoader.load(path_card)
+	current_scene = s.instantiate()
+	current_scene.path_siguiente_piso = path_world
+	get_tree().root.add_child(current_scene)
 	
+	if _is_world_scene():
+		_setup_card_in_world()
+		
+	get_tree().current_scene = current_scene
+	
+
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.

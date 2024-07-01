@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bentwn41s8uf"]
 
-[ext_resource type="Script" path="res://Scene/scorer.gd" id="1_ontb4"]
+[ext_resource type="Script" path="res://Online/Carpeta Score/scorer.gd" id="1_ontb4"]
 [ext_resource type="Theme" uid="uid://cnq38gpyrr5nb" path="res://Carpeta Cartas/Escena Carta/Assets/new_theme.tres" id="2_vbi2r"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel_NO_input.gd" id="3_7ogau"]
 [ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="4_s55hk"]

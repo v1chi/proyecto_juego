@@ -1,7 +1,7 @@
 extends Area2D
 
 # Ruta de la nueva escena
-const SECONDARY_SCENE_PATH = "res://Scene/w2l3.tscn"
+var SECONDARY_SCENE_PATH = "res://Scene/w1l3.tscn"
 var menu = "res://Menu/menu.tscn"
 
 
@@ -12,9 +12,10 @@ func _on_Area2D_body_entered(body):
 		change_scene("res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn")
 
 # Función para cambiar de escena
-func change_scene(scene_path):
-	Global.goto_scene(scene_path)
+func change_scene(scene_card_path):
+	Global.goto_scene_card_to_world(scene_card_path, SECONDARY_SCENE_PATH)
 
 # Conectar la señal del área para detectar la entrada de un cuerpo
 func _ready():
 	connect("body_entered", Callable(self, "_on_Area2D_body_entered"))
+	
