@@ -4,19 +4,28 @@ extends Node2D
 @onready var player = $TileMap/char1
 
 @onready var spawn_timer = Timer.new()
-
+@onready var gui_cartas = $CanvasLayer2/GuiCartas
 @onready var label = $CanvasLayer2/Control/Label
-@onready var timer = $CanvasLayer2/Control/Timer
+@onready var main_timer = $CanvasLayer2/Control/Timer
 
+var path_enviar_dato = "res://Online/EnviarDatos.tscn"
 # Definimos los archivos de los diferentes enemigos
 var enemy_scenes = [
 	"res://Characters/Enemies/charSlime/char_slime.tscn",
 	"res://Characters/Enemies/GInfected/GInfected.tscn",
 ]
 
+func _connect_signal_main_timer():
+	gui_cartas.connect_main_timer(main_timer)
+	main_timer.timeout.connect(_on_main_timer_timeout)
+
+func _on_main_timer_timeout():
+	var escena_enviar = load(path_enviar_dato).instantiate()
+	$CanvasLayer2.add_child(escena_enviar)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer.start()
+	_connect_signal_main_timer()
+	main_timer.start()
 	contenedorCorazones.setMaxHearts(player.maxHealth)
 	player.healthChanged.connect(contenedorCorazones.updateHearts)
 	
@@ -52,7 +61,7 @@ func _spawn_enemy():
 	_generar_particula(instancia)
 
 func time_left_alive():
-	var time_left = timer.time_left
+	var time_left = main_timer.time_left
 	var minutes = int(time_left / 60)
 	var seconds = int(abs(minutes*60 - time_left))
 	return [minutes, seconds]

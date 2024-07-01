@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Online/EnviarDatos.gd" id="1_v5lo1"]
 
 [node name="EnviarDatos" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v5lo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.109804, 0.109804, 0.109804, 0.403922)
 
 [node name="nombre" type="LineEdit" parent="."]
 layout_mode = 1
@@ -50,6 +60,7 @@ text = "Nombre inválido:
 fit_content = true
 
 [node name="puntuacion" type="LineEdit" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,14 +88,15 @@ horizontal_alignment = 1
 
 [node name="OK" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -13.5
-offset_top = -26.0
-offset_right = 13.5
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.711
+anchor_right = 0.498
+anchor_bottom = 0.711
+offset_left = -13.52
+offset_top = -12.985
+offset_right = 13.48
+offset_bottom = 13.015
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 13

@@ -88,6 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_5l5bf")
 horizontal_scroll_mode = 0
 
@@ -95,5 +96,6 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
-theme_override_constants/separation = 10
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 0
 alignment = 1

@@ -7,6 +7,7 @@ var current_score
 var anim : AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.set_score_zero()
 	current_score = 0
 	anim = $AnimationPlayer
 	text_score = $ParentPanel/Panel/RichTextLabel

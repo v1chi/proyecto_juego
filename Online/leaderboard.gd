@@ -31,6 +31,7 @@ var paleta_color_pos = [[0,255,255],[0,3*255/4,255],[0,255/2,255]]
 func _crear_tabla():
 	var tabla = $ScrollContainer/VBoxContainer
 	var i = 1
+	print(listado_player.size())
 	for player in listado_player:
 		var player_label = load(path_score_label).instantiate()
 		_rellenar_label(player_label, i)
@@ -39,8 +40,13 @@ func _crear_tabla():
 		player_label.set_text_name("[left]" + player["playerName"] + "[/left]")
 		player_label.set_text_score("[center]" + str(player["score"]) + "[/center]")
 		i += 1
+		print(i)
 	
 func _rellenar_label(label, pos):
 	if pos <= 3:
 		label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2]))
 #Color(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2])
+
+var menu = "res://Menu/menu.tscn"
+func _on_button_pressed():
+	Global.goto_scene(menu)

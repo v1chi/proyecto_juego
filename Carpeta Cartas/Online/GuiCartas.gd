@@ -51,5 +51,10 @@ func _on_timer_timeout():
 	await wait(1)
 	$AnimationPlayer.play_backwards("aviso_entrada")
 	
+func connect_main_timer(main_timer):
+	main_timer.timeout.connect(_on_main_timer_timeout)
 
+func _on_main_timer_timeout():
+	$Timer.timeout.disconnect(_on_timer_timeout)
+	
 	

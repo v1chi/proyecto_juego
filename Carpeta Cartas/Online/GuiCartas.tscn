@@ -164,9 +164,11 @@ script = ExtResource("1_xj2hu")
 
 [node name="ParentCarta1" type="Node2D" parent="."]
 position = Vector2(35, 12)
+scale = Vector2(0.75, 0.75)
 
 [node name="ParentCarta2" type="Node2D" parent="."]
 position = Vector2(8, 12)
+scale = Vector2(0.75, 0.75)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

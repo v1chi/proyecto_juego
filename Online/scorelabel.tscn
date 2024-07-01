@@ -11,6 +11,7 @@ texture_margin_right = 2.16209
 region_rect = Rect2(64, 32, 16, 16)
 
 [node name="ScoreLabel" type="Control"]
+custom_minimum_size = Vector2(240, 10)
 layout_mode = 3
 anchors_preset = 0
 grow_vertical = 2
@@ -35,7 +36,7 @@ offset_bottom = 12.0
 alignment = 1
 
 [node name="PPos" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")
