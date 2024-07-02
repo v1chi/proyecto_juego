@@ -1,6 +1,6 @@
 extends AbstractCard
 
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/Q.tres"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas malas/Vida reducida carta mala.png"
 var flag = true
 var player
 var contenedor_corazon
@@ -12,6 +12,8 @@ var contador_efectos
 
 func _ready():
 	super._ready()
+	super.set_scale_carta_frontal(Vector2(0.14,0.15))
+	super.set_scale_carta_trasera(Vector2(0.26,0.26))
 	print("Ready de la clase concreta")
 	
 
@@ -44,3 +46,4 @@ func _init():
 	self.id = 10
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Vida reducida"
+	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/parte trasera mala.png"

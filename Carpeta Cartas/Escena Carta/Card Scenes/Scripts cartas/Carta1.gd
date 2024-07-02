@@ -1,10 +1,6 @@
 extends AbstractCard
 
 # Carta qie afecta la velocidad del jugador
-
-
-
-
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres"
 var player
 

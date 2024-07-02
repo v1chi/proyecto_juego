@@ -1,6 +1,6 @@
 extends AbstractCard
 
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Don_sup.png"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas buenas/Don del superviviente.png"
 var flag = true
 var player
 var enemies_defeated_count
@@ -78,3 +78,4 @@ func _init():
 	self.id = 9
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Entras en un estado de supervivencia al estar con 1 corazón"
+	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/carta_trasera_buena.png"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://burgfybsksbq7"
-path="res://.godot/imported/carta_trasera_buena.png-8c44e02e1ae1bd03a1675cf7d44c404f.ctex"
+uid="uid://cis2uurvkuwvu"
+path="res://.godot/imported/Inflinges menos daño.png-68b28b03f752d7e57a6a4d6427f517e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Carpeta Cartas/Escena Carta/cartas_ia/carta_trasera_buena.png"
-dest_files=["res://.godot/imported/carta_trasera_buena.png-8c44e02e1ae1bd03a1675cf7d44c404f.ctex"]
+source_file="res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas malas/Inflinges menos daño.png"
+dest_files=["res://.godot/imported/Inflinges menos daño.png-68b28b03f752d7e57a6a4d6427f517e3.ctex"]
 
 [params]
 
