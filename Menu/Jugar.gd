@@ -12,9 +12,9 @@ func _process(delta):
 
 var cambio1 = ("res://Menu/pantalla carga.tscn")
 var cambio = "res://Carpeta Cartas/Escena Selección/Eleccion_carta_final.tscn"
-
+var world1 = "res://Scene/w1l1.tscn"
 func _on_pressed():
 	Global.score = 0
-	Global.goto_scene(cambio1)
+	Global.goto_scene_card_to_world(cambio, world1)
 
 
