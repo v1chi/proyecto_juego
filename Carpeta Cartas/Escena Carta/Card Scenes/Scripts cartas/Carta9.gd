@@ -1,6 +1,6 @@
 extends AbstractCard
 
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/Q.tres"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Don_sup.png"
 var flag = true
 var player
 var enemies_defeated_count
@@ -11,6 +11,8 @@ var contador_efectos
 
 func _ready():
 	super._ready()
+	super.set_scale_carta_frontal(Vector2(0.15,0.15))
+	super.set_scale_carta_trasera(Vector2(0.21, 0.21))
 	print("Ready de la clase concreta")
 	
 

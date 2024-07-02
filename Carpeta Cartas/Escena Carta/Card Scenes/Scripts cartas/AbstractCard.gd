@@ -6,7 +6,8 @@ const PATH_ESCENA_CARTA : String = "res://Carpeta Cartas/Escena Carta/Card Scene
 var imagen_carta : Resource = preload("res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/JOKER_ROJO.tres")
 
 
-var sprite_carta : Sprite2D
+var sprite_carta_frontal : Sprite2D
+var sprite_carta_trasera : Sprite2D
 var anim : AnimationPlayer
 
 
@@ -46,9 +47,18 @@ func get_descripcion():
 	return self.descripcion_carta
 
 func set_carta_frontal(texture_load):
-	assert(sprite_carta != null, "Nodo Sprite2D de la carta frontal es nulo")
-	sprite_carta.set_texture(texture_load)
+	assert(sprite_carta_frontal != null, "Nodo Sprite2D de la carta frontal es nulo")
+	sprite_carta_frontal.set_texture(texture_load)
 
+func set_scale_carta_frontal(escala : Vector2):
+	sprite_carta_frontal.set_scale(escala)
+
+func set_carta_trasera(texture_load):
+	assert(sprite_carta_frontal != null, "Nodo Sprite2D de la carta frontal es nulo")
+	sprite_carta_trasera.set_texture(texture_load)
+	
+func set_scale_carta_trasera(escala : Vector2):
+	sprite_carta_trasera.set_scale(escala)
 
 func activate_card_flip():
 	assert(anim != null, "Animation player es nulo")
@@ -68,7 +78,8 @@ func _ready():
 	assert(get_node("card/AnimationPlayer") != null, "AnimationPlayer es nulo")
 	assert(get_node("card/cardback/frontal") != null, "Sprite2D de la carta frontal es nulo")
 	
-	sprite_carta = get_node("card/cardback/frontal")
+	sprite_carta_frontal = $card/cardback/frontal
+	sprite_carta_trasera = $card/cardback/Trasera/trasera
 	anim = get_node("card/AnimationPlayer")
 	
 	set_carta_frontal(imagen_carta)
