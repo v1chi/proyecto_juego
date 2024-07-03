@@ -1,11 +1,13 @@
 extends AbstractEnemy
 
-@export var patrol_speed: int = 10
+
 @export var patrol_distance: int = 200
 var patrol_direction: int = 1
 var start_position: Vector2
 
 func _ready():
+	super._ready()
+	self.health = 4
 	score = 5
 	start_position = position
 
@@ -48,7 +50,7 @@ func updateAnimation(direction):
 			animationName = "walkRight" #down
 		elif direction.y < 0:
 			animationName = "walkLeft" #up
-	$AnimationPlayer.play(animationName)
+	$AnimationPlayer.play(animationName, -1, custom_speed_animation, false)
 
 func _on_detection_body_entered(body):
 	if body.has_method("player"):
@@ -66,7 +68,7 @@ func _on_enemy_hitbox_area_entered(area):
 
 func dead():
 	set_physics_process(false)
-	$AnimationPlayer.play("deathRight")
+	$AnimationPlayer.play("deathRight", -1, 2, false)
 	mostrar_score()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)

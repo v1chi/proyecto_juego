@@ -7,7 +7,7 @@ var timer
 var escena_reducida = "res://Carpeta Cartas/vision_reducida.tscn"
 var flag = true
 var contador_efectos
-var idle_timer
+var idle_timer : Timer
 
 func _ready():
 	super._ready()
@@ -31,6 +31,14 @@ func _activar_efecto_hijo():
 	idle_timer = player.get_node("IdleTimer")
 	if not(idle_timer.timeout.is_connected(_on_idle_timeout)):
 		idle_timer.timeout.connect(_on_idle_timeout)
+
+func desactivar_efecto():
+	set_process(false)
+	if idle_timer != null and idle_timer.timeout.is_connected(_on_idle_timeout):
+		idle_timer.timeout.disconnect(_on_idle_timeout)
+
+
+
 
 func _process(delta):
 	if idle_timer != null and not(idle_timer.is_stopped()):

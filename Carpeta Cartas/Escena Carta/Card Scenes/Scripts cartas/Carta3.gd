@@ -2,6 +2,7 @@ extends AbstractCard
 
 var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas malas/menor velocidad Player.png"
 var player 
+var reduccion_vel
 
 func _ready():
 	super._ready()
@@ -20,11 +21,17 @@ func get_id():
 func _activar_efecto_hijo():
 	anim.play("palpeo")
 	player = Global.get_tree().get_nodes_in_group("Player")[0]
-	player.speed = 30
+	player.speed -= reduccion_vel
 	
+
+func desactivar_efecto():
+	player.speed += reduccion_vel
+	
+
 
 func _init(): 
 	self.id = 3
+	self.reduccion_vel = 5
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Disminuye tu velocidad de MOV"
 	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/parte trasera mala.png"

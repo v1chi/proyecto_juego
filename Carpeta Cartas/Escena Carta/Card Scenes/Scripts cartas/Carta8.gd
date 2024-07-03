@@ -16,11 +16,12 @@ func get_id():
 	return id
 
 func _activar_efecto_hijo():
+	FactoryEnemy.carta8 = self
+	FactoryEnemy.agregar_efecto("_on_active_carta8")
 	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.death_signal.connect(_on_enemy_defeated.bind(enemy))
-
+		connect_death_signal(enemy)
 
 func _on_enemy_defeated(enemy):
 	enemy.death_signal.disconnect(_on_enemy_defeated)
@@ -30,6 +31,21 @@ func _on_enemy_defeated(enemy):
 	if enemies_defeated_count % 2 == 0 and player.currentHealth < player.maxHealth:
 		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)
+
+func connect_death_signal(enemy):
+	if enemy != null:
+		enemy.death_signal.connect(_on_enemy_defeated.bind(enemy))
+
+
+func disconnect_death_signal(enemy):
+	if enemy != null and enemy.death_signal.is_connected(_on_enemy_defeated):
+		enemy.death_signal.disconnect(_on_enemy_defeated)
+		
+
+func desactivar_efecto():
+	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		disconnect_death_signal(enemy)
 
 
 func get_icono():

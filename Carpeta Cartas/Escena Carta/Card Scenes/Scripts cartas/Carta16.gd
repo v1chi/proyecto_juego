@@ -38,19 +38,13 @@ func _on_revive_player():
 	player.revivePlayer.disconnect(_on_revive_player)
 	player.can_revive = false
 	anim.play("activa_inst", -1, 0.6, false)
+	await anim.animation_finished
+	anim.play("fade_out")
 
 
-func _on_idle_timeout():
-	if player.currentHealth < player.maxHealth:
-		player.currentHealth += 1
-		player.healthChanged.emit(player.currentHealth)
-	
-	pass
-
-
-
-
-
+func desactivar_efecto():
+	if player != null and player.revivePlayer.is_connected(_on_revive_player):
+		player.revivePlayer.disconnect(_on_revive_player)
 
 func get_icono():
 	return path_carta_frontal

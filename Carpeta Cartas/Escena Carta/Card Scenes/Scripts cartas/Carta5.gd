@@ -17,7 +17,10 @@ func _activar_efecto_hijo():
 	anim.play("palpeo")
 	player = Global.get_tree().get_nodes_in_group("Player")[0]
 	player.custom_speed = 0.65
-	
+
+func desactivar_efecto():
+	player.custom_speed = 1
+
 
 func get_icono():
 	return path_carta_frontal

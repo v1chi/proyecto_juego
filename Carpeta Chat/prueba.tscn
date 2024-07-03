@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3lqfmgc6ekrd"]
+
+[sub_resource type="GDScript" id="GDScript_1wyax"]
+script/source = "extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	FactoryEnemy.efecto_1 = \"_on_active_carta6\"
+	add_child(FactoryEnemy.instanticiar_enemigo())
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Prueba" type="Node2D"]
+position = Vector2(116, 89)
+script = SubResource("GDScript_1wyax")

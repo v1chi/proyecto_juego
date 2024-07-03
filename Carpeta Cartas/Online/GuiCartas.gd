@@ -29,13 +29,20 @@ func _fade_out_cartas():
 	carta2.anim.play("fade_out")
 	await carta1.anim.animation_finished
 	await carta2.anim.animation_finished
-	parent_carta1.remove_child(carta1)
-	parent_carta2.remove_child(carta2)
+	_eliminar_hijos(parent_carta1)
+	_eliminar_hijos(parent_carta2)
 	pass 
 
+func _eliminar_hijos(parent):
+	for n in parent.get_children():
+		parent.remove_child(n)
+		n.queue_free()
+
+
 func _fade_in_cartas():
-	var carta1 = GlobalCartas.instanciar_carta()
-	var carta2 = _get_carta2(carta1)
+	var carta1 = GlobalCartas.instanciar_carta_no_repetida()
+	var carta2 = GlobalCartas.instanciar_carta_no_repetida()
+	GlobalCartas.reset_no_repetidos()
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)
 	carta1.anim.play("fade_in")
@@ -45,10 +52,13 @@ func _fade_in_cartas():
 
 func _on_timer_timeout():
 	_fade_out_cartas()
+	FactoryEnemy.reset_efectos()
+	_desactivar_cartas()
 	$AnimationPlayer.play("aviso_entrada")
-	await wait(2)
+	await wait(3)
 	_fade_in_cartas()
 	await wait(1)
+	_activar_cartas()
 	$AnimationPlayer.play_backwards("aviso_entrada")
 	
 func connect_main_timer(main_timer):
@@ -58,8 +68,16 @@ func _on_main_timer_timeout():
 	$Timer.timeout.disconnect(_on_timer_timeout)
 	
 
-func _get_carta2(carta1 : AbstractCard):
-	var carta_aux = carta1
-	while(carta1 == carta_aux):
-		carta_aux = GlobalCartas.instanciar_carta()
-	return carta_aux
+func _desactivar_cartas():
+	if parent_carta1.get_child_count() == 0 or parent_carta2.get_child_count() == 0:
+		return
+	print("Desconectando")
+	parent_carta1.get_child(0).desactivar_efecto()
+	parent_carta2.get_child(0).desactivar_efecto()
+
+func _activar_cartas():
+	parent_carta1.get_child(0).anim.play("no_activa")
+	parent_carta2.get_child(0).anim.play("no_activa")
+	parent_carta1.get_child(0).activar_efecto()
+	parent_carta2.get_child(0).activar_efecto()
+	

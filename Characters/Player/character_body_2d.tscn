@@ -602,7 +602,6 @@ texture_filter = 1
 position = Vector2(-6.55651e-06, -3.21865e-06)
 scale = Vector2(1.21875, 1.1875)
 texture = ExtResource("2_el8pd")
-flip_h = true
 hframes = 10
 vframes = 15
 
@@ -647,6 +646,10 @@ stream = ExtResource("4_6dl53")
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="attack_cooldown2" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="attack_cooldown2" to="." method="_on_attack_cooldown_2_timeout"]

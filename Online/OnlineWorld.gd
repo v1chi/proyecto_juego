@@ -27,11 +27,13 @@ func _on_main_timer_timeout():
 func _ready():
 	_connect_signal_main_timer()
 	main_timer.start()
+	player.maxHealth = 10
+	player.currentHealth = player.maxHealth
 	contenedorCorazones.setMaxHearts(player.maxHealth)
 	player.healthChanged.connect(contenedorCorazones.updateHearts)
 	
 	# Configurar el timer para el cooldown de spawn
-	spawn_timer.set_wait_time(0.5)
+	spawn_timer.set_wait_time(3)
 	spawn_timer.set_autostart(true)
 	spawn_timer.set_one_shot(false)
 	add_child(spawn_timer)
@@ -44,8 +46,9 @@ func _ready():
 func _spawn_enemy():
 	var random_enemy = enemy_scenes[randi() % enemy_scenes.size()]
 	
-	var instancia = load(random_enemy).instantiate()
-
+	#var instancia = load(random_enemy).instantiate()
+	var instancia = FactoryEnemy.instanciar_slime()
+	
 	var spawn_position
 	var random_position = randi() % 4
 	if random_position == 0:

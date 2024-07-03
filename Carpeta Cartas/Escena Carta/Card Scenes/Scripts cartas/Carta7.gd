@@ -17,11 +17,19 @@ func _activar_efecto_hijo():
 	if !flag:
 		return 
 	anim.play("palpeo")
+	FactoryEnemy.agregar_efecto("_on_active_carta7")
 	flag = false
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.attack_damage = enemy.attack_damage*2
+		if enemy != null:
+			enemy.attack_damage = enemy.attack_damage*2
 	
+
+func desactivar_efecto():
+	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		if enemy != null:
+			enemy.attack_damage = enemy.attack_damage/2
 	
 
 func get_icono():

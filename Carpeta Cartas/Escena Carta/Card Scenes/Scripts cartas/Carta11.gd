@@ -7,6 +7,7 @@ var timer
 var escena_reducida = "res://Carpeta Cartas/vision_reducida.tscn"
 var flag = true
 var contador_efectos
+var instancia_vision
 
 func _ready():
 	super._ready()
@@ -25,10 +26,15 @@ func _activar_efecto_hijo():
 	if flag:
 		anim.play("palpeo")
 		player = Global.get_tree().get_nodes_in_group("Player")[0]
-		player.add_child(load(escena_reducida).instantiate())
+		instancia_vision = load(escena_reducida).instantiate()
+		player.add_child(instancia_vision)
 	flag = false
 
-
+func desactivar_efecto():
+	instancia_vision.get_node("AnimationPlayer").play_backwards("ready")
+	await Global.wait(1.5)
+	instancia_vision.queue_free()
+	
 
 
 func get_icono():

@@ -20,6 +20,7 @@ var enemy_attack_cooldown = true
 var custom_speed = 1
 var knockback = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/knockback.tscn").instantiate()
 
+var player_attack_cooldown = false
 var can_revive = false
 
 @onready var idle_timer = $IdleTimer
@@ -42,14 +43,14 @@ func handleInput():
 	velocity = moveDirection * speed * 2
 	
 	if Input.is_action_just_pressed("attack"):
-		if not isAttacking and enemy_attack_cooldown:
+		if not isAttacking and not player_attack_cooldown:
+			player_attack_cooldown = true
 			isAttacking = true
-			enemy_attack_cooldown = false
 			animations.play("attack" + lastAnimDirection, -1, custom_speed, false)
 			$audioAtaque.play()
 			await animations.animation_finished
 			isAttacking = false
-			attack_cooldown_timer.start()
+			$attack_cooldown2.start()
 	
 func updateAnimation():
 	if isAttacking:
@@ -94,7 +95,6 @@ func wait(seconds):
 	pass
 	
 func dead():
-	
 	animations.play("deathLeft")
 	$audioMuerte.play()
 	await animations.animation_finished
@@ -138,3 +138,7 @@ func hurted():
 	
 func player():
 	pass
+
+
+func _on_attack_cooldown_2_timeout():
+	player_attack_cooldown = false

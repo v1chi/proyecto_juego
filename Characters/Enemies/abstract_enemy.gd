@@ -4,18 +4,20 @@ extends CharacterBody2D
 
 @export var speed: int = 15
 @onready var animations = $AnimationPlayer
+@export var patrol_speed: int = 10
 var player_chase = false
 var player = null
-var health = 2
+var health = 8
 var playerChase = false
 var toAttack = false
 var damaged = 2
-var attack_damage = 1
+var attack_damage = 4
 var knockback = Vector2.ZERO
 var score = 10
 var path_puntuacion = "res://Characters/Enemies/puntuacion.tscn"
 var show_score = false
 var anim
+var custom_speed_animation = 1
 signal death_signal
 
 

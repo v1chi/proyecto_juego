@@ -98,20 +98,17 @@ _data = {
 position = Vector2(-2, 2)
 
 [node name="TextureLight" type="PointLight2D" parent="."]
-energy = 0.4
+energy = 0.0
 texture = ExtResource("1_aej7l")
-texture_scale = 0.3
 
 [node name="Shadow" type="PointLight2D" parent="."]
-energy = 0.7
+energy = 0.0
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 3.0
 texture = ExtResource("1_aej7l")
-texture_scale = 0.15
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

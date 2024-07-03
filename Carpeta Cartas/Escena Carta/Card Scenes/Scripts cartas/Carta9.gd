@@ -4,7 +4,7 @@ var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas bue
 var flag = true
 var player
 var enemies_defeated_count
-var timer
+var timer : Timer
 
 
 var contador_efectos
@@ -34,7 +34,8 @@ func _on_timer_timeout_efecto(timer_):
 	anim.play("no_activa")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.attack_damage = 1
+		if enemy != null:
+			enemy.attack_damage = 1
 	timer_.queue_free()
 	contador_efectos += 1
 	if contador_efectos >= 2:
@@ -46,17 +47,18 @@ func _on_timer_timeout_efecto(timer_):
 func _on_low_health_player():
 	player.lowHealth.disconnect(_on_low_health_player)
 	anim.play("palpeo")
-	player.currentHealth += 3
+	player.currentHealth = max(player.maxHealth, player.currentHealth + 3)
 	player.healthChanged.emit(player.currentHealth)
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
 		enemy.attack_damage = 2
-	
-	
 	timer = _get_timer()
 	timer.start()
-	
-	pass
+
+
+func desactivar_efecto():
+	if timer != null:
+		timer.stop()
 
 
 func _get_timer():

@@ -35,7 +35,10 @@ func _activar_efecto_hijo():
 func activar_efecto():
 	card_effected.emit()
 	_activar_efecto_hijo()
-	
+
+func desactivar_efecto():
+	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: desactivar_efecto()")
+
 func get_id():
 	push_error("ERROR DE NO IMPLEMENTACIÓN DEL MÉTODO: get_id()")
 

@@ -12,6 +12,12 @@ func _activar_efecto_hijo():
 	player.healthChanged.emit(player.currentHealth)
 	
 
+func desactivar_efecto():
+	pass
+
+
+
+
 func get_icono():
 	return path_carta_frontal
 

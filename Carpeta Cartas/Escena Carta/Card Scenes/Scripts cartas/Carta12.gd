@@ -28,11 +28,18 @@ func _activar_efecto_hijo():
 		return 
 	flag = false
 	anim.play("palpeo")
+	FactoryEnemy.agregar_efecto("_on_active_carta12")
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.attack_damage = enemy.attack_damage/2
+		if enemy != null:	
+			enemy.attack_damage = max(enemy.attack_damage/2, 1)
 
-
+func desactivar_efecto():
+	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		if enemy != null:
+			enemy.attack_damage = enemy.attack_damage*2
+	
 
 
 func get_icono():
