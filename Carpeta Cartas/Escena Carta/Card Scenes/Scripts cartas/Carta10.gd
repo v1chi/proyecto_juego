@@ -29,7 +29,7 @@ func _activar_efecto_hijo():
 	if flag:
 		anim.play("palpeo")
 		player = Global.get_tree().get_nodes_in_group("Player")[0]
-		contenedor_corazon = Global.get_tree().get_nodes_in_group("ContenedorCorazon")[0]
+		contenedor_corazon = Global.get_tree().get_nodes_in_group("ContenedorCorazon")[0]	
 		player.maxHealth = 3
 		player.currentHealth = min(player.maxHealth, player.currentHealth)
 		contenedor_corazon.setMaxHearts(player.maxHealth)

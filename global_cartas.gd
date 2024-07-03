@@ -25,6 +25,7 @@ func set_cartas_elegidas(carta1 : AbstractCard, carta2 : AbstractCard):
 
 func instanciar_carta_no_repetida():
 	if array_no_repetidos.size() == 0:
+		print("si")
 		return instanciar_carta()
 	var carta = load(PATH_ESCENA_CARTA).instantiate()
 	var n = rng.randi_range(0, array_no_repetidos.size() -1)

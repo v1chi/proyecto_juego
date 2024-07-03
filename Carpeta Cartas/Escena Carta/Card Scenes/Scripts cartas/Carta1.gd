@@ -27,4 +27,4 @@ func _ready():
 func _init(): 
 	self.id = 1
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Boost de velocidad +2 "
+	self.descripcion_carta = "Disminución de velocidad en los enemigos"
