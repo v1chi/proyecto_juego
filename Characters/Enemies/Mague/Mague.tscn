@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://0ik8344ikmfh"]
+[gd_scene load_steps=24 format=3 uid="uid://0ik8344ikmfh"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/Mague/Mague.gd" id="1_cj8qp"]
 [ext_resource type="Texture2D" uid="uid://dqlkkt5281u" path="res://Characters/Enemies/Mague/Mage-Sheet.png" id="2_fvpvc"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_51d7h"]
 [ext_resource type="Script" path="res://Characters/Enemies/Mague/Zonas de spawn.gd" id="4_cpjmi"]
+[ext_resource type="Script" path="res://Characters/Enemies/Mague/Zonas de muerte.gd" id="5_64drc"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -500,6 +501,13 @@ shape = SubResource("CircleShape2D_msyfa")
 script = ExtResource("4_cpjmi")
 
 [node name="Area2D" type="Node2D" parent="Zonas de spawn"]
+position = Vector2(0, -1)
+
+[node name="Zonas de muerte" type="Node2D" parent="."]
+position = Vector2(0, 8)
+script = ExtResource("5_64drc")
+
+[node name="Area2D" type="Node2D" parent="Zonas de muerte"]
 position = Vector2(0, -1)
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]

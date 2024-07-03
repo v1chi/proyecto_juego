@@ -26,18 +26,20 @@ var can_revive = false
 
 @onready var idle_timer = $IdleTimer
 @onready var attack_cooldown_timer = $attack_cooldown
+@onready var attack_cooldown2 = $attack_cooldown2  # Nuevo código agregado
 
 func _ready():
 	add_to_group("Player")
 	maxHealthChanged.connect(_on_set_maxHealth)
-	attack_cooldown_timer.wait_time = 0.7  
+	attack_cooldown_timer.wait_time = 1.1  # Nuevo código agregado
+	attack_cooldown2.wait_time = 0.7  # Nuevo código agregado
 
 func start_timer_idle():
 	if idle_timer.is_stopped():
 		idle_timer.start()
 
 func stop_timer_idle():
-	if not(idle_timer.is_stopped()):
+	if not idle_timer.is_stopped():
 		idle_timer.stop()
 
 func handleInput():
@@ -52,7 +54,7 @@ func handleInput():
 			$audioAtaque.play()
 			await animations.animation_finished
 			isAttacking = false
-			$attack_cooldown2.start()
+			attack_cooldown2.start()  # Nuevo código agregado
 	
 func updateAnimation():
 	if isAttacking:
@@ -88,7 +90,6 @@ func _physics_process(delta):
 	elif damaged < currentHealth:
 		damaged = currentHealth
 	
-	
 	handleInput()
 	move_and_slide()
 	updateAnimation()
@@ -108,7 +109,7 @@ func dead():
 		await _on_revive_card()
 	else:
 		Global.goto_scene(path_menu)
-	
+
 func _on_revive_card():
 	revivePlayer.emit()
 	enemy_attack_cooldown = false
@@ -144,13 +145,12 @@ func hurted():
 func _on_set_maxHealth():
 	damaged = maxHealth
 
-func set_maxHealth(health : int):
+func set_maxHealth(health: int):
 	maxHealth = health
 	maxHealthChanged.emit()
 
 func player():
 	pass
-
 
 func _on_attack_cooldown_2_timeout():
 	player_attack_cooldown = false

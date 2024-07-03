@@ -70,7 +70,7 @@ func _on_enemy_hitbox_area_entered(area):
 
 func dead():	
 	$AnimationPlayer.play("deathRight")
-	$"Zonas de spawn".emitir_efecto.emit()
+	$"Zonas de muerte".emitir_efecto.emit()
 	mostrar_score()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
