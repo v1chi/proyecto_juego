@@ -87,7 +87,7 @@ text = "El Laberinto Del Destino"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_kbenk")
-volume_db = -6.114
+volume_db = -29.537
 
 [connection signal="pressed" from="VBoxBotones/Jugar" to="VBoxBotones/Jugar" method="_on_pressed"]
 [connection signal="pressed" from="VBoxBotones/Online" to="VBoxBotones/Online" method="_on_pressed"]
