@@ -1,7 +1,7 @@
 extends AbstractEnemy
 
-
 var last_direction = Vector2.ZERO
+var buffVida = false
 
 func _init():
 	speed = 30
@@ -14,6 +14,10 @@ func _physics_process(delta):
 		await hurted()
 		await dead()
 	else:
+		if buffVida == false:
+			damaged += 5
+			health +=5
+			buffVida = true
 		if damaged != health:
 			await hurted()
 			damaged = health
@@ -64,9 +68,9 @@ func _on_enemy_hitbox_area_entered(area):
 	if area.name == "WeaponArea2D":
 		receive_damage(attack_damage)
 
-func dead():
-	$"Zonas de spawn".emitir_efecto.emit()
+func dead():	
 	$AnimationPlayer.play("deathRight")
+	$"Zonas de spawn".emitir_efecto.emit()
 	mostrar_score()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
@@ -92,6 +96,8 @@ func attack():
 			attack_animation = "attackDown"
 		else:
 			attack_animation = "attackUp"
+			
+	$"Zonas de spawn".emitir_efecto.emit()
 	$AnimationPlayer.play(attack_animation)
 	await $AnimationPlayer.animation_finished
 	set_physics_process(true)

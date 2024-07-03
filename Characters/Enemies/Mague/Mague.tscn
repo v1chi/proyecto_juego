@@ -59,6 +59,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(2, 25), Vector2(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Zonas de spawn/Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 25), Vector2(0, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_t0n2p"]
 resource_name = "attackLeft"
@@ -110,6 +122,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Zonas de spawn/Area2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-25, 7), Vector2(0, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_vca6x"]
@@ -163,6 +187,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Zonas de spawn/Area2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(25, 7), Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_fpuin"]
 resource_name = "attackUp"
@@ -202,6 +238,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2i(0, 14), Vector2i(1, 14), Vector2i(2, 14), Vector2i(3, 14), Vector2i(4, 14)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Zonas de spawn/Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, -19), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_er0rn"]
@@ -398,7 +446,7 @@ size = Vector2(15, 32)
 size = Vector2(9, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msyfa"]
-radius = 17.6918
+radius = 26.4008
 
 [node name="Mague" type="CharacterBody2D"]
 position = Vector2(2, 1)
@@ -442,7 +490,6 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_51d7h")
 
 [node name="attack detector" type="Area2D" parent="."]
-visible = false
 
 [node name="attack detector shape" type="CollisionShape2D" parent="attack detector"]
 position = Vector2(0, 3)
@@ -453,7 +500,7 @@ shape = SubResource("CircleShape2D_msyfa")
 script = ExtResource("4_cpjmi")
 
 [node name="Area2D" type="Node2D" parent="Zonas de spawn"]
-position = Vector2(19, -6)
+position = Vector2(0, -1)
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
