@@ -26,13 +26,13 @@ var can_revive = false
 
 @onready var idle_timer = $IdleTimer
 @onready var attack_cooldown_timer = $attack_cooldown
-@onready var attack_cooldown2 = $attack_cooldown2  # Nuevo código agregado
+@onready var attack_cooldown2 = $attack_cooldown2  
 
 func _ready():
 	add_to_group("Player")
 	maxHealthChanged.connect(_on_set_maxHealth)
-	attack_cooldown_timer.wait_time = 1.1  # Nuevo código agregado
-	attack_cooldown2.wait_time = 0.7  # Nuevo código agregado
+	attack_cooldown_timer.wait_time = 1.1  # cooldown recibiendo daño
+	attack_cooldown2.wait_time = 0.7  # velocidad de ataque
 
 func start_timer_idle():
 	if idle_timer.is_stopped():
@@ -44,7 +44,7 @@ func stop_timer_idle():
 
 func handleInput():
 	var moveDirection = Input.get_vector("left", "right", "up", "down")
-	velocity = moveDirection * speed * 2
+	velocity = moveDirection * speed * 2.5 # velocidad de movimiento
 	
 	if Input.is_action_just_pressed("attack"):
 		if not isAttacking and not player_attack_cooldown:
@@ -54,7 +54,7 @@ func handleInput():
 			$audioAtaque.play()
 			await animations.animation_finished
 			isAttacking = false
-			attack_cooldown2.start()  # Nuevo código agregado
+			attack_cooldown2.start()  
 	
 func updateAnimation():
 	if isAttacking:

@@ -262,7 +262,7 @@ radius = 7.0
 radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7080r"]
-size = Vector2(12, 3)
+size = Vector2(12, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gd2j"]
 radius = 7.0
@@ -301,8 +301,7 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_t73k3")
 
 [node name="footShape" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 5.5)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
