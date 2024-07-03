@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://um3xsl0affc1"]
+[gd_scene load_steps=19 format=3 uid="uid://um3xsl0affc1"]
 
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="1_j75tr"]
+[ext_resource type="Script" path="res://Scene/world.gd" id="1_rwlls"]
 [ext_resource type="Texture2D" uid="uid://c6gn7sq10ficq" path="res://TileSet/Pixel Art Top Down - Basic (1)/Texture/TX Props.png" id="2_ytol8"]
 [ext_resource type="Texture2D" uid="uid://cqerhbfxddn4x" path="res://TileSet/Pixel Art Top Down - Basic (1)/Farm Game Dungeon Cellar Tileset/Tilesets/FG_Cellar.png" id="3_hegyp"]
 [ext_resource type="Texture2D" uid="uid://k011qrr80d3x" path="res://TileSet/Pixel Art Top Down - Basic (1)/Farm Game Dungeon Cellar Tileset/suelo.png" id="4_klbix"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" path="res://Scene/Cambios Escenas/w2l2.gd" id="6_o1a5y"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="7_tt86s"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="8_yo53v"]
+[ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="9_ustud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("1_j75tr")
@@ -4533,6 +4535,7 @@ sources/8 = SubResource("TileSetAtlasSource_3nghd")
 size = Vector2(256, 62.5)
 
 [node name="world" type="Node2D" groups=["World"]]
+script = ExtResource("1_rwlls")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -4573,3 +4576,5 @@ offset_right = 108.0
 offset_bottom = 23.0
 
 [node name="ContenedorCartas" parent="CanvasLayer" groups=["ContenedorCarta"] instance=ExtResource("8_yo53v")]
+
+[node name="Pausa" parent="." instance=ExtResource("9_ustud")]
