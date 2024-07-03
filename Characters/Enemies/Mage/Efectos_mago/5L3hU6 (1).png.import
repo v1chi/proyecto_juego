@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqlkkt5281u"
-path="res://.godot/imported/Mage-Sheet.png-0ba0928ccd6bcc2c79ba3a4cf5a2bf3a.ctex"
+uid="uid://dw8sj0n6kxbxx"
+path="res://.godot/imported/5L3hU6 (1).png-bf20f4d9e65f91a8a37eee24fbd65d0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mague/Mage-Sheet.png"
-dest_files=["res://.godot/imported/Mage-Sheet.png-0ba0928ccd6bcc2c79ba3a4cf5a2bf3a.ctex"]
+source_file="res://Characters/Enemies/Mage/Efectos_mago/5L3hU6 (1).png"
+dest_files=["res://.godot/imported/5L3hU6 (1).png-bf20f4d9e65f91a8a37eee24fbd65d0e.ctex"]
 
 [params]
 

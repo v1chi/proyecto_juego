@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw8sj0n6kxbxx"
-path="res://.godot/imported/5L3hU6 (1).png-8ead688a7cf68be1013c2381980593e6.ctex"
+uid="uid://clp4q8huuvwtd"
+path="res://.godot/imported/5L3hU6 - muerte (2).png-d29996f769fcc7ee3ed90841b53ffb1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mague/Efectos_mago/5L3hU6 (1).png"
-dest_files=["res://.godot/imported/5L3hU6 (1).png-8ead688a7cf68be1013c2381980593e6.ctex"]
+source_file="res://Characters/Enemies/Mage/Efectos_mago/5L3hU6 - muerte (2).png"
+dest_files=["res://.godot/imported/5L3hU6 - muerte (2).png-d29996f769fcc7ee3ed90841b53ffb1e.ctex"]
 
 [params]
 

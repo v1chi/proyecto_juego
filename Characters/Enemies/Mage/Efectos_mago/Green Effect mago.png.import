@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg3usb2n21pug"
-path="res://.godot/imported/Mage-Sheet.png-f42eeee0fbd6e65cc98cbd697e317e41.ctex"
+uid="uid://cos2hiocrljqy"
+path="res://.godot/imported/Green Effect mago.png-9b71cf00ec083b9eba48ed86fcd84acd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/char2/Mage-Sheet.png"
-dest_files=["res://.godot/imported/Mage-Sheet.png-f42eeee0fbd6e65cc98cbd697e317e41.ctex"]
+source_file="res://Characters/Enemies/Mage/Efectos_mago/Green Effect mago.png"
+dest_files=["res://.godot/imported/Green Effect mago.png-9b71cf00ec083b9eba48ed86fcd84acd.ctex"]
 
 [params]
 

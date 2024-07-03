@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://0ik8344ikmfh"]
 
-[ext_resource type="Script" path="res://Characters/Enemies/Mague/Mague.gd" id="1_cj8qp"]
-[ext_resource type="Texture2D" uid="uid://dqlkkt5281u" path="res://Characters/Enemies/Mague/Mage-Sheet.png" id="2_fvpvc"]
+[ext_resource type="Script" path="res://Characters/Enemies/Mage/Mage.gd" id="1_cj8qp"]
+[ext_resource type="Texture2D" uid="uid://dqlkkt5281u" path="res://Characters/Enemies/Mage/Mage-Sheet.png" id="2_fvpvc"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_51d7h"]
-[ext_resource type="Script" path="res://Characters/Enemies/Mague/Zonas de spawn.gd" id="4_cpjmi"]
-[ext_resource type="Script" path="res://Characters/Enemies/Mague/Zonas de muerte.gd" id="5_64drc"]
+[ext_resource type="Script" path="res://Characters/Enemies/Mage/Zonas de spawn.gd" id="4_cpjmi"]
+[ext_resource type="Script" path="res://Characters/Enemies/Mage/Zonas de muerte.gd" id="5_64drc"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001

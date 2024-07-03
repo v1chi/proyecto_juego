@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://b65b47tfijty6"]
 
-[ext_resource type="Script" path="res://Characters/Enemies/GSword/GSword.gd" id="1_cgeb7"]
+[ext_resource type="Script" path="res://Characters/Enemies/Golem1/Golem1.gd" id="1_8ixla"]
 [ext_resource type="Texture2D" uid="uid://df44gp14hpgdq" path="res://Characters/Enemies/Golem1/Hooded knight_finalsheet-1.png (3).png" id="2_h54fv"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_iuwku"]
 
@@ -411,9 +411,9 @@ size = Vector2(7, 3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_msyfa"]
 radius = 11.4018
 
-[node name="GSword" type="CharacterBody2D"]
+[node name="Golem1" type="CharacterBody2D"]
 position = Vector2(2, 1)
-script = ExtResource("1_cgeb7")
+script = ExtResource("1_8ixla")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
