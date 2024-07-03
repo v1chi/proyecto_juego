@@ -4,14 +4,15 @@ extends CharacterBody2D
 @onready var animations = $AnimationPlayer
 var lastAnimDirection: String = "Down"
 var isAttacking: bool = false
-var damaged = 5
 @export var maxHealth = 5
+var damaged = maxHealth
 @onready var currentHealth: int = maxHealth
 
 var path_menu = "res://Menu/menu.tscn"
 signal healthChanged
 signal lowHealth
 signal revivePlayer
+signal maxHealthChanged
 
 var received_damage = 1
 var enemy_inattack_range = false
@@ -28,6 +29,7 @@ var can_revive = false
 
 func _ready():
 	add_to_group("Player")
+	maxHealthChanged.connect(_on_set_maxHealth)
 	attack_cooldown_timer.wait_time = 0.7  
 
 func start_timer_idle():
@@ -76,13 +78,16 @@ func _physics_process(delta):
 	healthChanged.emit(currentHealth)
 	if currentHealth == 1:
 		lowHealth.emit() 
-	if damaged != currentHealth:
-		await hurted()
-		damaged = currentHealth
 	elif currentHealth <= 0:
 		set_physics_process(false)
 		await hurted()
 		await dead()
+	if damaged > currentHealth:
+		await hurted()
+		damaged = currentHealth
+	elif damaged < currentHealth:
+		damaged = currentHealth
+	
 	
 	handleInput()
 	move_and_slide()
@@ -133,9 +138,16 @@ func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 	
 func hurted():
-	$AnimationPlayer.play("hurted")
-	await $AnimationPlayer.animation_finished
-	
+	$AnimationPlayer2.play("hurted")
+	#await $AnimationPlayer.animation_finished
+
+func _on_set_maxHealth():
+	damaged = maxHealth
+
+func set_maxHealth(health : int):
+	maxHealth = health
+	maxHealthChanged.emit()
+
 func player():
 	pass
 

@@ -57,17 +57,3 @@ func agregar_cartas_elegidas(id1, id2):
 	for i in array_elegidas:
 		array_no_repetidos.erase(i)
 	
-	
-#func _ready():
-#	carta1 = load(PATH_ESCENA_CARTA).instantiate()
-#	carta2 = load(PATH_ESCENA_CARTA).instantiate()
-
-
-
-func _process(delta):
-	if Input.is_key_pressed(KEY_TAB):
-		GlobalCartas.carta1.activar_efecto()
-	elif Input.is_key_pressed(KEY_Q):
-		GlobalCartas.carta2.activar_efecto()
-	pass
-

@@ -11,6 +11,7 @@ var listado_player : Array
 func _ready():
 	http_request = $HTTPRequest
 	http_request.request_completed.connect(self._on_request_completed)
+	print(url)
 	http_request.request(url, headers, HTTPClient.METHOD_GET)
 
 
@@ -21,17 +22,20 @@ func _sort_dict_descendiente(a, b):
 
 
 func _on_request_completed(result, response_code, headers, body):
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	listado_player = json.data
-	listado_player.sort_custom(_sort_dict_descendiente)
-	_crear_tabla()
+	if result == HTTPRequest.RESULT_SUCCESS:
+		var json = JSON.parse_string(body.get_string_from_utf8())
+		listado_player = json.data
+		listado_player.sort_custom(_sort_dict_descendiente)
+		_crear_tabla()
+	else:
+		$AnimationPlayer.pause()
+		$PanelContainer/RichTextLabel.text = "[center]Error al conectarse con el servidor...[/center]"
 	
 var path_score_label = "res://Online/scorelabel.tscn"
 var paleta_color_pos = [[0,255,255],[0,3*255/4,255],[0,255/2,255]]
 func _crear_tabla():
 	var tabla = $ScrollContainer/VBoxContainer
 	var i = 1
-	print(listado_player.size())
 	for player in listado_player:
 		var player_label = load(path_score_label).instantiate()
 		_rellenar_label(player_label, i)
@@ -40,7 +44,6 @@ func _crear_tabla():
 		player_label.set_text_name("[left]" + player["playerName"] + "[/left]")
 		player_label.set_text_score("[center]" + _get_formato_score(player["score"]) + "[/center]")
 		i += 1
-		print(i)
 
 var array_theme = [
 	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_1.tres",

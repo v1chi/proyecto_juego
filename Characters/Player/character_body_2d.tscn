@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cg4o1dqm08nvi"]
+[gd_scene load_steps=29 format=3 uid="uid://cg4o1dqm08nvi"]
 
 [ext_resource type="Script" path="res://Characters/Player/character_body_2d.gd" id="1_k8407"]
 [ext_resource type="Texture2D" uid="uid://ddcnaxu1t2s1o" path="res://Characters/Player/Hooded knight_finalsheet-1.png (1).png" id="2_el8pd"]
@@ -396,7 +396,7 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.06),
+"times": PackedFloat32Array(0, 0.03, 0.05),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2i(1, 6), Vector2i(3, 6), Vector2i(2, 6)]
@@ -587,6 +587,32 @@ _data = {
 "walkUp": SubResource("Animation_w5t8i")
 }
 
+[sub_resource type="Animation" id="Animation_pmfjt"]
+resource_name = "RESET"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_so6mp"]
+resource_name = "hurted"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 6), Vector2i(3, 6), Vector2i(2, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u42ii"]
+_data = {
+"RESET": SubResource("Animation_pmfjt"),
+"hurted": SubResource("Animation_so6mp")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow8hn"]
 size = Vector2(8, 4)
 
@@ -618,6 +644,12 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_n225e")
 }
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u42ii")
+}
+autoplay = "RESET"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

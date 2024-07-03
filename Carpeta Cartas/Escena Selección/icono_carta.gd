@@ -9,13 +9,24 @@ var parent_carta1
 var parent_carta2
 
 func add_cartas():
-	
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)
 	
+	play_no_activa()
+	activar_cartas()
+	
+	
+func play_no_activa():
+	if carta1 == null or carta2 == null:
+		return
 	carta1.anim.play("no_activa")
 	carta2.anim.play("no_activa")
 
+func activar_cartas():
+	if carta1 == null or carta2 == null:
+		return
+	carta1.activar_efecto()
+	carta2.activar_efecto()
 	
 	pass
 
@@ -33,7 +44,3 @@ func _ready():
 	parent_carta2 = get_node("ParentCard2")
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -27,7 +27,7 @@ func _on_main_timer_timeout():
 func _ready():
 	_connect_signal_main_timer()
 	main_timer.start()
-	player.maxHealth = 10
+	player.set_maxHealth(10)
 	player.currentHealth = player.maxHealth
 	contenedorCorazones.setMaxHearts(player.maxHealth)
 	player.healthChanged.connect(contenedorCorazones.updateHearts)
