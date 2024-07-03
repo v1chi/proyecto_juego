@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq7jvu45ukye1"]
+[gd_scene load_steps=10 format=3 uid="uid://bq7jvu45ukye1"]
 
 [ext_resource type="Script" path="res://Online/leaderboard.gd" id="1_0rrhx"]
 [ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="2_5fthr"]
 [ext_resource type="PackedScene" uid="uid://cuoydvy8gief3" path="res://Carpeta Chat/scroll_container.tscn" id="2_evdpn"]
 [ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="3_o0ky5"]
+[ext_resource type="PackedScene" uid="uid://oxycpvpo6yhp" path="res://Online/scorelabel.tscn" id="4_71h8m"]
 
 [sub_resource type="Theme" id="Theme_fdpkv"]
 
@@ -48,7 +49,7 @@ script = ExtResource("1_0rrhx")
 layout_mode = 0
 offset_left = -6.0
 offset_right = 245.0
-offset_bottom = 24.0
+offset_bottom = 20.0
 theme = SubResource("Theme_fdpkv")
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vs68")
 
@@ -68,7 +69,7 @@ scroll_active = false
 layout_mode = 0
 offset_top = 24.0
 offset_right = 240.0
-offset_bottom = 107.0
+offset_bottom = 135.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 layout_mode = 2
@@ -77,10 +78,32 @@ bbcode_enabled = true
 text = "[center]Cargando[/center]"
 fit_content = true
 
+[node name="ScoreLabel" parent="." instance=ExtResource("4_71h8m")]
+layout_mode = 2
+offset_left = 0.5
+offset_top = 20.0
+offset_right = 240.5
+offset_bottom = 30.0
+metadata/_edit_group_ = true
+
+[node name="PLabel" parent="ScoreLabel" index="0"]
+self_modulate = Color(0.51132, 0.718267, 1, 1)
+offset_left = -5.0
+offset_right = 241.0
+
+[node name="Pos" parent="ScoreLabel/PLabel/HBoxContainer/PPos" index="0"]
+text = "[center]Pos[/center]"
+
+[node name="Name" parent="ScoreLabel/PLabel/HBoxContainer/PName" index="0"]
+text = "[center]Nombre[/center]"
+
+[node name="Score" parent="ScoreLabel/PLabel/HBoxContainer/PScore" index="0"]
+text = "[center]Score[/center]"
+
 [node name="ScrollContainer" parent="." instance=ExtResource("2_evdpn")]
 layout_mode = 1
-offset_top = 24.0
-offset_bottom = -28.0
+offset_top = 30.0
+offset_bottom = -25.0
 follow_focus = true
 
 [node name="VBoxContainer" parent="ScrollContainer" index="0"]
@@ -96,15 +119,17 @@ libraries = {
 autoplay = "cargando"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = 103.0
-offset_top = 124.0
+offset_top = 119.0
 offset_right = 132.0
-offset_bottom = 141.0
+offset_bottom = 136.0
 theme_override_font_sizes/font_size = 6
 text = "ok"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
+[editable path="ScoreLabel"]
 [editable path="ScrollContainer"]

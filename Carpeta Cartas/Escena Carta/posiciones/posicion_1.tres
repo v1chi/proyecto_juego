@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2i57usigyome"]
+
+[ext_resource type="Texture2D" uid="uid://dqb61l05ho8cm" path="res://Carpeta Cartas/Escena Carta/posiciones/posiciones.png" id="1_h07b2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hssov"]
+texture = ExtResource("1_h07b2")
+region_rect = Rect2(0, 0, 46, 14)
+modulate_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_hssov")

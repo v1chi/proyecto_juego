@@ -38,15 +38,39 @@ func _crear_tabla():
 		tabla.add_child(player_label)
 		player_label.set_text_pos( "[center]#" + str(i) + "[/center]")
 		player_label.set_text_name("[left]" + player["playerName"] + "[/left]")
-		player_label.set_text_score("[center]" + str(player["score"]) + "[/center]")
+		player_label.set_text_score("[center]" + _get_formato_score(player["score"]) + "[/center]")
 		i += 1
 		print(i)
-	
+
+var array_theme = [
+	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_1.tres",
+	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_2.tres",
+	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_3.tres"
+	]
 func _rellenar_label(label, pos):
+	label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[2][0], paleta_color_pos[2][1], paleta_color_pos[2][2]))
 	if pos <= 3:
-		label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2]))
+		#label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2]))
+		label.get_node("PLabel/HBoxContainer/PPos").set_theme(load(array_theme[pos-1]))
 #Color(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2])
 
 var menu = "res://Menu/menu.tscn"
 func _on_button_pressed():
 	Global.goto_scene(menu)
+
+func _get_formato_score(score :int):
+	#return str(score)
+	var string_score = str(score)
+	var score_con_delimitadores = ""
+	var str = ""
+	var cont = 1
+	for i in range(string_score.length() - 1, -1, -1):
+		score_con_delimitadores = score_con_delimitadores + string_score[i]
+		if cont % 3 == 0 and i != 0:
+			score_con_delimitadores = score_con_delimitadores + ","
+		cont += 1
+	for i in range(score_con_delimitadores.length() - 1, -1, -1):
+		str += score_con_delimitadores[i]
+	
+	return str
+

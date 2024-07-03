@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Online/scorelabel.gd" id="1_nmqkw"]
 [ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="1_tjdbx"]
-[ext_resource type="Theme" uid="uid://c6i6y0oy33ysu" path="res://Carpeta Chat/score.tres" id="2_ijyt5"]
+[ext_resource type="Theme" uid="uid://c6i6y0oy33ysu" path="res://Carpeta Cartas/Escena Carta/posiciones/score.tres" id="2_ijyt5"]
 [ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="3_ft231"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1y2vg"]
@@ -30,8 +30,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1y2vg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PLabel"]
 layout_mode = 1
+offset_left = 30.0
 offset_top = 2.0
-offset_right = 148.0
+offset_right = 210.0
 offset_bottom = 12.0
 alignment = 1
 
@@ -52,6 +53,8 @@ offset_right = -1.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("3_ft231")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
@@ -62,7 +65,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="PName" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(130, 0)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")
@@ -85,7 +88,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="PScore" type="Panel" parent="PLabel/HBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ijyt5")

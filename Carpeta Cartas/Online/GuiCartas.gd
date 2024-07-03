@@ -34,8 +34,8 @@ func _fade_out_cartas():
 	pass 
 
 func _fade_in_cartas():
-	var carta1 = GlobalCartas.instanciar_carta_no_repetida()
-	var carta2 = GlobalCartas.instanciar_carta()
+	var carta1 = GlobalCartas.instanciar_carta()
+	var carta2 = _get_carta2(carta1)
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)
 	carta1.anim.play("fade_in")
@@ -57,4 +57,9 @@ func connect_main_timer(main_timer):
 func _on_main_timer_timeout():
 	$Timer.timeout.disconnect(_on_timer_timeout)
 	
-	
+
+func _get_carta2(carta1 : AbstractCard):
+	var carta_aux = carta1
+	while(carta1 == carta_aux):
+		carta_aux = GlobalCartas.instanciar_carta()
+	return carta_aux
