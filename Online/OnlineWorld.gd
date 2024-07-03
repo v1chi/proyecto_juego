@@ -21,6 +21,7 @@ func _connect_signal_main_timer():
 
 func _on_main_timer_timeout():
 	var escena_enviar = load(path_enviar_dato).instantiate()
+	$Pausa.set_process_mode(Node.PROCESS_MODE_INHERIT)
 	$CanvasLayer2.add_child(escena_enviar)
 # Called when the node enters the scene tree for the first time.
 func _ready():
