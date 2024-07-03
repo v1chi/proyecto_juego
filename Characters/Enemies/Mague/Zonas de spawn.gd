@@ -2,7 +2,7 @@ extends Node2D
 
 signal emitir_efecto
 
-var particula = "res://Carpeta Cartas/Escena Carta/Assets/Effect and Bullet 16x16 (1)/efecto_entrada.tscn"
+var particula = "res://Characters/Enemies/Mague/Efectos_mago/mageAttack.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

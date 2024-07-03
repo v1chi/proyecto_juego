@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctdsnii68si7d"]
+
+[ext_resource type="Texture2D" uid="uid://dw8sj0n6kxbxx" path="res://Characters/Enemies/Mague/Efectos_mago/5L3hU6 (1).png" id="1_r6jrs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_twvlk"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_uwu3t"]
+max_value = 2.0
+_data = [Vector2(0, 0.927675), 0.0, 0.0, 0, 0, Vector2(0.482759, 1.74357), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_twvlk")
+emitting = false
+amount = 1
+one_shot = true
+speed_scale = 1.25
+local_coords = true
+texture = ExtResource("1_r6jrs")
+gravity = Vector2(0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_speed_curve = SubResource("Curve_uwu3t")
