@@ -253,7 +253,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jywya"]
-radius = 52.0096
+radius = 69.0072
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nump8"]
 radius = 7.0
@@ -283,7 +283,6 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
-visible = false
 
 [node name="detectionShape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jywya")

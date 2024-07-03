@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2gr324dccwx3"]
+[gd_scene load_steps=29 format=3 uid="uid://c2gr324dccwx3"]
 
 [ext_resource type="Script" path="res://Scene/world.gd" id="1_4muhk"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_ffqf2"]
@@ -13,7 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="11_t3ivc"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="12_0gl21"]
 [ext_resource type="Script" path="res://Scene/Cambios Escenas/w1l2.gd" id="13_ljtso"]
+[ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="14_6eiun"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="14_sx36w"]
+[ext_resource type="PackedScene" uid="uid://di6csugfnhws6" path="res://Characters/Enemies/GInfected/GInfected.tscn" id="15_n3gbi"]
+[ext_resource type="PackedScene" uid="uid://cxnuk6na5qk54" path="res://Characters/Enemies/charSlime/char_slime.tscn" id="16_08adl"]
+[ext_resource type="PackedScene" uid="uid://cvg6q6xtwcqlu" path="res://Characters/Enemies/GSpear/GSpear.tscn" id="17_3r6p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_ffqf2")
@@ -3974,6 +3978,159 @@ speed = 37
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)
 position_smoothing_enabled = true
+
+[node name="GInfected" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(115, 381)
+
+[node name="GInfected2" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(217, 377)
+
+[node name="GInfected7" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(577, 537)
+
+[node name="GInfected8" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(616, 542)
+
+[node name="GInfected12" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(883, 882)
+
+[node name="GInfected13" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(338, 880)
+
+[node name="GInfected23" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-407, 868)
+
+[node name="GInfected14" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-59, 1353)
+
+[node name="GInfected15" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-41, 1393)
+
+[node name="GInfected16" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-17, 1440)
+
+[node name="GInfected17" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-501, 1040)
+
+[node name="GInfected19" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-574, 1059)
+
+[node name="GInfected20" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-438, 1123)
+
+[node name="GInfected21" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-440, 1061)
+
+[node name="GInfected22" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-502, 1105)
+
+[node name="GInfected9" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(962, 571)
+
+[node name="GInfected10" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(1013, 581)
+
+[node name="GInfected11" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-380, 431)
+
+[node name="GInfected3" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-15, 370)
+
+[node name="GInfected4" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-458, 139)
+
+[node name="GInfected6" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-460, 105)
+
+[node name="GInfected5" parent="TileMap" instance=ExtResource("15_n3gbi")]
+position = Vector2(-435, 96)
+
+[node name="charSlime" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(95, 192)
+
+[node name="charSlime2" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(133, 232)
+
+[node name="charSlime3" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(27, 478)
+
+[node name="charSlime4" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(27, 478)
+
+[node name="charSlime8" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(287, 524)
+
+[node name="charSlime9" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-267, 451)
+
+[node name="charSlime20" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(198, 472)
+
+[node name="charSlime21" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(335, 447)
+
+[node name="charSlime22" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(495, 416)
+
+[node name="charSlime23" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(247, 335)
+
+[node name="charSlime24" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-350, 298)
+
+[node name="charSlime25" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-402, 264)
+
+[node name="charSlime10" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-16, 991)
+
+[node name="charSlime11" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-16, 991)
+
+[node name="charSlime12" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(122, 789)
+
+[node name="charSlime13" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(563, 785)
+
+[node name="charSlime14" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(610, 709)
+
+[node name="charSlime15" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(633, 840)
+
+[node name="charSlime26" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(1005, 783)
+
+[node name="charSlime16" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(256, 942)
+
+[node name="charSlime27" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(458, 882)
+
+[node name="charSlime17" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(-322, 980)
+
+[node name="charSlime18" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(66, 1183)
+
+[node name="charSlime19" parent="TileMap" instance=ExtResource("16_08adl")]
+position = Vector2(110, 1151)
+
+[node name="GSpear" parent="TileMap" instance=ExtResource("17_3r6p5")]
+position = Vector2(-147, 889)
+
+[node name="ParentPocion" parent="TileMap" instance=ExtResource("14_6eiun")]
+position = Vector2(-97, 1411)
+
+[node name="ParentPocion2" parent="TileMap" instance=ExtResource("14_6eiun")]
+position = Vector2(-96, 1379)
+
+[node name="ParentPocion3" parent="TileMap" instance=ExtResource("14_6eiun")]
+position = Vector2(981, 506)
+
+[node name="ParentPocion4" parent="TileMap" instance=ExtResource("14_6eiun")]
+position = Vector2(-612, 86)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

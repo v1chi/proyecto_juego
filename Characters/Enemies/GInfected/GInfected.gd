@@ -23,7 +23,7 @@ func procesamiento(delta):
 	if playerChase:
 		var moveDirection = player.position - position
 		var velocity = moveDirection.normalized() * speed + knockback
-		var coll = move_and_collide(velocity * delta)
+		var coll = move_and_collide(velocity * delta * 1.5)
 		updateAnimation(moveDirection)
 	else:
 		$AnimationPlayer.play("walkStand")
