@@ -671,9 +671,11 @@ wait_time = 2.33
 
 [node name="audioAtaque" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_n0y2h")
+volume_db = -14.857
 
 [node name="audioMuerte" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6dl53")
+volume_db = -14.857
 
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -8,6 +8,8 @@ extends Node2D
 @onready var label = $CanvasLayer2/Control/Label
 @onready var main_timer = $CanvasLayer2/Control/Timer
 
+@onready var musica = $AudioStreamPlayer
+
 var path_enviar_dato = "res://Online/EnviarDatos.tscn"
 # Definimos los archivos de los diferentes enemigos
 var enemy_scenes = [
@@ -25,6 +27,7 @@ func _on_main_timer_timeout():
 	$CanvasLayer2.add_child(escena_enviar)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	musica.play()
 	_connect_signal_main_timer()
 	main_timer.start()
 	player.set_maxHealth(10)

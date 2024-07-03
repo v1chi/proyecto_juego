@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kbuxeyn58ivx"]
+[gd_scene load_steps=16 format=3 uid="uid://kbuxeyn58ivx"]
 
 [ext_resource type="Script" path="res://Online/OnlineWorld.gd" id="1_n5coa"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_t8enm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Online/SquaresLimitsManager.gd" id="9_iw6xf"]
 [ext_resource type="Script" path="res://Online/SquareLimits.gd" id="9_qw0wa"]
 [ext_resource type="PackedScene" uid="uid://2xbqhu2gtqi3" path="res://Carpeta Cartas/Online/GuiCartas.tscn" id="11_b5qtl"]
+[ext_resource type="AudioStream" uid="uid://cse7xuriuyxtb" path="res://musica/musica online.mp3" id="12_uhr6n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_t8enm")
@@ -1165,3 +1166,7 @@ theme_override_font_sizes/font_size = 10
 text = "aa"
 
 [node name="GuiCartas" parent="CanvasLayer2" instance=ExtResource("11_b5qtl")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_uhr6n")
+volume_db = -14.991
