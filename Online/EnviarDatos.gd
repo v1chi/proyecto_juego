@@ -1,6 +1,7 @@
 extends Control
 
-
+const PUNTAJE_MAX : int = 999999999
+const PUNTAJE_MIN : int = 1
 var url = "https://ucn-game-server.martux.cl/scores"
 var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjNkN2VjZi03MTg1LTRhNmMtOTNlMy0xZjk0MzY4YmFhMGMiLCJrZXkiOiIyeUExYXJnZDVycVRmMHhZb0xvcU4xMUNrIiwiaWF0IjoxNzE5NDYxNTMzLCJleHAiOjE3NTA5OTc1MzN9.7Ox7Ii-QmFeYQIvzcq6KMQnIWILoYvTJbBVVE1dHgR4"
 var headers = ["Content-Type: application/json","Authorization: Bearer %s" % token] 
@@ -25,9 +26,17 @@ func _on_request_completed(result, response_code, headers, body):
 	Global.goto_scene(leaderboard)
 	
 
+func _validar_puntuacion():
+	if Global.score > PUNTAJE_MAX: # 999.999.999
+		Global.score = PUNTAJE_MAX
+		
+	if Global.score < PUNTAJE_MIN: # 1
+		Global.score = PUNTAJE_MIN
+	
+
+
 func _on_ok_button_up():
-	if Global.score == 0:
-		Global.score = 1
+	_validar_puntuacion()
 	var data = { "playerName": $nombre.text, "score": int(Global.score) }
 	var query = JSON.stringify(data)
 	http_request.request(url, headers, HTTPClient.METHOD_POST, query)

@@ -48,18 +48,22 @@ func _crear_tabla():
 var array_theme = [
 	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_1.tres",
 	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_2.tres",
-	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_3.tres"
+	"res://Carpeta Cartas/Escena Carta/posiciones/posicion_3.tres",
+	"res://Carpeta Cartas/Escena Carta/posiciones/vacio.tres"
 	]
 func _rellenar_label(label, pos):
 	label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[2][0], paleta_color_pos[2][1], paleta_color_pos[2][2]))
 	if pos <= 3:
 		#label.get_node("PLabel").set_self_modulate(Color8(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2]))
 		label.get_node("PLabel/HBoxContainer/PPos").set_theme(load(array_theme[pos-1]))
+		label.get_node("PLabel/HBoxContainer/PName").set_theme(load(array_theme[pos-1]))
+		label.get_node("PLabel/HBoxContainer/PScore").set_theme(load(array_theme[pos-1]))
+	else:
+		label.get_node("PLabel/HBoxContainer/PPos").set_theme(load(array_theme[3]))
+		label.get_node("PLabel/HBoxContainer/PName").set_theme(load(array_theme[3]))
+		label.get_node("PLabel/HBoxContainer/PScore").set_theme(load(array_theme[3]))
 #Color(paleta_color_pos[pos-1][0], paleta_color_pos[pos-1][1], paleta_color_pos[pos-1][2])
 
-var menu = "res://Menu/menu.tscn"
-func _on_button_pressed():
-	Global.goto_scene(menu)
 
 func _get_formato_score(score :int):
 	#return str(score)
@@ -77,3 +81,8 @@ func _get_formato_score(score :int):
 	
 	return str
 
+
+
+var menu = "res://Menu/menu.tscn"
+func _on_texture_button_button_up():
+	Global.goto_scene(menu)
