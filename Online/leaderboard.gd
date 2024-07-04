@@ -20,9 +20,13 @@ func _sort_dict_descendiente(a, b):
 		return true
 	return false
 
+func set_text_cargando():
+	$AnimationPlayer.pause()
+	$PanelContainer/RichTextLabel.text = ""
 
 func _on_request_completed(result, response_code, headers, body):
 	if result == HTTPRequest.RESULT_SUCCESS:
+		set_text_cargando()
 		var json = JSON.parse_string(body.get_string_from_utf8())
 		listado_player = json.data
 		listado_player.sort_custom(_sort_dict_descendiente)
@@ -34,6 +38,8 @@ func _on_request_completed(result, response_code, headers, body):
 var path_score_label = "res://Online/scorelabel.tscn"
 var paleta_color_pos = [[0,255,255],[0,3*255/4,255],[0,255/2,255]]
 func _crear_tabla():
+	if listado_player.size() == 0:
+		$PanelContainer/RichTextLabel.text = "[center]No existen puntajes por mostrar[/center]"
 	var tabla = $ScrollContainer/VBoxContainer
 	var i = 1
 	for player in listado_player:
