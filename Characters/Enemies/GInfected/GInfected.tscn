@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://di6csugfnhws6"]
+[gd_scene load_steps=19 format=3 uid="uid://di6csugfnhws6"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/GInfected/GInfected.gd" id="1_cwoff"]
 [ext_resource type="Texture2D" uid="uid://365qmkhtd3e4" path="res://Characters/Enemies/GInfected/Hooded knight_finalsheet-1.png (2).png" id="2_ak3m6"]
-[ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_y15qt"]
+[ext_resource type="AudioStream" uid="uid://dl04dqjdbgf6r" path="res://musica/GOBLIN SOUND FX 6 - Gaming Sound Effects HD FREE NO Copyright.mp3" id="3_4h40t"]
+[ext_resource type="AudioStream" uid="uid://b4netaoy8bsn6" path="res://musica/GOBLIN SOUND 12 - Gaming Sound Effects HD FREE NO Copyright.mp3" id="4_byc10"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -277,7 +278,7 @@ position = Vector2(0.5, 11.5)
 shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_y15qt")
+stream = ExtResource("3_4h40t")
 
 [node name="attack detector" type="Area2D" parent="."]
 visible = false
@@ -286,6 +287,9 @@ visible = false
 position = Vector2(0, 3)
 rotation = -0.678974
 shape = SubResource("CircleShape2D_msyfa")
+
+[node name="muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_byc10")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

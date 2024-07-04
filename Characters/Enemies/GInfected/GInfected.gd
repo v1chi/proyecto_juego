@@ -1,5 +1,7 @@
 extends AbstractEnemy
 
+@onready var daño = $caminar
+@onready var muerte = $muerte
 
 func _init():
 	speed = 20
@@ -64,10 +66,12 @@ func _on_enemy_hitbox_area_entered(area):
 func dead():
 	$AnimationPlayer.play("deathRight")
 	mostrar_score()
+	muerte.play()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
 	queue_free()
 
 func hurted():
 	$AnimationPlayer.play("hurted")
+	daño.play()
 	await $AnimationPlayer.animation_finished
