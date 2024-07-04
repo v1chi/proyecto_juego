@@ -4565,7 +4565,7 @@ position = Vector2(322, -1907)
 script = ExtResource("6_o1a5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-240, 2155)
+position = Vector2(1085, 5137)
 shape = SubResource("RectangleShape2D_o1h83")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

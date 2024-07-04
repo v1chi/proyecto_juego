@@ -3951,7 +3951,7 @@ sources/6 = SubResource("TileSetAtlasSource_l4bpw")
 sources/7 = SubResource("TileSetAtlasSource_7yjux")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3t2"]
-size = Vector2(122, 24.75)
+size = Vector2(145.473, 23.5923)
 
 [node name="world2" type="Node2D" groups=["World"]]
 script = ExtResource("1_axwa5")
@@ -3974,7 +3974,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="char1" parent="TileMap" instance=ExtResource("10_1jb1p")]
-position = Vector2(420, 1530)
+position = Vector2(120, 93)
 speed = 37
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
@@ -3982,10 +3982,10 @@ position = Vector2(-1, 6)
 position_smoothing_enabled = true
 
 [node name="GSpear" parent="TileMap" instance=ExtResource("11_l6qg4")]
-position = Vector2(151, 196)
+position = Vector2(145, 1502)
 
 [node name="GSpear2" parent="TileMap" instance=ExtResource("11_l6qg4")]
-position = Vector2(80, 195)
+position = Vector2(145, 1553)
 
 [node name="GInfected" parent="TileMap" instance=ExtResource("12_dcq8y")]
 position = Vector2(-160, 1158)
@@ -4020,6 +4020,15 @@ position = Vector2(132, 657)
 [node name="GInfected11" parent="TileMap" instance=ExtResource("12_dcq8y")]
 position = Vector2(417, 1237)
 
+[node name="GInfected17" parent="TileMap" instance=ExtResource("12_dcq8y")]
+position = Vector2(679, 1474)
+
+[node name="GInfected18" parent="TileMap" instance=ExtResource("12_dcq8y")]
+position = Vector2(682, 1512)
+
+[node name="GInfected19" parent="TileMap" instance=ExtResource("12_dcq8y")]
+position = Vector2(689, 1567)
+
 [node name="GInfected12" parent="TileMap" instance=ExtResource("12_dcq8y")]
 position = Vector2(-29, 617)
 
@@ -4030,16 +4039,10 @@ position = Vector2(538, 609)
 position = Vector2(457, 470)
 
 [node name="GInfected15" parent="TileMap" instance=ExtResource("12_dcq8y")]
-position = Vector2(205, 1493)
+position = Vector2(211, 234)
 
 [node name="GInfected16" parent="TileMap" instance=ExtResource("12_dcq8y")]
-position = Vector2(187, 1561)
-
-[node name="GInfected17" parent="TileMap" instance=ExtResource("12_dcq8y")]
-position = Vector2(666, 1501)
-
-[node name="GInfected18" parent="TileMap" instance=ExtResource("12_dcq8y")]
-position = Vector2(674, 1572)
+position = Vector2(11, 235)
 
 [node name="charSlime" parent="TileMap" instance=ExtResource("13_dwu75")]
 position = Vector2(394, 1121)
@@ -4048,7 +4051,7 @@ position = Vector2(394, 1121)
 position = Vector2(292, 1526)
 
 [node name="charSlime11" parent="TileMap" instance=ExtResource("13_dwu75")]
-position = Vector2(520, 1535)
+position = Vector2(524, 1573)
 
 [node name="charSlime2" parent="TileMap" instance=ExtResource("13_dwu75")]
 position = Vector2(392, 1449)
@@ -4075,7 +4078,7 @@ position = Vector2(291, 410)
 position = Vector2(291, 410)
 
 [node name="Golem1" parent="TileMap" instance=ExtResource("14_gdrcx")]
-position = Vector2(124, 227)
+position = Vector2(409, 1525)
 
 [node name="ParentPocion" parent="TileMap" instance=ExtResource("16_xrv86")]
 position = Vector2(-227, 1166)
@@ -4103,7 +4106,9 @@ position = Vector2(318, -1943)
 script = ExtResource("13_m42d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-194, 2116)
+position = Vector2(-204.78, 3478.74)
+rotation = 1.57453
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ee3t2")
 
 [node name="Pausa" parent="." instance=ExtResource("14_7acbw")]

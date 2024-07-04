@@ -2,6 +2,7 @@ extends AbstractEnemy
 
 
 var last_direction = Vector2.ZERO
+var buffVida = false
 
 func _init():
 	speed = 20
@@ -15,6 +16,10 @@ func _physics_process(delta):
 		await hurted()
 		await dead()
 	else:
+		if buffVida == false:
+			damaged += 15
+			health += 15
+			buffVida = true
 		if damaged != health:
 			await hurted()
 			damaged = health
