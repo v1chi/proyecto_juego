@@ -284,6 +284,7 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
+visible = false
 
 [node name="detectionShape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jywya")

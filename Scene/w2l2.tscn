@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://um3xsl0affc1"]
+[gd_scene load_steps=24 format=3 uid="uid://um3xsl0affc1"]
 
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="1_j75tr"]
 [ext_resource type="Script" path="res://Scene/Script escenas/w2l2.gd" id="1_lg6hb"]
@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://k011qrr80d3x" path="res://TileSet/Pixel Art Top Down - Basic (1)/Farm Game Dungeon Cellar Tileset/suelo.png" id="4_klbix"]
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/Player/character_body_2d.tscn" id="4_wgo8d"]
 [ext_resource type="Script" path="res://Scene/Cambios Escenas/w2l2.gd" id="6_o1a5y"]
+[ext_resource type="PackedScene" uid="uid://iym17sokqjvk" path="res://Characters/Enemies/GSword/GSword.tscn" id="7_2f7bp"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="7_tt86s"]
+[ext_resource type="PackedScene" uid="uid://cvg6q6xtwcqlu" path="res://Characters/Enemies/GSpear/GSpear.tscn" id="8_f0y8m"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="8_yo53v"]
+[ext_resource type="PackedScene" uid="uid://di6csugfnhws6" path="res://Characters/Enemies/GInfected/GInfected.tscn" id="9_solqh"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="9_ustud"]
+[ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="10_lhowx"]
 [ext_resource type="AudioStream" uid="uid://cxc6cq3sbv0xu" path="res://musica/musica mundo 2_2.mp3" id="11_lfygo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
@@ -4559,6 +4563,249 @@ position = Vector2(120, 73)
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)
 position_smoothing_enabled = true
+
+[node name="GSword" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(1117.9, 911)
+
+[node name="GSword2" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(591.9, 972)
+
+[node name="GSword3" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(727.9, 1015)
+
+[node name="GSword4" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(123.9, 751)
+
+[node name="GSword5" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(-384.1, 239)
+
+[node name="GSword6" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(-632.1, 1183)
+
+[node name="GSword7" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(391.9, 1803)
+
+[node name="GSword8" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(445.9, 1876)
+
+[node name="GSword9" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(1307.9, 3147)
+
+[node name="GSword10" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(1401.9, 3156)
+
+[node name="GSword11" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(1509.9, 3143)
+
+[node name="GSword12" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(135.9, 2321)
+
+[node name="GSword13" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(205.9, 1242)
+
+[node name="GSword14" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(52.9, 1236)
+
+[node name="GSword15" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(120.9, 1039)
+
+[node name="GSword16" parent="TileMap" instance=ExtResource("7_2f7bp")]
+position = Vector2(-698.1, 756)
+
+[node name="GSpear" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(266.9, 526)
+
+[node name="GSpear2" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-27.1, 520)
+
+[node name="GSpear3" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(653.9, 518)
+
+[node name="GSpear4" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(719.9, 939)
+
+[node name="GSpear5" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(298.9, 909)
+
+[node name="GSpear6" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-63.1, 920)
+
+[node name="GSpear7" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-442.1, 842)
+
+[node name="GSpear8" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-680.1, 1357)
+
+[node name="GSpear9" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-769.1, 1180)
+
+[node name="GSpear10" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(117.9, 1369)
+
+[node name="GSpear11" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-669.1, 1714)
+
+[node name="GSpear12" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-794.1, 348)
+
+[node name="GSpear13" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(-435.1, 510)
+
+[node name="GSpear14" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(866.9, 1395)
+
+[node name="GSpear15" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(871.9, 2005)
+
+[node name="GSpear16" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(1383.9, 2369)
+
+[node name="GSpear17" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(768.9, 2347)
+
+[node name="GSpear18" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(862.9, 2351)
+
+[node name="GSpear19" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(72.9, 2361)
+
+[node name="GSpear20" parent="TileMap" instance=ExtResource("8_f0y8m")]
+position = Vector2(129.9, 390)
+
+[node name="GInfected" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(107.9, 224)
+
+[node name="GInfected2" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(139.9, 244)
+
+[node name="GInfected3" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(518.9, 528)
+
+[node name="GInfected4" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(744.9, 439)
+
+[node name="GInfected5" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(778.9, 465)
+
+[node name="GInfected6" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-136.1, 519)
+
+[node name="GInfected7" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-305.1, 529)
+
+[node name="GInfected8" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-323.1, 106)
+
+[node name="GInfected9" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-356.1, 106)
+
+[node name="GInfected10" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-805.1, 421)
+
+[node name="GInfected11" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-656.1, 524)
+
+[node name="GInfected12" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-530.1, 521)
+
+[node name="GInfected13" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(45.9, 930)
+
+[node name="GInfected14" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(40.9, 975)
+
+[node name="GInfected15" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(216.9, 946)
+
+[node name="GInfected16" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(216.9, 903)
+
+[node name="GInfected17" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(913.9, 932)
+
+[node name="GInfected18" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-206.1, 1244)
+
+[node name="GInfected19" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-375.1, 1246)
+
+[node name="GInfected20" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(486.9, 1258)
+
+[node name="GInfected21" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(771.9, 1258)
+
+[node name="GInfected22" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(1033.9, 1265)
+
+[node name="GInfected23" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(812.9, 1580)
+
+[node name="GInfected24" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(835.9, 1591)
+
+[node name="GInfected25" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(863.9, 1608)
+
+[node name="GInfected26" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(835.9, 1795)
+
+[node name="GInfected27" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-506.1, 1833)
+
+[node name="GInfected28" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-529.1, 1845)
+
+[node name="GInfected29" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-764.1, 1839)
+
+[node name="GInfected30" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-734.1, 1811)
+
+[node name="GInfected31" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-645.1, 1803)
+
+[node name="GInfected32" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-685.1, 1548)
+
+[node name="GInfected33" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(450.9, 2324)
+
+[node name="GInfected34" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(1158.9, 2324)
+
+[node name="GInfected35" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(1422.9, 2548)
+
+[node name="GInfected36" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(1410.9, 2836)
+
+[node name="GInfected37" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(874.9, 2188)
+
+[node name="GInfected38" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(548.9, 2344)
+
+[node name="GInfected39" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(624.9, 1842)
+
+[node name="GInfected40" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(290.9, 1326)
+
+[node name="GInfected41" parent="TileMap" instance=ExtResource("9_solqh")]
+position = Vector2(-52.1, 1301)
+
+[node name="ParentPocion" parent="TileMap" instance=ExtResource("10_lhowx")]
+position = Vector2(1152.9, 916)
+
+[node name="ParentPocion2" parent="TileMap" instance=ExtResource("10_lhowx")]
+position = Vector2(-683.1, 1913)
+
+[node name="ParentPocion3" parent="TileMap" instance=ExtResource("10_lhowx")]
+position = Vector2(-34.1, 2312)
+
+[node name="ParentPocion4" parent="TileMap" instance=ExtResource("10_lhowx")]
+position = Vector2(-260.1, 113)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(322, -1907)
