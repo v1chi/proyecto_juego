@@ -1,7 +1,7 @@
 extends AbstractCard
 
 # Carta qie afecta la velocidad del jugador
-var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/CuteCards - asset pack/cartas_separadas/2.tres"
+var path_carta_frontal = "res://Carpeta Cartas/Escena Carta/cartas_ia/Cartas buenas/Lentitud enemiga.png"
 var player
 
 
@@ -23,6 +23,8 @@ func get_icono():
 
 func _ready():
 	super._ready()
+	super.set_scale_carta_frontal(Vector2(0.243,0.266))
+	super.set_scale_carta_trasera(Vector2(0.21,0.21))
 	print("Ready de la clase concreta")
 	
 
@@ -31,3 +33,4 @@ func _init():
 	self.id = 1
 	self.imagen_carta = load(path_carta_frontal)
 	self.descripcion_carta = "Disminución de velocidad en los enemigos"
+	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/carta_trasera_buena.png"
