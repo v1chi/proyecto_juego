@@ -94,8 +94,8 @@ func _set_spawn_timer_null():
 
 const INIT_SPAWN_WAIT_TIME = 4
 func _get_spawn_wait_time():
-	print(max(1.5, INIT_SPAWN_WAIT_TIME - 0.4 * ronda))
-	return max(1.5, INIT_SPAWN_WAIT_TIME - 0.4 * ronda)
+	print(max(2, INIT_SPAWN_WAIT_TIME - 0.4 * ronda))
+	return max(2, INIT_SPAWN_WAIT_TIME - 0.4 * ronda)
 
 func _get_spawn_timer():
 	var timer = Timer.new()

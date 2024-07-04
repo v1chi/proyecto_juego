@@ -7,11 +7,17 @@ extends AbstractEnemy
 var patrol_direction: int = 1
 var start_position: Vector2
 
+
+func _init():
+	self.speed = 15
+	self.health = 4
+	self.score = 5
+	self.damaged = self.health
+	
+
 func _ready():
 	efectoCaminar.play()
 	super._ready()
-	self.health = 4
-	score = 5
 	start_position = position
 
 

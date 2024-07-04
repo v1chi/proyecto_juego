@@ -51,7 +51,7 @@ func _on_low_health_player():
 	player.healthChanged.emit(player.currentHealth)
 	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
 	for enemy in enemies:
-		enemy.attack_damage = 2
+		enemy.attack_damage = enemy.attack_damage*2
 	timer = _get_timer()
 	timer.start()
 
@@ -79,5 +79,5 @@ func _init():
 	self.contador_efectos = 0
 	self.id = 9
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Entras en un estado de supervivencia al estar con 1 corazón"
+	self.descripcion_carta = "Estado de supervivencia al estar con 1 corazón"
 	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/carta_trasera_buena.png"

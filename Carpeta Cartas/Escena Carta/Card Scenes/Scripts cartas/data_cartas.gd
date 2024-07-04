@@ -25,6 +25,12 @@ func _init():
 	"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta16.gd"
 	]
 	
+	array_script = [
+		"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta16.gd",
+		"res://Carpeta Cartas/Escena Carta/Card Scenes/Scripts cartas/Carta9.gd"
+	]
+
+	
 func get_size():
 	return array_script.size()
 

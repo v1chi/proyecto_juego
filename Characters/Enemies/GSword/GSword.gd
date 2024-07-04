@@ -4,8 +4,11 @@ extends AbstractEnemy
 var last_direction = Vector2.ZERO
 
 func _init():
-	speed = 20
-	score = 50
+	self.speed = 15
+	self.health = 14
+	self.damaged = self.health
+	self.score = 75
+
 
 func _physics_process(delta):
 	if health <= 0:
