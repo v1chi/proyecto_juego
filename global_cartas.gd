@@ -32,7 +32,6 @@ func set_cartas_elegidas(carta1_ : AbstractCard, carta2_ : AbstractCard):
 	
 
 func instanciar_carta_no_repetida():
-	print(array_elegidas)
 	if array_no_repetidos.size() == 0:
 		print("si")
 		return instanciar_carta()
@@ -41,7 +40,6 @@ func instanciar_carta_no_repetida():
 	var index = array_no_repetidos[n]
 	array_no_repetidos.remove_at(n)
 	carta.set_script(load(data_cartas.get_script_carta(index)))
-	print(array_no_repetidos)
 	return carta
 
 func instanciar_carta():

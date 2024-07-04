@@ -71,7 +71,6 @@ func _on_main_timer_timeout():
 func _desactivar_cartas():
 	if parent_carta1.get_child_count() == 0 or parent_carta2.get_child_count() == 0:
 		return
-	print("Desconectando")
 	parent_carta1.get_child(0).desactivar_efecto()
 	parent_carta2.get_child(0).desactivar_efecto()
 

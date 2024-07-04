@@ -10,6 +10,14 @@ func _init():
 	efecto_1 = "_desactivo"
 	efecto_2 = "_desactivo"
 
+
+func instanciar_enemigo_por_path(path_enemigo : String):
+	var enemy : AbstractEnemy = load(path_enemigo).instantiate()
+	enemy.show_score = true
+	var call_efecto1 : Callable = Callable(self, efecto_1)
+	var call_efecto2 : Callable = Callable(self, efecto_2)
+	return call_efecto1.call(call_efecto2.call(enemy))
+
 func instanciar_slime():
 	var enemy : AbstractEnemy = load(path_slime).instantiate()
 	enemy.show_score = true

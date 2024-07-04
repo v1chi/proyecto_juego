@@ -3,11 +3,11 @@ extends Node2D
 @onready var contenedorCorazones = $CanvasLayer/contenedorCorazones
 @onready var player = $TileMap/char1
 
-@onready var spawn_timer = Timer.new()
+@onready var spawn_timer : Timer
 @onready var gui_cartas = $CanvasLayer2/GuiCartas
 @onready var label = $CanvasLayer2/Control/Label
 @onready var main_timer = $CanvasLayer2/Control/Timer
-
+var controlador_spawn = ControladorSpawn.new()
 @onready var musica = $AudioStreamPlayer
 
 var path_enviar_dato = "res://Online/EnviarDatos.tscn"
@@ -35,22 +35,22 @@ func _ready():
 	contenedorCorazones.setMaxHearts(player.maxHealth)
 	player.healthChanged.connect(contenedorCorazones.updateHearts)
 	
-	# Configurar el timer para el cooldown de spawn
-	spawn_timer.set_wait_time(3)
-	spawn_timer.set_autostart(true)
-	spawn_timer.set_one_shot(false)
+	gui_cartas.get_node("Timer").timeout.connect(_on_timeout_cartas)
+	
+	spawn_timer = _get_spawn_timer()
 	add_child(spawn_timer)
 	spawn_timer.timeout.connect(_spawn_enemy)
-
-	# Empezar el proceso de spawn
 	spawn_timer.start()
+
+
 	
-	# Función para spawnear enemigos
+	
+
 func _spawn_enemy():
 	var random_enemy = enemy_scenes[randi() % enemy_scenes.size()]
 	
 	#var instancia = load(random_enemy).instantiate()
-	var instancia = FactoryEnemy.instanciar_slime()
+	var instancia = controlador_spawn.instanciar_enemigo(ronda)
 	
 	var spawn_position
 	var random_position = randi() % 4
@@ -84,6 +84,41 @@ func _generar_particula(instancia):
 	par.set_emitting(true)
 	instancia.desactivar_fisicas(1)
 
+
+func _disconnect_spawn_timer():
+	if spawn_timer != null and spawn_timer.timeout.is_connected(_spawn_enemy):
+		spawn_timer.timeout.disconnect(_spawn_enemy)
+func _set_spawn_timer_null():
+	if spawn_timer == null:
+		pass
+	else:
+		spawn_timer.queue_free()
+		spawn_timer = null
+
+const INIT_SPAWN_WAIT_TIME = 4
+func _get_spawn_wait_time():
+	print(max(1.5, INIT_SPAWN_WAIT_TIME - 0.4 * ronda))
+	return max(1.5, INIT_SPAWN_WAIT_TIME - 0.4 * ronda)
+
+func _get_spawn_timer():
+	var timer = Timer.new()
+	timer.set_wait_time(_get_spawn_wait_time())
+	timer.set_autostart(true)
+	timer.set_one_shot(false)
+	return timer
+
+
+var ronda : int = 0
+func _on_timeout_cartas():
+	ronda += 1
+	_disconnect_spawn_timer()
+	_set_spawn_timer_null()
+	spawn_timer = _get_spawn_timer()
+	add_child(spawn_timer)
+	spawn_timer.timeout.connect(_spawn_enemy)
+	spawn_timer.start()
+	
+	
 
 
 

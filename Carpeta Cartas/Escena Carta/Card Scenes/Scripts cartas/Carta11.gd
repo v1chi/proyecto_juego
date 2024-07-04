@@ -32,9 +32,10 @@ func _activar_efecto_hijo():
 
 func desactivar_efecto():
 	instancia_vision.get_node("AnimationPlayer").play_backwards("ready")
-	await Global.wait(1.5)
+	await Global.wait(0.5)
+	player.remove_child(instancia_vision)
 	instancia_vision.queue_free()
-	
+	print("sdljknds")
 
 
 func get_icono():
