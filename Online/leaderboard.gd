@@ -25,9 +25,11 @@ func set_text_cargando():
 	$PanelContainer/RichTextLabel.text = ""
 
 func _on_request_completed(result, response_code, headers, body):
-	if result == HTTPRequest.RESULT_SUCCESS:
+	print(result)
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	if result == HTTPRequest.RESULT_SUCCESS and json != null:
 		set_text_cargando()
-		var json = JSON.parse_string(body.get_string_from_utf8())
+		json = JSON.parse_string(body.get_string_from_utf8())
 		listado_player = json.data
 		listado_player.sort_custom(_sort_dict_descendiente)
 		_crear_tabla()

@@ -76,3 +76,7 @@ func _input(ev):
 
 
 
+
+
+func _on_texture_button_button_up():
+	Global.goto_scene(menu)

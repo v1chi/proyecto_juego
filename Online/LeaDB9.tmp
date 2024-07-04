@@ -1,0 +1,172 @@
+[gd_scene load_steps=16 format=3 uid="uid://bq7jvu45ukye1"]
+
+[ext_resource type="Script" path="res://Online/leaderboard.gd" id="1_0rrhx"]
+[ext_resource type="Texture2D" uid="uid://c3vcdnfv8ejnl" path="res://Carpeta Cartas/Escena Carta/GUI.png" id="2_5fthr"]
+[ext_resource type="PackedScene" uid="uid://cuoydvy8gief3" path="res://Carpeta Chat/scroll_container.tscn" id="2_evdpn"]
+[ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="3_o0ky5"]
+[ext_resource type="PackedScene" uid="uid://oxycpvpo6yhp" path="res://Online/scorelabel.tscn" id="4_71h8m"]
+[ext_resource type="Texture2D" uid="uid://dkl0yxj1xdrvf" path="res://Carpeta Cartas/boton_rojo_salir.png" id="6_4pbk4"]
+
+[sub_resource type="Theme" id="Theme_fdpkv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vs68"]
+texture = ExtResource("2_5fthr")
+texture_margin_left = 30.4125
+texture_margin_right = 29.7421
+region_rect = Rect2(145, 81, 46, 14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3h1s"]
+bg_color = Color(0.0470588, 0.054902, 0.145098, 1)
+
+[sub_resource type="Animation" id="Animation_fs1f5"]
+resource_name = "cargando"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[center]Cargando[/center]", "[center]Cargando.[/center]", "[center]Cargando..[/center]", "[center]Cargando...[/center]", "[center]Cargando[/center]"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1w7n"]
+_data = {
+"cargando": SubResource("Animation_fs1f5")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7ae8"]
+atlas = ExtResource("6_4pbk4")
+region = Rect2(29, 99, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w1vk"]
+atlas = ExtResource("6_4pbk4")
+region = Rect2(125, 102, 32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0itu"]
+atlas = ExtResource("6_4pbk4")
+region = Rect2(318, 100, 32, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1y2vg"]
+texture = ExtResource("2_5fthr")
+texture_margin_right = 2.16209
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="Listado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rrhx")
+
+[node name="LabelTitulo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_right = 253.0
+offset_bottom = 20.0
+theme = SubResource("Theme_fdpkv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vs68")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LabelTitulo"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 246.0
+offset_bottom = 15.0
+theme_override_fonts/normal_font = ExtResource("3_o0ky5")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[center][color=white]Leaderboard[/color][/center]"
+scroll_active = false
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 240.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3h1s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("3_o0ky5")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Cargando[/center]"
+fit_content = true
+
+[node name="ScoreLabel" parent="." instance=ExtResource("4_71h8m")]
+layout_mode = 2
+offset_left = 0.5
+offset_top = 20.0
+offset_right = 240.5
+offset_bottom = 30.0
+metadata/_edit_group_ = true
+
+[node name="PLabel" parent="ScoreLabel" index="0"]
+self_modulate = Color(0.51132, 0.718267, 1, 1)
+offset_left = -5.0
+offset_right = 241.0
+
+[node name="Pos" parent="ScoreLabel/PLabel/HBoxContainer/PPos" index="0"]
+text = "[center]Pos[/center]"
+
+[node name="Name" parent="ScoreLabel/PLabel/HBoxContainer/PName" index="0"]
+text = "[center]Nombre[/center]"
+
+[node name="Score" parent="ScoreLabel/PLabel/HBoxContainer/PScore" index="0"]
+text = "[center]Score[/center]"
+
+[node name="ScrollContainer" parent="." instance=ExtResource("2_evdpn")]
+layout_mode = 1
+offset_top = 30.0
+follow_focus = true
+
+[node name="VBoxContainer" parent="ScrollContainer" index="0"]
+size_flags_horizontal = 4
+alignment = 0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y1w7n")
+}
+autoplay = "cargando"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 2.0
+offset_right = 239.0
+offset_bottom = 15.0
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_o7ae8")
+texture_pressed = SubResource("AtlasTexture_4w1vk")
+texture_hover = SubResource("AtlasTexture_r0itu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PLabel" type="Panel" parent="."]
+self_modulate = Color(0.51132, 0.718267, 1, 1)
+z_index = -1
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 242.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1y2vg")
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
+
+[editable path="ScoreLabel"]
+[editable path="ScrollContainer"]
