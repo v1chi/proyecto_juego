@@ -46,5 +46,5 @@ func _ready():
 func _init(): 
 	self.id = 1
 	self.imagen_carta = load(path_carta_frontal)
-	self.descripcion_carta = "Disminución de velocidad a los enemigos"
+	self.descripcion_carta = "Velocidad enemiga reducida"
 	self.path_carta_trasera_imagen = "res://Carpeta Cartas/Escena Carta/cartas_ia/Parte Trasera Cartas/carta_trasera_buena.png"
