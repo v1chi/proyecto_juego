@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dg6enpobe3u80"
-path="res://.godot/imported/musica mundo 2_3.mp3-f359078244ffa49d62657f80ea5d1233.mp3str"
+path="res://.godot/imported/musica mundo 2_3.mp3-e40db31eed4c720058241cd79e526de1.mp3str"
 
 [deps]
 
-source_file="res://musica/musica mundo 2_3.mp3"
-dest_files=["res://.godot/imported/musica mundo 2_3.mp3-f359078244ffa49d62657f80ea5d1233.mp3str"]
+source_file="res://Musica/musica mundo 2_3.mp3"
+dest_files=["res://.godot/imported/musica mundo 2_3.mp3-e40db31eed4c720058241cd79e526de1.mp3str"]
 
 [params]
 

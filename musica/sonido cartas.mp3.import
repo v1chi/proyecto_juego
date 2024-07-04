@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://crhldy0tigrqx"
-path="res://.godot/imported/sonido cartas.mp3-13351c6f4ae4da45841b9f8c87e6ba84.mp3str"
+path="res://.godot/imported/sonido cartas.mp3-4ebdec1dded3e43f442f7487c4cb7ae4.mp3str"
 
 [deps]
 
-source_file="res://musica/sonido cartas.mp3"
-dest_files=["res://.godot/imported/sonido cartas.mp3-13351c6f4ae4da45841b9f8c87e6ba84.mp3str"]
+source_file="res://Musica/sonido cartas.mp3"
+dest_files=["res://.godot/imported/sonido cartas.mp3-4ebdec1dded3e43f442f7487c4cb7ae4.mp3str"]
 
 [params]
 

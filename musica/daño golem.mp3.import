@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b3j0tvphtq612"
-path="res://.godot/imported/daño golem.mp3-155b9b931edb2bca7fa63fd6ce2c27f2.mp3str"
+path="res://.godot/imported/daño golem.mp3-2bb0472050eed4980dc8cd0b0a961101.mp3str"
 
 [deps]
 
-source_file="res://musica/daño golem.mp3"
-dest_files=["res://.godot/imported/daño golem.mp3-155b9b931edb2bca7fa63fd6ce2c27f2.mp3str"]
+source_file="res://Musica/daño golem.mp3"
+dest_files=["res://.godot/imported/daño golem.mp3-2bb0472050eed4980dc8cd0b0a961101.mp3str"]
 
 [params]
 

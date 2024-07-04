@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ck1hkrs37gccd"
-path="res://.godot/imported/Efectos de Sonido - Grito de Muerte Hombre 4.mp3-8b2aa850402056a0f0affe422ff8d1da.mp3str"
+path="res://.godot/imported/Efectos de Sonido - Grito de Muerte Hombre 4.mp3-d1387fadff7a992c9bd8341ec61efa6c.mp3str"
 
 [deps]
 
-source_file="res://musica/Efectos de Sonido - Grito de Muerte Hombre 4.mp3"
-dest_files=["res://.godot/imported/Efectos de Sonido - Grito de Muerte Hombre 4.mp3-8b2aa850402056a0f0affe422ff8d1da.mp3str"]
+source_file="res://Musica/Efectos de Sonido - Grito de Muerte Hombre 4.mp3"
+dest_files=["res://.godot/imported/Efectos de Sonido - Grito de Muerte Hombre 4.mp3-d1387fadff7a992c9bd8341ec61efa6c.mp3str"]
 
 [params]
 

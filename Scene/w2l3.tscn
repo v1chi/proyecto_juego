@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="8_ck5e2"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="8_o1ykb"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="10_vatnw"]
-[ext_resource type="AudioStream" uid="uid://dg6enpobe3u80" path="res://musica/musica mundo 2_3.mp3" id="11_y163t"]
+[ext_resource type="AudioStream" uid="uid://dg6enpobe3u80" path="res://Musica/musica mundo 2_3.mp3" id="11_y163t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("2_w4ogo")

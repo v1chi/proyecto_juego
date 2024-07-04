@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dwcooio88ql2e"
-path="res://.godot/imported/muerte mago.mp3-2d26f93157b25809852486066d8dd26c.mp3str"
+path="res://.godot/imported/muerte mago.mp3-8784a3884b15c3697edf215b55393310.mp3str"
 
 [deps]
 
-source_file="res://musica/muerte mago.mp3"
-dest_files=["res://.godot/imported/muerte mago.mp3-2d26f93157b25809852486066d8dd26c.mp3str"]
+source_file="res://Musica/muerte mago.mp3"
+dest_files=["res://.godot/imported/muerte mago.mp3-8784a3884b15c3697edf215b55393310.mp3str"]
 
 [params]
 

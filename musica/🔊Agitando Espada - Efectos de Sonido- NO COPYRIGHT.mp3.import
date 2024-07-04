@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://brprljat8p8o3"
-path="res://.godot/imported/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3-8e4961e4963d45545d16c76d6a3de899.mp3str"
+path="res://.godot/imported/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3-6dc275157c02da826456e2e7578a0b16.mp3str"
 
 [deps]
 
-source_file="res://musica/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3"
-dest_files=["res://.godot/imported/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3-8e4961e4963d45545d16c76d6a3de899.mp3str"]
+source_file="res://Musica/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3"
+dest_files=["res://.godot/imported/🔊Agitando Espada - Efectos de Sonido- NO COPYRIGHT.mp3-6dc275157c02da826456e2e7578a0b16.mp3str"]
 
 [params]
 

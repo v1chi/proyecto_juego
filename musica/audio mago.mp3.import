@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cvujtv2vrwpjt"
-path="res://.godot/imported/audio mago.mp3-4210e35fb1ef5dee5b75da6d76ab4cbd.mp3str"
+path="res://.godot/imported/audio mago.mp3-63bb5b5dcb1c6ef2589b408996d18b06.mp3str"
 
 [deps]
 
-source_file="res://musica/audio mago.mp3"
-dest_files=["res://.godot/imported/audio mago.mp3-4210e35fb1ef5dee5b75da6d76ab4cbd.mp3str"]
+source_file="res://Musica/audio mago.mp3"
+dest_files=["res://.godot/imported/audio mago.mp3-63bb5b5dcb1c6ef2589b408996d18b06.mp3str"]
 
 [params]
 

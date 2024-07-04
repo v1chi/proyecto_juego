@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://di6csugfnhws6" path="res://Characters/Enemies/GInfected/GInfected.tscn" id="9_solqh"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="9_ustud"]
 [ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="10_lhowx"]
-[ext_resource type="AudioStream" uid="uid://cxc6cq3sbv0xu" path="res://musica/musica mundo 2_2.mp3" id="11_lfygo"]
+[ext_resource type="AudioStream" uid="uid://cxc6cq3sbv0xu" path="res://Musica/musica mundo 2_2.mp3" id="11_lfygo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrvo"]
 texture = ExtResource("1_j75tr")

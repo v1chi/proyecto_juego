@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="11_jiqa7"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="12_tv7b4"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="13_f5m3r"]
-[ext_resource type="AudioStream" uid="uid://lw388dcd1iao" path="res://musica/musica mundo 2_1.mp3" id="15_34y4u"]
+[ext_resource type="AudioStream" uid="uid://lw388dcd1iao" path="res://Musica/musica mundo 2_1.mp3" id="15_34y4u"]
 [ext_resource type="Script" path="res://Scene/Cambios Escenas/w2l1.gd" id="15_cispe"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="16_36m2y"]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d0lodnqmtrbcw"
-path="res://.godot/imported/Slime Death.mp3-4bf87b4dfe4be2d7e8c31e8c0826c1a9.mp3str"
+path="res://.godot/imported/Slime Death.mp3-6554093d18c30b830cc6a0c69ae080e2.mp3str"
 
 [deps]
 
-source_file="res://musica/Slime Death.mp3"
-dest_files=["res://.godot/imported/Slime Death.mp3-4bf87b4dfe4be2d7e8c31e8c0826c1a9.mp3str"]
+source_file="res://Musica/Slime Death.mp3"
+dest_files=["res://.godot/imported/Slime Death.mp3-6554093d18c30b830cc6a0c69ae080e2.mp3str"]
 
 [params]
 
