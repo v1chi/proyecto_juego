@@ -10,10 +10,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if position.y >= 30 and alpha <= 1:
+	if position.y >= 35 and alpha <= 1:
 		alpha += 4 * delta
 		set_self_modulate(Color(1,1,1,alpha))
-	elif position.y < 30:
+	elif position.y < 35:
 		alpha = 0
 		set_self_modulate(Color(1,1,1,alpha))
 	

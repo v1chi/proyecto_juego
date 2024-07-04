@@ -68,7 +68,7 @@ func _on_mouse_entered():
 	set_self_modulate(Color(0, 0, 0, 1))
 	_show_description(name)
 	#descrip_changed.emit(get_description())
-	text.set_text(get_description())
+	text.set_text("[center]" + get_description() + "[/center]")
 	connect("mouse_exited", _on_mouse_exited)
 
 
