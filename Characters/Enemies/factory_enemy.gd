@@ -33,6 +33,11 @@ func _desactivo(enemy : AbstractEnemy):
 	
 
 
+func _on_active_carta1(enemy : AbstractEnemy):
+	enemy.speed -= 10
+	enemy.patrol_speed -= 7
+	enemy.custom_speed_animation = 0.5
+	return enemy
 #Aumento de Velocidad enemigos
 func _on_active_carta6(enemy : AbstractEnemy):
 	enemy.speed += 5

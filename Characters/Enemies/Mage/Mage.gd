@@ -5,7 +5,7 @@ var buffVida = false
 
 func _init():
 	speed = 30
-	score = 50
+	score = 700
 
 func _physics_process(delta):
 	if health <= 0:

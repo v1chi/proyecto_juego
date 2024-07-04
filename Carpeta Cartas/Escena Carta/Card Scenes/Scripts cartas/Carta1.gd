@@ -7,11 +7,25 @@ var player
 
 func _activar_efecto_hijo():
 	anim.play("palpeo")
-	player = Global.get_tree().get_nodes_in_group("Player")[0]
-	player.speed += 5
+	FactoryEnemy.agregar_efecto("_on_active_carta1")
+	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		if enemy != null:
+			enemy.speed -= 10
+			enemy.patrol_speed -= 6
+			enemy.custom_speed_animation = 0.5
+			
+			
+
 
 func desactivar_efecto():
-	player.speed -= 5
+	var enemies = Global.get_tree().get_nodes_in_group("Enemies")
+	for enemy in enemies:
+		if enemy != null:
+			enemy.speed += 10
+			enemy.patrol_speed += 5
+			enemy.custom_speed_animation = 1
+	
 
 	
 func get_id():

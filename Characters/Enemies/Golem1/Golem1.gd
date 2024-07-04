@@ -5,7 +5,8 @@ var last_direction = Vector2.ZERO
 
 func _init():
 	speed = 20
-	score = 50
+	score = 500
+	health = 50
 
 func _physics_process(delta):
 	if health <= 0:
