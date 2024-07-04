@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxc6cq3sbv0xu"
+path="res://.godot/imported/musica mundo 2_2.mp3-ce2c7575d65eed7ce8d61c26312e6e74.mp3str"
+
+[deps]
+
+source_file="res://musica/musica mundo 2_2.mp3"
+dest_files=["res://.godot/imported/musica mundo 2_2.mp3-ce2c7575d65eed7ce8d61c26312e6e74.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
