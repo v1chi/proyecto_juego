@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cvg6q6xtwcqlu"]
+[gd_scene load_steps=24 format=3 uid="uid://cvg6q6xtwcqlu"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/GSpear/GSpear.gd" id="1_o0qfr"]
 [ext_resource type="Texture2D" uid="uid://bjgl3lby2raa4" path="res://Characters/Enemies/GSpear/spear goblin.png" id="2_lmel4"]
@@ -370,9 +370,25 @@ tracks/0/keys = {
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_77w7n"]
+resource_name = "aparecer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6lxx2"]
 _data = {
 "RESET": SubResource("Animation_7cxmw"),
+"aparecer": SubResource("Animation_77w7n"),
 "attackDown": SubResource("Animation_8as7f"),
 "attackLeft": SubResource("Animation_t0n2p"),
 "attackRight": SubResource("Animation_vca6x"),
@@ -417,6 +433,7 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
+visible = false
 
 [node name="detection shape" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_li3oc")
