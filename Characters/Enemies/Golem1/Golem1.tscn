@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b65b47tfijty6"]
+[gd_scene load_steps=24 format=3 uid="uid://b65b47tfijty6"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/Golem1/Golem1.gd" id="1_8ixla"]
 [ext_resource type="Texture2D" uid="uid://ceqggcdv7lwmw" path="res://Characters/Enemies/Golem1/new golem test.png" id="2_dmcfd"]
-[ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_iuwku"]
+[ext_resource type="AudioStream" uid="uid://b3j0tvphtq612" path="res://musica/daño golem.mp3" id="3_k5j7h"]
+[ext_resource type="AudioStream" uid="uid://1xm88urbh354" path="res://musica/muerte golem.mp3" id="4_pgcld"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -477,7 +478,7 @@ shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
 visible = false
-stream = ExtResource("3_iuwku")
+stream = ExtResource("3_k5j7h")
 
 [node name="attack detector" type="Area2D" parent="."]
 visible = false
@@ -487,6 +488,9 @@ visible = false
 position = Vector2(-1, 7)
 rotation = -1.57054
 shape = SubResource("CapsuleShape2D_d78yi")
+
+[node name="Muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pgcld")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
