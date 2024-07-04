@@ -11,16 +11,25 @@ var parent_carta2
 func add_cartas():
 	parent_carta1.add_child(carta1)
 	parent_carta2.add_child(carta2)
-	
+	play_fade_in()
+	await Global.wait(0.7)
 	play_no_activa()
 	activar_cartas()
-	
-	
+
+func play_fade_in():
+	if carta1 == null or carta2 == null:
+		return
+	carta1.anim.play("fade_in")
+	carta2.anim.play("fade_in")
+	await carta2.anim.animation_finished
+	await carta1.anim.animation_finished
+
 func play_no_activa():
 	if carta1 == null or carta2 == null:
 		return
 	carta1.anim.play("no_activa")
 	carta2.anim.play("no_activa")
+	await carta2.anim.animation_finished
 
 func activar_cartas():
 	if carta1 == null or carta2 == null:

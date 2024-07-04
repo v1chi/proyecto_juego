@@ -35,7 +35,7 @@ func desactivar_efecto():
 	await Global.wait(0.5)
 	player.remove_child(instancia_vision)
 	instancia_vision.queue_free()
-	print("sdljknds")
+	
 
 
 func get_icono():
