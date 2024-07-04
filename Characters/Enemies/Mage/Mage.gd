@@ -1,5 +1,8 @@
 extends AbstractEnemy
 
+@onready var aparece = $caminar
+@onready var muerte = $muerte
+
 var last_direction = Vector2.ZERO
 var buffVida = false
 
@@ -30,6 +33,7 @@ func _physics_process(delta):
 
 func procesamiento(delta):
 	if playerChase:
+		aparece.play()
 		var moveDirection = -player.position + position
 		last_direction = moveDirection.normalized()  # Guardar la última dirección de movimiento
 		var velocity = moveDirection.normalized() * speed + knockback
@@ -75,6 +79,7 @@ func dead():
 	$AnimationPlayer.play("deathRight")
 	$"Zonas de muerte".emitir_efecto.emit()
 	mostrar_score()
+	muerte.play()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
 	queue_free()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://iym17sokqjvk"]
+[gd_scene load_steps=23 format=3 uid="uid://iym17sokqjvk"]
 
 [ext_resource type="Texture2D" uid="uid://cdri2xvifb04v" path="res://Characters/Enemies/GSword/sword goblin-1.png (5).png" id="1_62dpa"]
 [ext_resource type="Script" path="res://Characters/Enemies/GSword/GSword.gd" id="1_ubgrr"]
-[ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_wpvgk"]
+[ext_resource type="AudioStream" uid="uid://dl04dqjdbgf6r" path="res://musica/GOBLIN SOUND FX 6 - Gaming Sound Effects HD FREE NO Copyright.mp3" id="3_dieqy"]
+[ext_resource type="AudioStream" uid="uid://b4netaoy8bsn6" path="res://musica/GOBLIN SOUND 12 - Gaming Sound Effects HD FREE NO Copyright.mp3" id="4_lr7fc"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -441,7 +442,7 @@ position = Vector2(0.5, 11.5)
 shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wpvgk")
+stream = ExtResource("3_dieqy")
 
 [node name="attack detector" type="Area2D" parent="."]
 visible = false
@@ -450,6 +451,10 @@ visible = false
 position = Vector2(0, 3)
 rotation = -0.649836
 shape = SubResource("CircleShape2D_msyfa")
+
+[node name="muerte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lr7fc")
+volume_db = -1.874
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
