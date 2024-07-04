@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxnuk6na5qk54"]
+[gd_scene load_steps=20 format=3 uid="uid://cxnuk6na5qk54"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/charSlime/char_slime.gd" id="1_3rome"]
 [ext_resource type="Texture2D" uid="uid://dedi52lqpdnog" path="res://Characters/Enemies/charSlime/slime.png" id="1_cd0ue"]
 [ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_vv5ja"]
+[ext_resource type="AudioStream" uid="uid://d0lodnqmtrbcw" path="res://musica/Slime Death.mp3" id="4_g3y5b"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -305,6 +306,7 @@ shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vv5ja")
+volume_db = -14.857
 
 [node name="attackdetector" type="Area2D" parent="."]
 visible = false
@@ -313,6 +315,10 @@ monitoring = false
 [node name="attackDetectorShape2D" type="CollisionShape2D" parent="attackdetector"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_0gd2j")
+
+[node name="muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_g3y5b")
+volume_db = 5.181
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

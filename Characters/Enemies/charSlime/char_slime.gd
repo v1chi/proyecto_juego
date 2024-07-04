@@ -1,11 +1,14 @@
 extends AbstractEnemy
 
+@onready var efectoCaminar = $caminar
+@onready var efectMuerte = $muerte
 
 @export var patrol_distance: int = 200
 var patrol_direction: int = 1
 var start_position: Vector2
 
 func _ready():
+	efectoCaminar.play()
 	super._ready()
 	self.health = 4
 	score = 5
@@ -51,6 +54,7 @@ func updateAnimation(direction):
 		elif direction.y < 0:
 			animationName = "walkLeft" #up
 	$AnimationPlayer.play(animationName, -1, custom_speed_animation, false)
+	
 
 func _on_detection_body_entered(body):
 	if body.has_method("player"):
@@ -70,6 +74,7 @@ func dead():
 	set_physics_process(false)
 	$AnimationPlayer.play("deathRight", -1, 2, false)
 	mostrar_score()
+	efectMuerte.play()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
 	queue_free()	
