@@ -1,6 +1,7 @@
 class_name Eleccion_carta
 extends Control
 
+@onready var sonidoCarta = $AudioStreamPlayer
  
 signal selection_finished(cartas)
 
@@ -18,6 +19,7 @@ func add_panels():
 		panels.append(get_node("Contenedor/Panel" + str(panel_id)))
 	
 func add_card_to_panel(panel_id):
+	sonidoCarta.play()
 	var instance_card = GlobalCartas.instanciar_carta_no_repetida()
 	panels[panel_id - 1].add_child(instance_card)
 	instance_card.activate_shift_animation()

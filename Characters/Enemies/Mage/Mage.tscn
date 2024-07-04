@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://0ik8344ikmfh"]
+[gd_scene load_steps=26 format=3 uid="uid://0ik8344ikmfh"]
 
 [ext_resource type="Script" path="res://Characters/Enemies/Mage/Mage.gd" id="1_cj8qp"]
 [ext_resource type="Texture2D" uid="uid://dqlkkt5281u" path="res://Characters/Enemies/Mage/Mage-Sheet.png" id="2_fvpvc"]
-[ext_resource type="AudioStream" uid="uid://crpe36w0fxj2e" path="res://musica/slime.mp3" id="3_51d7h"]
+[ext_resource type="AudioStream" uid="uid://cvujtv2vrwpjt" path="res://musica/audio mago.mp3" id="3_0ow15"]
 [ext_resource type="Script" path="res://Characters/Enemies/Mage/Zonas de spawn.gd" id="4_cpjmi"]
 [ext_resource type="Script" path="res://Characters/Enemies/Mage/Zonas de muerte.gd" id="5_64drc"]
+[ext_resource type="AudioStream" uid="uid://dwcooio88ql2e" path="res://musica/muerte mago.mp3" id="6_2cw8i"]
 
 [sub_resource type="Animation" id="Animation_7cxmw"]
 length = 0.001
@@ -516,7 +517,8 @@ position = Vector2(-0.5, 19.5)
 shape = SubResource("RectangleShape2D_7080r")
 
 [node name="caminar" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_51d7h")
+stream = ExtResource("3_0ow15")
+volume_db = -7.924
 
 [node name="attack detector" type="Area2D" parent="."]
 
@@ -537,6 +539,9 @@ script = ExtResource("5_64drc")
 
 [node name="Area2D" type="Node2D" parent="Zonas de muerte"]
 position = Vector2(0, -1)
+
+[node name="muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2cw8i")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

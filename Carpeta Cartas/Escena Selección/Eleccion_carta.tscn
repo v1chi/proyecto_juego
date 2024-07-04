@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ufb1hjutfhcv"]
+[gd_scene load_steps=25 format=3 uid="uid://ufb1hjutfhcv"]
 
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel.gd" id="1_83018"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Eleccion_carta.gd" id="1_fqvd7"]
@@ -6,6 +6,10 @@
 [ext_resource type="Theme" uid="uid://cnq38gpyrr5nb" path="res://Carpeta Cartas/Escena Carta/Assets/new_theme.tres" id="4_2vm88"]
 [ext_resource type="FontFile" uid="uid://c86n303edbvb2" path="res://Carpeta Cartas/Escena Carta/Assets/font/Silver (1).ttf" id="5_f1nuo"]
 [ext_resource type="Script" path="res://Carpeta Cartas/Escena Selección/Panel_NO_input.gd" id="5_p3hhk"]
+[ext_resource type="Texture2D" uid="uid://2j3prl1mot4o" path="res://Carpeta Cartas/Escena Selección/Imagenes/sangre 2.png" id="7_2wjjb"]
+[ext_resource type="Texture2D" uid="uid://cs6w57vbetrhy" path="res://Carpeta Cartas/Escena Selección/Imagenes/sangre 4.png" id="8_5eppk"]
+[ext_resource type="Texture2D" uid="uid://dhdyipsutjp2k" path="res://Carpeta Cartas/Escena Selección/Imagenes/cakavera 2.jpg" id="9_ip1uc"]
+[ext_resource type="AudioStream" uid="uid://crhldy0tigrqx" path="res://musica/sonido cartas.mp3" id="10_dbkhb"]
 
 [sub_resource type="Animation" id="Animation_tnjx6"]
 resource_name = "Panel1_show"
@@ -167,6 +171,7 @@ _data = {
 }
 
 [node name="EleccionCarta" type="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -422,7 +427,7 @@ clip_contents = true
 layout_mode = 0
 offset_left = -1.0
 offset_top = -1.0
-offset_right = 241.0
+offset_right = -1.0
 offset_bottom = 21.0
 theme = ExtResource("4_2vm88")
 script = ExtResource("5_p3hhk")
@@ -454,7 +459,26 @@ layout_mode = 0
 offset_right = 240.0
 offset_bottom = 135.0
 mouse_filter = 2
-color = Color(0.258824, 0.431373, 1, 0.309804)
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(141, 118)
+scale = Vector2(0.0353618, 0.030222)
+texture = ExtResource("7_2wjjb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(28, 41)
+scale = Vector2(0.305238, 0.29477)
+texture = ExtResource("8_5eppk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(218, 65)
+scale = Vector2(0.147472, 0.153395)
+texture = ExtResource("9_ip1uc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_dbkhb")
+volume_db = -8.432
 
 [connection signal="selection_finished" from="." to="." method="_on_selection_finished"]
 [connection signal="card_created" from="Contenedor/Panel1" to="Contenedor/Panel1" method="_on_card_created"]

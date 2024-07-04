@@ -15,8 +15,9 @@ func _ready():
 	get_tree().paused = not get_tree().paused
 	http_request = $OK/HTTPRequest
 	$OK.set_disabled(true)
+	set_process_input(true) 
 	http_request.request_completed.connect(self._on_request_completed)
-	regex.compile("\\W+")
+	regex.compile("[^A-Za-z0-9]")
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -32,7 +33,9 @@ func _validar_puntuacion():
 		
 	if Global.score < PUNTAJE_MIN: # 1
 		Global.score = PUNTAJE_MIN
-	
+
+
+
 
 
 func _on_ok_button_up():
@@ -52,8 +55,24 @@ func _on_nombre_focus_exited():
 		$OK.set_disabled(false)
 
 func _es_nombre_valido(nombre : String):
+	if nombre == null or nombre == "":
+		return false 
 	if nombre.length() > 10:
 		return false
 	elif regex.search_all(nombre).size() != 0:
 		return false
 	return true
+
+
+func _input(ev):
+	if Input.is_key_pressed(KEY_ENTER) and _es_nombre_valido($nombre.text):
+		$OK.emit_signal("button_up")
+	
+
+
+
+
+
+
+
+

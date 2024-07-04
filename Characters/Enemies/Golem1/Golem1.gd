@@ -1,5 +1,6 @@
 extends AbstractEnemy
-
+@onready var daño = $caminar
+@onready var muerte = $Muerte
 
 var last_direction = Vector2.ZERO
 var buffVida = false
@@ -74,11 +75,13 @@ func _on_enemy_hitbox_area_entered(area):
 func dead():
 	$AnimationPlayer.play("deathRight")
 	mostrar_score()
+	muerte.play()
 	await $AnimationPlayer.animation_finished
 	Global.score_agregate(score)
 	queue_free()
 
 func hurted():
+	daño.play()
 	$AnimationPlayer.play("hurted")
 	await $AnimationPlayer.animation_finished
 

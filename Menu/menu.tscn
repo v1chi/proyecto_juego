@@ -60,7 +60,7 @@ script = ExtResource("3_ppii8")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qtrxv")
 theme_override_font_sizes/font_size = 4
-text = "Modo Online"
+text = "Modo Horda"
 script = ExtResource("5_6dyow")
 
 [node name="Salir" type="Button" parent="VBoxBotones"]

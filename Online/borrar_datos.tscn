@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wnjhwfmd7tcg"]
+
+[ext_resource type="PackedScene" uid="uid://efy7jo8hg7en" path="res://Online/EnviarDatos.tscn" id="1_0wl2k"]
+
+[node name="EnviarDatos" instance=ExtResource("1_0wl2k")]
