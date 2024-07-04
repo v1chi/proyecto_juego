@@ -37,6 +37,7 @@ func _ready():
 	
 	gui_cartas.get_node("Timer").timeout.connect(_on_timeout_cartas)
 	
+	
 	spawn_timer = _get_spawn_timer()
 	add_child(spawn_timer)
 	spawn_timer.timeout.connect(_spawn_enemy)
@@ -44,6 +45,23 @@ func _ready():
 
 
 	
+
+var path_pocion = "res://Carpeta Corazones/pocion.tscn"
+func _spawn_pocion():
+	print("Emitiendo pocion")
+	var pocion = load(path_pocion).instantiate()
+	var spawn_position
+	var random_position = randi() % 4
+	if random_position == 0:
+		spawn_position = $SquaresLimits.get_pos_valida_top_left()
+	elif random_position == 1:
+		spawn_position = $SquaresLimits.get_pos_valida_top_right()
+	elif random_position == 2:
+		spawn_position = $SquaresLimits.get_pos_valida_bottom_left()
+	else:
+		spawn_position = $SquaresLimits.get_pos_valida_bottom_right()
+	pocion.position = spawn_position
+	$TileMap.add_child(pocion)
 	
 
 func _spawn_enemy():

@@ -1177,3 +1177,9 @@ text = "aa"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_uhr6n")
 volume_db = -14.991
+
+[node name="TimerPociones" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="timeout" from="TimerPociones" to="." method="_spawn_pocion"]
