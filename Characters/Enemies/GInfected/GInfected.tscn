@@ -280,6 +280,7 @@ shape = SubResource("RectangleShape2D_7080r")
 stream = ExtResource("3_y15qt")
 
 [node name="attack detector" type="Area2D" parent="."]
+visible = false
 
 [node name="attack detector shape" type="CollisionShape2D" parent="attack detector"]
 position = Vector2(0, 3)
