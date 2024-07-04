@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl04dqjdbgf6r"
+path="res://.godot/imported/GOBLIN SOUND FX 6 - Gaming Sound Effects HD FREE NO Copyright.mp3-24e2b8c6d0807a9817df2638c778cd83.mp3str"
+
+[deps]
+
+source_file="res://musica/GOBLIN SOUND FX 6 - Gaming Sound Effects HD FREE NO Copyright.mp3"
+dest_files=["res://.godot/imported/GOBLIN SOUND FX 6 - Gaming Sound Effects HD FREE NO Copyright.mp3-24e2b8c6d0807a9817df2638c778cd83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

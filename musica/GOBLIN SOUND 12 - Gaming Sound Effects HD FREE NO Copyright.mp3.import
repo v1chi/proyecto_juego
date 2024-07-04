@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4netaoy8bsn6"
+path="res://.godot/imported/GOBLIN SOUND 12 - Gaming Sound Effects HD FREE NO Copyright.mp3-10acb18c15ce50fa8ab0f8bb1f978d6c.mp3str"
+
+[deps]
+
+source_file="res://musica/GOBLIN SOUND 12 - Gaming Sound Effects HD FREE NO Copyright.mp3"
+dest_files=["res://.godot/imported/GOBLIN SOUND 12 - Gaming Sound Effects HD FREE NO Copyright.mp3-10acb18c15ce50fa8ab0f8bb1f978d6c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
