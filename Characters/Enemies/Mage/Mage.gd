@@ -15,8 +15,8 @@ func _physics_process(delta):
 		await dead()
 	else:
 		if buffVida == false:
-			damaged += 5
-			health +=5
+			damaged += 15
+			health += 15
 			buffVida = true
 		if damaged != health:
 			await hurted()

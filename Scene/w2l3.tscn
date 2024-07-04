@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://ke04rll5j12x"]
+[gd_scene load_steps=18 format=3 uid="uid://ke04rll5j12x"]
 
 [ext_resource type="Script" path="res://Scene/Script escenas/w2l3.gd" id="1_ngsld"]
 [ext_resource type="Texture2D" uid="uid://bvxjmcw6cic6b" path="res://TileSet/Dungeon tileset/Dungeon tileset.png" id="2_w4ogo"]
 [ext_resource type="Texture2D" uid="uid://c6gn7sq10ficq" path="res://TileSet/Pixel Art Top Down - Basic (1)/Texture/TX Props.png" id="3_6n4nv"]
+[ext_resource type="PackedScene" uid="uid://iym17sokqjvk" path="res://Characters/Enemies/GSword/GSword.tscn" id="5_33w7v"]
 [ext_resource type="PackedScene" uid="uid://cg4o1dqm08nvi" path="res://Characters/Player/character_body_2d.tscn" id="5_h0ts0"]
-[ext_resource type="PackedScene" uid="uid://b65b47tfijty6" path="res://Characters/Enemies/Golem1/Golem1.tscn" id="5_o470h"]
-[ext_resource type="PackedScene" uid="uid://0ik8344ikmfh" path="res://Characters/Enemies/Mage/Mage.tscn" id="6_bxf0b"]
+[ext_resource type="PackedScene" uid="uid://cvg6q6xtwcqlu" path="res://Characters/Enemies/GSpear/GSpear.tscn" id="6_eb4un"]
 [ext_resource type="PackedScene" uid="uid://bhs5y07f5gpet" path="res://Carpeta Corazones/Escena corazones/contenedorCorazones.tscn" id="7_3qard"]
 [ext_resource type="Script" path="res://Scene/Cambios Escenas/w2l3.gd" id="7_webds"]
+[ext_resource type="PackedScene" uid="uid://di6csugfnhws6" path="res://Characters/Enemies/GInfected/GInfected.tscn" id="7_y1hdr"]
+[ext_resource type="PackedScene" uid="uid://bwv15aawmtw4i" path="res://Carpeta Corazones/pocion.tscn" id="8_ck5e2"]
 [ext_resource type="PackedScene" uid="uid://devak5c8008uq" path="res://Carpeta Cartas/Escena Selección/icono_carta.tscn" id="8_o1ykb"]
 [ext_resource type="PackedScene" uid="uid://bv5tnso1i0ben" path="res://Menu/pausa.tscn" id="10_vatnw"]
 [ext_resource type="AudioStream" uid="uid://dg6enpobe3u80" path="res://musica/musica mundo 2_3.mp3" id="11_y163t"]
@@ -1079,7 +1081,7 @@ sources/0 = SubResource("TileSetAtlasSource_trrvo")
 sources/1 = SubResource("TileSetAtlasSource_4bs02")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3t2"]
-size = Vector2(288.5, 27)
+size = Vector2(172.011, 27)
 
 [node name="world2" type="Node2D" groups=["World"]]
 position = Vector2(-48, 49)
@@ -1101,18 +1103,84 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="char1" parent="TileMap" instance=ExtResource("5_h0ts0")]
-position = Vector2(121, 92)
+position = Vector2(-126, 102)
 speed = 37
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/char1"]
 position = Vector2(-1, 6)
 position_smoothing_enabled = true
 
-[node name="Golem1" parent="TileMap" instance=ExtResource("5_o470h")]
-position = Vector2(-114, 104)
+[node name="GSword" parent="TileMap" instance=ExtResource("5_33w7v")]
+position = Vector2(362, 1270)
 
-[node name="Mague" parent="TileMap" instance=ExtResource("6_bxf0b")]
-position = Vector2(327, 106)
+[node name="GSword2" parent="TileMap" instance=ExtResource("5_33w7v")]
+position = Vector2(360, 1339)
+
+[node name="GSword3" parent="TileMap" instance=ExtResource("5_33w7v")]
+position = Vector2(132, 702)
+
+[node name="GSpear" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(370, 112)
+
+[node name="GSpear2" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(126, 272)
+
+[node name="GSpear3" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(612, 478)
+
+[node name="GSpear4" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(-99, 484)
+
+[node name="GSpear5" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(383, 876)
+
+[node name="GSpear7" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(175, 1211)
+
+[node name="GSpear9" parent="TileMap" instance=ExtResource("6_eb4un")]
+position = Vector2(66, 1343)
+
+[node name="GInfected" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(112, 115)
+
+[node name="GInfected2" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(138, 113)
+
+[node name="GInfected3" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(148, 473)
+
+[node name="GInfected4" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(112, 469)
+
+[node name="GInfected5" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(372, 479)
+
+[node name="GInfected6" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(600, 665)
+
+[node name="GInfected7" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(618, 887)
+
+[node name="GInfected8" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(-100, 693)
+
+[node name="GInfected9" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(416, 1097)
+
+[node name="GInfected10" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(616, 1095)
+
+[node name="GInfected11" parent="TileMap" instance=ExtResource("7_y1hdr")]
+position = Vector2(172, 1121)
+
+[node name="ParentPocion" parent="TileMap" instance=ExtResource("8_ck5e2")]
+position = Vector2(418, 112)
+
+[node name="ParentPocion2" parent="TileMap" instance=ExtResource("8_ck5e2")]
+position = Vector2(176, 704)
+
+[node name="ParentPocion3" parent="TileMap" instance=ExtResource("8_ck5e2")]
+position = Vector2(-36, 1322)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1131,7 +1199,9 @@ position = Vector2(318, -1943)
 script = ExtResource("7_webds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-177, 2154)
+position = Vector2(113, 3257.04)
+rotation = 1.57958
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ee3t2")
 
 [node name="Pausa" parent="." instance=ExtResource("10_vatnw")]
