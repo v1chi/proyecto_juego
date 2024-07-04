@@ -13,8 +13,8 @@ func _activar_efecto_hijo():
 		player = Global.get_tree().get_nodes_in_group("Player")[0]
 		contenedor_corazon = Global.get_tree().get_nodes_in_group("ContenedorCorazon")[0]	
 		player.maxHealth += vida_aumentada 
+		player.currentHealth = player.currentHealth + vida_aumentada if player.currentHealth + vida_aumentada <= player.maxHealth else  player.maxHealth 
 		contenedor_corazon.setMaxHearts(player.maxHealth)
-		player.currentHealth = player.maxHealth if player.currentHealth + vida_aumentada  == player.maxHealth else player.currentHealth 
 		contenedor_corazon.updateHearts(player.currentHealth)
 		flag = false
 	

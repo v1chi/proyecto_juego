@@ -4,9 +4,11 @@ extends AbstractEnemy
 @onready var muerte = $muerte
 
 func _init():
-	speed = 20
-	toAttack = false
-	score = 5
+	self.speed = 20
+	self.toAttack = false
+	self.score = 10
+	self.health = 8
+	self.damaged = self.health
 	
 func _physics_process(delta):
 	if health <= 0:
