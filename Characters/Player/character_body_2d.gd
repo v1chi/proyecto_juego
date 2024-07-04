@@ -17,6 +17,7 @@ signal maxHealthChanged
 var received_damage = 1
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
+var is_mode_online = false
 
 var custom_speed = 1
 var knockback = preload("res://Carpeta Cartas/Escena Carta/Card Scenes/knockback.tscn").instantiate()
@@ -99,7 +100,9 @@ func _physics_process(delta):
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
 	pass
-	
+
+var path_enviar_dato = "res://Online/EnviarDatos.tscn"
+signal death
 func dead():
 	animations.play("deathLeft")
 	$audioMuerte.play()
@@ -108,7 +111,7 @@ func dead():
 	if can_revive:
 		await _on_revive_card()
 	else:
-		Global.goto_scene(path_menu)
+		death.emit() if is_mode_online else  Global.goto_scene(path_menu)
 
 func _on_revive_card():
 	revivePlayer.emit()

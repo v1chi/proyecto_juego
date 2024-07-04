@@ -23,3 +23,17 @@ func get_pos_valida_bottom_left():
 
 func get_pos_valida_bottom_right():
 	return bottom_right.get_posicion_valida()
+
+func get_pos_valida_azar():
+	var random_position = randi() % 4
+	if random_position == 0:
+		return get_pos_valida_top_left()
+	elif random_position == 1:
+		return get_pos_valida_top_right()
+	elif random_position == 2:
+		return get_pos_valida_bottom_left()
+	else:
+		return get_pos_valida_bottom_right()
+
+func _init():
+	randomize()

@@ -12,10 +12,7 @@ var controlador_spawn = ControladorSpawn.new()
 
 var path_enviar_dato = "res://Online/EnviarDatos.tscn"
 # Definimos los archivos de los diferentes enemigos
-var enemy_scenes = [
-	"res://Characters/Enemies/charSlime/char_slime.tscn",
-	"res://Characters/Enemies/GInfected/GInfected.tscn",
-]
+
 
 func _connect_signal_main_timer():
 	gui_cartas.connect_main_timer(main_timer)
@@ -25,8 +22,15 @@ func _on_main_timer_timeout():
 	var escena_enviar = load(path_enviar_dato).instantiate()
 	$Pausa.set_process_mode(Node.PROCESS_MODE_INHERIT)
 	$CanvasLayer2.add_child(escena_enviar)
+
+func _on_death_player():
+	main_timer.stop()
+	main_timer.emit_signal("timeout")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.is_mode_online = true
+	player.death.connect(_on_death_player)
 	musica.play()
 	_connect_signal_main_timer()
 	main_timer.start()
@@ -44,43 +48,18 @@ func _ready():
 	spawn_timer.start()
 
 
-	
 
 var path_pocion = "res://Carpeta Corazones/pocion.tscn"
 func _spawn_pocion():
-	print("Emitiendo pocion")
 	var pocion = load(path_pocion).instantiate()
-	var spawn_position
-	var random_position = randi() % 4
-	if random_position == 0:
-		spawn_position = $SquaresLimits.get_pos_valida_top_left()
-	elif random_position == 1:
-		spawn_position = $SquaresLimits.get_pos_valida_top_right()
-	elif random_position == 2:
-		spawn_position = $SquaresLimits.get_pos_valida_bottom_left()
-	else:
-		spawn_position = $SquaresLimits.get_pos_valida_bottom_right()
+	var spawn_position = $SquaresLimits.get_pos_valida_azar()
 	pocion.position = spawn_position
 	$TileMap.add_child(pocion)
 	
 
 func _spawn_enemy():
-	var random_enemy = enemy_scenes[randi() % enemy_scenes.size()]
-	
-	#var instancia = load(random_enemy).instantiate()
 	var instancia = controlador_spawn.instanciar_enemigo(ronda)
-	
-	var spawn_position
-	var random_position = randi() % 4
-	if random_position == 0:
-		spawn_position = $SquaresLimits.get_pos_valida_top_left()
-	elif random_position == 1:
-		spawn_position = $SquaresLimits.get_pos_valida_top_right()
-	elif random_position == 2:
-		spawn_position = $SquaresLimits.get_pos_valida_bottom_left()
-	else:
-		spawn_position = $SquaresLimits.get_pos_valida_bottom_right()
-	
+	var spawn_position = $SquaresLimits.get_pos_valida_azar()
 	instancia.position = spawn_position
 	$TileMap.add_child(instancia)
 	_generar_particula(instancia)
