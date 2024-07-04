@@ -386,7 +386,8 @@ _data = {
 "walkUp": SubResource("Animation_a2vpa")
 }
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_6y3gf"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_li3oc"]
+radius = 115.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_utaar"]
 radius = 4.12311
@@ -416,10 +417,9 @@ libraries = {
 }
 
 [node name="detection" type="Area2D" parent="."]
-visible = false
 
 [node name="detection shape" type="CollisionShape2D" parent="detection"]
-shape = SubResource("SegmentShape2D_6y3gf")
+shape = SubResource("CircleShape2D_li3oc")
 
 [node name="attack shape" type="CollisionShape2D" parent="."]
 rotation = -1.56062
